@@ -15,10 +15,10 @@
 %
 \begin{tikzpicture}[thick,minimum size=8mm]
 	\node (w) at (0,0) [circle,draw=cyan!50,fill=cyan!20] {$\mW$};
-	\node (x) at (0,-1.5) [circle,draw=cyan!50,fill=cyan!20] {$\vx$};
-	\node (gemv) at (1.5,-0.75) [rectangle,draw=magenta!50,fill=magenta!20] {GEMV};
-	\node (y) at (3,-0.75) [circle,draw=cyan!50,fill=cyan!20] {$\vy$};
-	\draw [-{Latex[round]}] (w) -- (gemv);
-	\draw [-{Latex[round]}] (x) -- (gemv);
-	\draw [-{Latex[round]}] (gemv) -- (y);
+	\node (x) at (0,-1.5) [circle,draw=cyan!50,fill=cyan!20] {$\mX$};
+	\node (gemm) at (1.5,-0.75) [rectangle,draw=magenta!50,fill=magenta!20] {GEMM};
+	\node (y) at (3,-0.75) [circle,draw=cyan!50,fill=cyan!20] {$\mY$};
+	\draw [-{Latex[round]}] (w) -- (gemm);
+	\draw [-{Latex[round]}] (x) -- (gemm);
+	\draw [-{Latex[round]}] (gemm) -- (y);
 \end{tikzpicture}

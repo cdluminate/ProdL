@@ -18,6 +18,7 @@
 \usepackage[margin=0.9in]{geometry}
 \usepackage{tikz}
 \usepackage{pgflibraryshapes}
+\usetikzlibrary{arrows.meta}
 \usepackage{float}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -32,9 +33,11 @@
 
 \maketitle
 
-\section{Introduction}
+\section{Conventions}
 
-\section{List of Modules}
+Vectors are column vector by default.
+
+\section{Foundamental Modules}
 
 \subsection{Level0: Scalar Ops}
 
@@ -65,6 +68,29 @@
 
 \subsection{Level3: Matrix-Matrix Ops}
 
+\begin{figure}[h]
+	\centering
+	\resizebox{0.618\columnwidth}{!}{%
+		\input{tikz/cg-mm.tex}
+	}
+	\caption{GEMM: $\mW \mX = \mY$. (Linear)}
+\end{figure}
+
+	Forward Pass:
+	\begin{equation}
+		\mW_{(m\times k)} \cdot \mX_{(k\times n)} = \mY_{(m\times n)}
+	\end{equation}
+
+	Backward Pass:
+	\begin{align}
+		\frac{\partial L}{\partial\mW}_{(m\times k)} &=
+		\frac{\partial L}{\partial\mY}_{(m\times n)} \cdot \mX^T_{(n,k)}\\
+		\frac{\partial L}{\partial\mX}_{(k\times n)} &=
+		\mW^T_{(k\times m)} \cdot \frac{\partial L}{\partial \mY}_{(m\times n)}
+	\end{align}
+
 \subsection{Level4: Tensor Ops}
+
+\section{Network Layers}
 
 \end{document}
