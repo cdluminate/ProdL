@@ -28,7 +28,8 @@
 \input{include/math_commands.tex}
 
 \title{Computation Graph Cheat Sheet}
-\author{Mo Zhou\\\small\texttt{<cdluminate@gmail.com>}}
+\author{Mo Zhou\\\small\texttt{<cdluminate@gmail.com>}\\
+License: AGPL-3.0}
 
 \begin{document}
 
@@ -37,7 +38,8 @@
 
 \section{Conventions}
 
-Vectors are column vector by default.
+Vectors are column vectors by default.
+We follow the naming convention of BLAS/LAPACK for linear algebra operations.
 
 \section{Automatic Differentiation}
 
@@ -48,6 +50,8 @@ Vectors are column vector by default.
 \subsection{Level1: Vector-Vector Ops}
 
 \subsection{Level2: Matrix-Vector Ops}
+
+	\textbf{GEneral Matrix-Vector multiplication} (GEMV)
 
 \begin{figure}[h]
 	\centering
@@ -71,6 +75,8 @@ Vectors are column vector by default.
 	\end{align}
 
 \subsection{Level3: Matrix-Matrix Ops}
+
+	\textbf{GEneral Matrix-Matrix multiplication} (GEMM)
 
 \begin{figure}[h]
 	\centering
