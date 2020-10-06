@@ -14,11 +14,12 @@
 % Copyright (C) 2020 Mo Zhou <cdluminate@gmail.com>
 %
 \begin{tikzpicture}[thick,minimum size=8mm]
+	\usetikzlibrary{arrows.meta}
 	\node (w) at (0,0) [circle,draw=cyan!50,fill=cyan!20] {$\mW$};
 	\node (x) at (0,-1.5) [circle,draw=cyan!50,fill=cyan!20] {$\vx$};
 	\node (gemv) at (1.5,-0.75) [rectangle,draw=magenta!50,fill=magenta!20] {GEMV};
 	\node (y) at (3,-0.75) [circle,draw=cyan!50,fill=cyan!20] {$\vy$};
-	\draw [->] (w) -- (gemv);
-	\draw [->] (x) -- (gemv);
-	\draw [->] (gemv) -- (y);
+	\draw [-{Latex[round]}] (w) -- (gemv);
+	\draw [-{Latex[round]}] (x) -- (gemv);
+	\draw [-{Latex[round]}] (gemv) -- (y);
 \end{tikzpicture}
