@@ -50,6 +50,19 @@
 	\caption{GEMV: $\mW \vx = \vy$. (Linear)}
 \end{figure}
 
+	Forward Pass:
+	\begin{equation}
+		\mW_{(m\times k)} \cdot \vx_{(k)} = \vy_{(m)}
+	\end{equation}
+
+	Backward Pass:
+	\begin{align}
+		\frac{\partial L}{\partial\mW}_{(m\times k)} &=
+		\frac{\partial L}{\partial\vy}_{(m)} \cdot \vx^T_{(1,k)}\\
+		\frac{\partial L}{\partial\vx}_{(k)} &=
+		\mW^T_{(k\times m)} \cdot \frac{\partial L}{\partial \vy}_{(m)}
+	\end{align}
+
 \subsection{Level3: Matrix-Matrix Ops}
 
 \subsection{Level4: Tensor Ops}
