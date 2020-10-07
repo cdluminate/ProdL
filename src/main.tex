@@ -25,6 +25,7 @@
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{hyperref}
+\usepackage{mathtools}
 \input{include/math_commands.tex}
 
 \title{Computation Graph Cheat Sheet}
@@ -40,67 +41,118 @@ License: AGPL-3.0}
 
 Vectors are column vectors by default.
 We follow the naming convention of BLAS/LAPACK for linear algebra operations.
+Vecotr, Matrix, Tensor shapes are annotated under the corresponding symbols.
 
 \section{Automatic Differentiation}
 
 \section{Atomic Modules}
 
-\subsection{Level0: Scalar Ops}
-
 \subsection{Level1: Vector-Vector Ops}
+
+	\textbf{Identity}
+
+	\textbf{Addition} (Add)
+
+	\textbf{Element-wise Multiplication} (Mul)
+
+	\textbf{Dot Product} (Dot)
+
+	\textbf{Element-wise Inverse} (Inv)
+
+	\textbf{L-2 Norm} (L-2)
+
+	\textbf{Rectified Linear Unit} (ReLU)
+
+	\textbf{Sigmoid} ($\sigma$)
 
 \subsection{Level2: Matrix-Vector Ops}
 
 	\textbf{GEneral Matrix-Vector multiplication} (GEMV)
 
-\begin{figure}[h]
-	\centering
-	\resizebox{0.618\columnwidth}{!}{%
-		\input{tikz/cg-mv.tex}
-	}
-	\caption{GEMV: $\mW \vx = \vy$. (Linear)}
-\end{figure}
-
 	Forward Pass:
 	\begin{equation}
-		\mW_{(m\times k)} \cdot \vx_{(k)} = \vy_{(m)}
+		\underset{(m\times k)}{\mW} \cdot \underset{(k)}{\vx} =
+		\underset{(m)}{\vy}
 	\end{equation}
+
+	\begin{figure}[h]
+		\centering
+		\resizebox{0.618\columnwidth}{!}{%
+			\input{tikz/cg-mv.tex}
+		}
+		\caption{GEMV: $\mW \vx = \vy$. (Linear)}
+	\end{figure}
 
 	Backward Pass:
 	\begin{align}
-		\frac{\partial L}{\partial\mW}_{(m\times k)} &=
-		\frac{\partial L}{\partial\vy}_{(m)} \cdot \vx^T_{(1,k)}\\
-		\frac{\partial L}{\partial\vx}_{(k)} &=
-		\mW^T_{(k\times m)} \cdot \frac{\partial L}{\partial \vy}_{(m)}
+		\underset{(m\times k)}{\frac{\partial L}{\partial\mW}} &=
+		\underset{(m)}{\frac{\partial L}{\partial\vy}} \cdot
+		\underset{(1\times k)}{\vx^T}\\
+		\underset{(k)}{\frac{\partial L}{\partial\vx}} &=
+		\underset{(k\times m)}{\mW^T} \cdot
+		\underset{(m)}{\frac{\partial L}{\partial \vy}}
 	\end{align}
 
 \subsection{Level3: Matrix-Matrix Ops}
 
 	\textbf{GEneral Matrix-Matrix multiplication} (GEMM)
 
-\begin{figure}[h]
-	\centering
-	\resizebox{0.618\columnwidth}{!}{%
-		\input{tikz/cg-mm.tex}
-	}
-	\caption{GEMM: $\mW \mX = \mY$. (Linear)}
-\end{figure}
-
 	Forward Pass:
 	\begin{equation}
-		\mW_{(m\times k)} \cdot \mX_{(k\times n)} = \mY_{(m\times n)}
+		\underset{(m\times k)}{\mW} \cdot
+		\underset{(k\times n)}{\mX} =
+		\underset{(m\times n)}{\mY}
 	\end{equation}
+
+	\begin{figure}[h]
+		\centering
+		\resizebox{0.618\columnwidth}{!}{%
+			\input{tikz/cg-mm.tex}
+		}
+		\caption{GEMM: $\mW \mX = \mY$. (Linear)}
+	\end{figure}
 
 	Backward Pass:
 	\begin{align}
-		\frac{\partial L}{\partial\mW}_{(m\times k)} &=
-		\frac{\partial L}{\partial\mY}_{(m\times n)} \cdot \mX^T_{(n,k)}\\
-		\frac{\partial L}{\partial\mX}_{(k\times n)} &=
-		\mW^T_{(k\times m)} \cdot \frac{\partial L}{\partial \mY}_{(m\times n)}
+		\underset{(m\times k)}{\frac{\partial L}{\partial\mW}} &=
+		\underset{(m\times n)}{\frac{\partial L}{\partial\mY}} \cdot
+		\underset{(n,k)}{\mX^T}\\
+		\underset{(k\times n)}{\frac{\partial L}{\partial\mX}} &=
+		\underset{(k\times m)}{\mW^T} \cdot
+		\underset{(m\times n)}{\frac{\partial L}{\partial \mY}}
 	\end{align}
 
-\subsection{Level4: Tensor Ops}
+	\textbf{2-D Convolution} (Conv2d)
 
 \section{Network Layers}
+
+	\textbf{Affine Transformation Layer} (Affine)
+
+	\textbf{Mean Square Error} (MSE)
+
+	Forward Pass:
+	\begin{equation}
+		\frac{1}{H} \sum_{i=1}^H
+		\|\underset{(n)}{\vx_i} - \underset{(n)}{\hat{\vx}_i} \|_2^2
+		= \underset{(1)}{L} 
+	\end{equation}
+
+	\begin{figure}[h]
+		\centering
+		\resizebox{0.618\columnwidth}{!}{%
+			\input{tikz/cg-mse.tex}
+		}
+		\caption{MSE: $\frac{1}{H} \sum_{i=1}^H \|\vx_i - \hat{\vx}_i\|_2^2 = L$.}
+	\end{figure}
+
+	\textbf{Softmax Layer} (Softmax)
+
+	\textbf{Batch Normalization} (BN)
+
+\section{Networks}
+
+\subsection{Convolutional Neural Networks}
+
+\subsection{Recurrent Neural Networks}
 
 \end{document}
