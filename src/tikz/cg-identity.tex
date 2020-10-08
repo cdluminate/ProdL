@@ -14,9 +14,17 @@
 % Copyright (C) 2020 Mo Zhou <cdluminate@gmail.com>
 %
 \begin{tikzpicture}[thick,minimum size=8mm]
-	\node (x) at (0,0) [circle,draw=cyan!50,fill=cyan!20] {$\vx$};
-	\node (ident) at (2,0) [rectangle,draw=magenta!50,fill=magenta!20] {I};
-	\node (y) at (4,0) [circle,draw=cyan!50,fill=cyan!20] {$\vy$};
-	\draw [-{Latex[round]}] (x) -- (ident);
-	\draw [-{Latex[round]}] (ident) -- (y);
+	\node (x) at (0,0) [circle,draw=cyan!32,fill=cyan!16] {$\vx$};
+	\node (ident) at (2,0) [rectangle,draw=magenta!32,fill=magenta!16] {I};
+	\node (y) at (4,0) [circle,draw=cyan!32,fill=cyan!16] {$\vy$};
+	% forward
+	\draw [-{Latex[round]}] ([yshift=1mm]x.east)     -- ([yshift=1mm]ident.west);
+	\draw [-{Latex[round]}] ([yshift=1mm]ident.east) -- ([yshift=1mm]y.west);
+	% backward
+	\draw [{Latex[round]}-,draw=red] ([yshift=-1mm]ident.east) -- 
+	node[below]{\small\textcolor{red}{$\partial L/\partial \vy$}}
+	([yshift=-1mm]y.west);
+	\draw [{Latex[round]}-,draw=red] ([yshift=-1mm]x.east)     --
+	node[below]{\small\textcolor{red}{$\partial L/\partial \vy$}}
+	([yshift=-1mm]ident.west);
 \end{tikzpicture}
