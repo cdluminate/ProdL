@@ -14,11 +14,9 @@
 % Copyright (C) 2020 Mo Zhou <cdluminate@gmail.com>
 %
 \begin{tikzpicture}[thick,minimum size=8mm]
-	\node (w) at (0,0) [circle,draw=cyan!50,fill=cyan!20] {$\mW$};
-	\node (x) at (0,-2) [circle,draw=cyan!50,fill=cyan!20] {$\vx$};
-	\node (gemv) at (2,-1) [rectangle,draw=magenta!50,fill=magenta!20] {GEMV};
-	\node (y) at (4,-1) [circle,draw=cyan!50,fill=cyan!20] {$\vy$};
-	\draw [-{Latex[round]}] (w) -- (gemv);
-	\draw [-{Latex[round]}] (x) -- (gemv);
-	\draw [-{Latex[round]}] (gemv) -- (y);
+	\node (x) at (0,0) [circle,draw=cyan!50,fill=cyan!20] {$\vx$};
+	\node (trans) at (2,0) [rectangle,draw=magenta!50,fill=magenta!20] {T};
+	\node (y) at (4,0) [circle,draw=cyan!50,fill=cyan!20] {$\vy$};
+	\draw [-{Latex[round]}] (x) -- (trans);
+	\draw [-{Latex[round]}] (trans) -- (y);
 \end{tikzpicture}

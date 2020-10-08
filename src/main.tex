@@ -26,6 +26,7 @@
 \usepackage{xcolor}
 \usepackage{hyperref}
 \usepackage{mathtools}
+\usepackage{enumitem}
 \input{include/math_commands.tex}
 
 \title{Computation Graph Cheat Sheet}
@@ -36,12 +37,14 @@ License: AGPL-3.0}
 
 \maketitle
 \tableofcontents
+\newpage
 
 \section{Conventions}
 
 Vectors are column vectors by default.
 We follow the naming convention of BLAS/LAPACK for linear algebra operations.
 Vecotr, Matrix, Tensor shapes are annotated under the corresponding symbols.
+Throughout the whole document, $L$ denotes any loss function of interest.
 
 \section{Automatic Differentiation}
 
@@ -49,105 +52,123 @@ Vecotr, Matrix, Tensor shapes are annotated under the corresponding symbols.
 
 \subsection{Level1: Vector-Vector Ops}
 
-	\textbf{Identity}
+\begin{enumerate}[leftmargin=*]
+\item \textbf{Identity} (I)
+\begin{equation}
+	\underset{(m)}{\vx} = \underset{(m)}{\vy}
+\end{equation}
+\begin{center}
+	\resizebox{0.618\columnwidth}{!}{%
+		\input{tikz/cg-identity.tex}
+	}
+\end{center}
+\begin{equation}
+	\underset{(m)}{\frac{\partial L}{\partial \vx}} =
+	\underset{(m)}{\frac{\partial L}{\partial \vy}}
+\end{equation}
 
-	\textbf{Addition} (Add)
+\item \textbf{Transpose} (T)
+\begin{equation}
+	\underset{(1\times m)}{\vx^T} = \underset{(1\times m)}{\vy}
+\end{equation}
+\begin{center}
+	\resizebox{0.618\columnwidth}{!}{%
+		\input{tikz/cg-transpose.tex}
+	}
+\end{center}
+\begin{equation}
+	\underset{(m)}{\frac{\partial L}{\partial \vx}} =
+	\underset{(m)}{\Big(\frac{\partial L}{\partial \vy}\Big)^T}
+\end{equation}
 
-	\textbf{Element-wise Multiplication} (Mul)
+\item \textbf{Addition} (Add)
 
-	\textbf{Dot Product} (Dot)
+\item \textbf{Element-wise Multiplication} (Mul)
 
-	\textbf{Element-wise Inverse} (Inv)
+\item \textbf{Dot Product} (Dot)
 
-	\textbf{L-2 Norm} (L-2)
+\item \textbf{Element-wise Inverse} (Inv)
 
-	\textbf{Rectified Linear Unit} (ReLU)
+\item \textbf{L-2 Norm} (L-2)
 
-	\textbf{Sigmoid} ($\sigma$)
+\item \textbf{Rectified Linear Unit} (ReLU)
+
+\item \textbf{Sigmoid} ($\sigma$)
+\end{enumerate}
 
 \subsection{Level2: Matrix-Vector Ops}
 
-	\textbf{GEneral Matrix-Vector multiplication} (GEMV)
+\begin{enumerate}[leftmargin=*]
+\item \textbf{GEneral Matrix-Vector multiplication} (GEMV)
+\begin{equation}
+	\underset{(m\times k)}{\mW} \cdot \underset{(k)}{\vx} =
+	\underset{(m)}{\vy}
+\end{equation}
+\begin{center}
+	\resizebox{0.618\columnwidth}{!}{%
+		\input{tikz/cg-mv.tex}
+	}
+\end{center}
+\begin{align}
+	\underset{(m\times k)}{\frac{\partial L}{\partial\mW}} &=
+	\underset{(m)}{\frac{\partial L}{\partial\vy}} \cdot
+	\underset{(1\times k)}{\vx^T}\\
+	\underset{(k)}{\frac{\partial L}{\partial\vx}} &=
+	\underset{(k\times m)}{\mW^T} \cdot
+	\underset{(m)}{\frac{\partial L}{\partial \vy}}
+\end{align}
 
-	Forward Pass:
-	\begin{equation}
-		\underset{(m\times k)}{\mW} \cdot \underset{(k)}{\vx} =
-		\underset{(m)}{\vy}
-	\end{equation}
-
-	\begin{figure}[h]
-		\centering
-		\resizebox{0.618\columnwidth}{!}{%
-			\input{tikz/cg-mv.tex}
-		}
-		\caption{GEMV: $\mW \vx = \vy$. (Linear)}
-	\end{figure}
-
-	Backward Pass:
-	\begin{align}
-		\underset{(m\times k)}{\frac{\partial L}{\partial\mW}} &=
-		\underset{(m)}{\frac{\partial L}{\partial\vy}} \cdot
-		\underset{(1\times k)}{\vx^T}\\
-		\underset{(k)}{\frac{\partial L}{\partial\vx}} &=
-		\underset{(k\times m)}{\mW^T} \cdot
-		\underset{(m)}{\frac{\partial L}{\partial \vy}}
-	\end{align}
+\end{enumerate}
 
 \subsection{Level3: Matrix-Matrix Ops}
 
-	\textbf{GEneral Matrix-Matrix multiplication} (GEMM)
+\begin{enumerate}[leftmargin=*]
+\item \textbf{GEneral Matrix-Matrix multiplication} (GEMM)
+\begin{equation}
+	\underset{(m\times k)}{\mW} \cdot
+	\underset{(k\times n)}{\mX} =
+	\underset{(m\times n)}{\mY}
+\end{equation}
+\begin{center}
+	\resizebox{0.618\columnwidth}{!}{%
+		\input{tikz/cg-mm.tex}
+	}
+\end{center}
+\begin{align}
+	\underset{(m\times k)}{\frac{\partial L}{\partial\mW}} &=
+	\underset{(m\times n)}{\frac{\partial L}{\partial\mY}} \cdot
+	\underset{(n,k)}{\mX^T}\\
+	\underset{(k\times n)}{\frac{\partial L}{\partial\mX}} &=
+	\underset{(k\times m)}{\mW^T} \cdot
+	\underset{(m\times n)}{\frac{\partial L}{\partial \mY}}
+\end{align}
 
-	Forward Pass:
-	\begin{equation}
-		\underset{(m\times k)}{\mW} \cdot
-		\underset{(k\times n)}{\mX} =
-		\underset{(m\times n)}{\mY}
-	\end{equation}
-
-	\begin{figure}[h]
-		\centering
-		\resizebox{0.618\columnwidth}{!}{%
-			\input{tikz/cg-mm.tex}
-		}
-		\caption{GEMM: $\mW \mX = \mY$. (Linear)}
-	\end{figure}
-
-	Backward Pass:
-	\begin{align}
-		\underset{(m\times k)}{\frac{\partial L}{\partial\mW}} &=
-		\underset{(m\times n)}{\frac{\partial L}{\partial\mY}} \cdot
-		\underset{(n,k)}{\mX^T}\\
-		\underset{(k\times n)}{\frac{\partial L}{\partial\mX}} &=
-		\underset{(k\times m)}{\mW^T} \cdot
-		\underset{(m\times n)}{\frac{\partial L}{\partial \mY}}
-	\end{align}
-
-	\textbf{2-D Convolution} (Conv2d)
+\item \textbf{2-D Convolution} (Conv2d)
+\end{enumerate}
 
 \section{Network Layers}
 
-	\textbf{Affine Transformation Layer} (Affine)
+\begin{enumerate}[leftmargin=*]
+\item \textbf{Affine Transformation Layer} (Affine)
 
-	\textbf{Mean Square Error} (MSE)
+\item \textbf{Mean Square Error} (MSE)
+\begin{equation}
+	\frac{1}{H} \sum_{i=1}^H
+	\|\underset{(n)}{\vx_i} - \underset{(n)}{\hat{\vx}_i} \|_2^2
+	= \underset{(1)}{L} 
+\end{equation}
+\begin{figure}[h]
+	\centering
+	\resizebox{0.618\columnwidth}{!}{%
+		\input{tikz/cg-mse.tex}
+	}
+	\caption{MSE: $\frac{1}{H} \sum_{i=1}^H \|\vx_i - \hat{\vx}_i\|_2^2 = L$.}
+\end{figure}
 
-	Forward Pass:
-	\begin{equation}
-		\frac{1}{H} \sum_{i=1}^H
-		\|\underset{(n)}{\vx_i} - \underset{(n)}{\hat{\vx}_i} \|_2^2
-		= \underset{(1)}{L} 
-	\end{equation}
+\item \textbf{Softmax Layer} (Softmax)
 
-	\begin{figure}[h]
-		\centering
-		\resizebox{0.618\columnwidth}{!}{%
-			\input{tikz/cg-mse.tex}
-		}
-		\caption{MSE: $\frac{1}{H} \sum_{i=1}^H \|\vx_i - \hat{\vx}_i\|_2^2 = L$.}
-	\end{figure}
-
-	\textbf{Softmax Layer} (Softmax)
-
-	\textbf{Batch Normalization} (BN)
+\item \textbf{Batch Normalization} (BN)
+\end{enumerate}
 
 \section{Networks}
 
