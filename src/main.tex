@@ -83,6 +83,22 @@ objective function) of interest.
 \end{equation}
 
 \item \textbf{Addition} (Add)
+\begin{equation}
+	\underset{(m)}{\vx} + \underset{(m)}{\vz} =
+	\underset{(m)}{\vy}
+\end{equation}
+\begin{center}
+	\resizebox{0.618\columnwidth}{!}{%
+		\input{tikz/cg-add.tex}
+	}
+\end{center}
+\begin{align}
+	\mJ &= \underset{(m\times m)}{\mI} \\
+	\underset{(m)}{\frac{\partial L}{\partial \vx}} &=
+	\underset{(m)}{\frac{\partial L}{\partial \vy}} \\
+	\underset{(m)}{\frac{\partial L}{\partial \vz}} &=
+	\underset{(m)}{\frac{\partial L}{\partial \vy}}
+\end{align}
 
 \item \textbf{Element-wise Multiplication} (Mul)
 

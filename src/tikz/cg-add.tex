@@ -14,17 +14,11 @@
 % Copyright (C) 2020 Mo Zhou <cdluminate@gmail.com>
 %
 \begin{tikzpicture}[thick,minimum size=8mm]
-	\node (x) at (0,0) [circle,draw=cyan!32,fill=cyan!16] {$\vx$};
-	\node (ident) at (2,0) [rectangle,draw=lime!32,fill=lime!16] {I};
-	\node (y) at (4,0) [circle,draw=cyan!32,fill=cyan!16] {$\vy$};
-	% forward
-	\draw [-{Latex[round]}] ([yshift=1mm]x.east)     -- ([yshift=1mm]ident.west);
-	\draw [-{Latex[round]}] ([yshift=1mm]ident.east) -- ([yshift=1mm]y.west);
-	% backward
-	\draw [{Latex[round]}-,draw=blue!50!red!50] ([yshift=-1mm]ident.east) -- 
-	node[below]{\textcolor{blue!50!red!50}{$\frac{\partial L}{\partial \vy}$}}
-	([yshift=-1mm]y.west);
-	\draw [{Latex[round]}-,draw=blue!50!red!50] ([yshift=-1mm]x.east)     --
-	node[below]{\textcolor{blue!50!red!50}{$\frac{\partial L}{\partial \vy}$}}
-	([yshift=-1mm]ident.west);
+	\node (x) at (0,0) [circle,draw=cyan!50,fill=cyan!20] {$\vx$};
+	\node (z) at (0,-2) [circle,draw=cyan!50,fill=cyan!20] {$\vz$};
+	\node (add) at (2,-1) [rectangle,draw=magenta!50,fill=magenta!20] {ADD};
+	\node (y) at (4,-1) [circle,draw=cyan!50,fill=cyan!20] {$\vy$};
+	\draw [-{Latex[round]}] (x) -- (add);
+	\draw [-{Latex[round]}] (z) -- (add);
+	\draw [-{Latex[round]}] (add) -- (y);
 \end{tikzpicture}
