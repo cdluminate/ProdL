@@ -1,0 +1,30 @@
+% This program is free software: you can redistribute it and/or modify
+% it under the terms of the GNU AFFERO General Public License as published by
+% the Free Software Foundation, either version 3 of the License, or
+% (at your option) any later version.
+%
+% This program is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+%
+% You should have received a copy of the GNU AFFERO General Public License
+% along with this program.  If not, see <https://www.gnu.org/licenses/>.
+%
+% Copyright (C) 2020 Mo Zhou <cdluminate@gmail.com>
+%
+\begin{tikzpicture}[thick,minimum size=8mm]
+	\node (x) at (0,0) [circle,draw=cyan!32,fill=cyan!16] {$\vx$};
+	\node (ident) at (2,0) [rectangle,draw=lime!32,fill=lime!16] {I};
+	\node (y) at (4,0) [circle,draw=cyan!32,fill=cyan!16] {$\vy$};
+	% forward
+	\draw [-{Latex[round]}] ([yshift=1mm]x.east)     -- ([yshift=1mm]ident.west);
+	\draw [-{Latex[round]}] ([yshift=1mm]ident.east) -- ([yshift=1mm]y.west);
+	% backward
+	\draw [{Latex[round]}-,draw=blue!50!red!50] ([yshift=-1mm]ident.east) -- 
+	node[below]{\textcolor{blue!50!red!50}{$\frac{\partial L}{\partial \vy}$}}
+	([yshift=-1mm]y.west);
+	\draw [{Latex[round]}-,draw=blue!50!red!50] ([yshift=-1mm]x.east)     --
+	node[below]{\textcolor{blue!50!red!50}{$\frac{\partial L}{\partial \vy}$}}
+	([yshift=-1mm]ident.west);
+\end{tikzpicture}
