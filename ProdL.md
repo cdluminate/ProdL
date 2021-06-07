@@ -47,6 +47,8 @@ I recommend the [Python Official Tutorial](https://docs.python.org/3/tutorial/in
 as the core reference if you are new to Python. Note, please stay away from
 the ancient Python2 in case you intend to learn Python from other resources.
 
+Compiled languages v.s. interpreted languages: TODO
+
 ### 0.3. Domain Specific Languages
 
 * Markdown.
@@ -130,3 +132,5 @@ Color, Shapes, Lines, Layout, Fonts
 ## B. Python Libraries
 
 Some very useful python libraires.
+
+## C. Editors and IDEs
