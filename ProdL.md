@@ -49,15 +49,27 @@ the ancient Python2 in case you intend to learn Python from other resources.
 
 ### 0.3. Domain Specific Languages
 
-### 0.4. Computer Architecture
+* Markdown.
+
+* RestructuredText.
+
+* Makefile.
+
+### 0.4. Computer Organization
 
 ### 0.5. Operating System and POSIX
 
 ### 0.6. Fundamental Tools
 
-### 0.7. Software Engineering
+Including coreutils, findutils, etc.
 
-### 0.8. Git Workflow
+### 0.7. Remote Access
+
+### 0.8. Software Engineering
+
+### 0.9. Git Workflow
+
+Extremely important for production sanity, safety, and reliability.
 
 ## 1. Correctly Understanding Deep Learning Framework
 
@@ -71,7 +83,7 @@ the ancient Python2 in case you intend to learn Python from other resources.
 
 ### 2.1. Dense Numerical Linear Algebra
 
-### 2.2. Acceleration
+### 2.2. Linear Algebra Acceleration
 
 ## 3. High Performance Programming
 
@@ -81,7 +93,7 @@ the ancient Python2 in case you intend to learn Python from other resources.
 
 ### 3.3. IO and Storage System
 
-### 3.4. High Performance Python
+### 3.4. High Performance Python (pure Python)
 
 ### 3.5. Extending Python with Compiled Language
 
@@ -107,14 +119,14 @@ the ancient Python2 in case you intend to learn Python from other resources.
 
 Reference material: [how to draw ugly diagrams?](assets/ugly-diagram.pdf) [(svg source)](assets/ugly-diagram.svg)
 
-### 8.1. Color
+Color, Shapes, Lines, Layout, Fonts
 
-### 8.2. Elements
+## References
 
-### 8.3. Layout
-
-### 8.4. Fonts
+[1] Missing Course of Your CS Education: https://missing.csail.mit.edu/
 
 ## A. Algorithms
 
 ## B. Python Libraries
+
+Some very useful python libraires.
