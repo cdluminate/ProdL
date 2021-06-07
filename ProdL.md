@@ -127,6 +127,8 @@ Color, Shapes, Lines, Layout, Fonts
 
 [1] Missing Course of Your CS Education: https://missing.csail.mit.edu/
 
+[2] A collection of guides to successful scientific communication: https://mitcommlab.mit.edu/eecs/use-the-commkit/
+
 ## A. Algorithms
 
 ## B. Python Libraries
