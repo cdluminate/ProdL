@@ -71,6 +71,8 @@ you may sense a strong odor of UNIX in this document.
 
 ## 8. A Tiny Bit on Art
 
+Reference material: [how to draw ugly diagrams?](assets/ugly-diagram.pdf) [(svg source)](assets/ugly-diagram.svg)
+
 ### 8.1. Color
 
 ### 8.2. Elements
