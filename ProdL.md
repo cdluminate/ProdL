@@ -13,9 +13,39 @@ you may sense a strong odor of UNIX in this document.
 
 ## 0. Prerequisites
 
+In this section, I shall point out some keywords for background knowledge
+that would greatly help you throughout the journey on deep learning.
+
 ### 0.1. Critical Instinct
 
+Things may get much easier with the following instincts.
+
+* Be aware of what you are doing, and what you intend to do.
+
+* Carefully read and try to understand the output of programs.
+
+* [Ask questions in a smart way.](http://www.catb.org/~esr/faqs/smart-questions.html)
+
 ### 0.2. Programming Languages
+
+For deep learning, I personally think some background knowledge on ANSI C,
+C++ will be beneficial (in various aspects). Of course, one has to be proficient
+in Python as well.
+
+* ANSI C. It provides fundamental knowledge for programming in many other languages.
+Reference book: [K&R C](https://en.wikipedia.org/wiki/The_C_Programming_Language)
+
+* C++. The core parts of PyTorch, Tensorflow, as well as many other dependency
+libraries such as OpenCV are written in C++. It is suitable for some
+performance-critical tasks.
+
+* Python. An interpreted "glue" language. The standard Python interpreter is
+called `cpython`, which suffers from poor performance (compared to compiled
+languages), and GIL for multi-thread programming.
+
+I recommend the [Python Official Tutorial](https://docs.python.org/3/tutorial/index.html)
+as the core reference if you are new to Python. Note, please stay away from
+the ancient Python2 in case you intend to learn Python from other resources.
 
 ### 0.3. Domain Specific Languages
 
@@ -59,9 +89,9 @@ you may sense a strong odor of UNIX in this document.
 
 ## 5. Scheduling Interactive Experiments
 
-## 5.1. Interactive Experiments
+### 5.1. Interactive Experiments
 
-## 5.2. Computational Debugging
+### 5.2. Computational Debugging
 
 ## 6. Paper Reading
 
@@ -81,4 +111,6 @@ Reference material: [how to draw ugly diagrams?](assets/ugly-diagram.pdf) [(svg 
 
 ### 8.4. Fonts
 
-## 9. Algorithms
+## A. Algorithms
+
+## B. Python Libraries
