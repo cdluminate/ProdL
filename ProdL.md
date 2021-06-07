@@ -55,6 +55,10 @@ the ancient Python2 in case you intend to learn Python from other resources.
 
 ### 0.6. Fundamental Tools
 
+### 0.7. Software Engineering
+
+### 0.8. Git Workflow
+
 ## 1. Correctly Understanding Deep Learning Framework
 
 ### 1.1. Automatic Differentiation
