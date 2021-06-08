@@ -77,6 +77,7 @@ References:
 [GNU Make](https://www.gnu.org/software/make/) is mostly used for compiling
 software projects written in C, C++, etc. That said, it is also suitable
 for automating simple (or complicated) task pipelines in non-software projects.
+For example, compiling documentations, or executing experiment pipelines.
 
 For example, I usually keep such a `Makefile` in my CVPR draft directory:
 
@@ -107,13 +108,36 @@ is critical for you to correctly understand things that harms the performance
 of your program. It is also (partly) helpful for you to avoid writting prototype
 code without obvious performance flaw.
 
+Such background knowledge is critical for you to understand the performance
+of dense numerical linear algebra.
+
 ### 0.5. Operating System and POSIX
 
-### 0.6. Fundamental Utilities
+[POSIX](https://en.wikipedia.org/wiki/POSIX) is a standard for UNIX operating
+system, which defines some invariance between different Unix and other 
+operating systems such as linux. Specifically, it covers system API,
+shell and a set of core utilities.
+
+Some important tools and programming interfaces under linux follow POSIX.
+
+#### 0.5.1. POSIX Shell Scripting
+
+The commonly seen shells include `bash` and `zsh`. Both of them are POSIX
+compliant shells, and provides extended functionalities beyond what POSIX
+defined.
+
+- [POSIX shell Tutorial](https://www.grymoire.com/Unix/Sh.html)
+- [Bash Documentation](https://www.gnu.org/software/bash/)
+
+There are also some shells not compliant to POSIX for their own considerations,
+such as `fish` (oriented for better user interaction).
+
+For most linux distributions, POSIX shell is recommended if you are scripting
+for the system.
+
+#### 0.5.2. Core Utilities
 
 Including coreutils, findutils, etc.
-
-References:
 
 [1] Missing Course of Your CS Education: https://missing.csail.mit.edu/
 
