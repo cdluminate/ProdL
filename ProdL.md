@@ -99,7 +99,7 @@ fig1.pdf:
 	inkscape -o fig1.pdf fig1.svg
 ```
 
-### 0.4. Computer Organization
+### 0.4. Computer Organization, Compiler, etc.
 
 Computer organization [[1]](https://www.coursera.org/learn/jisuanji-zucheng)
 [[2]](https://www.geeksforgeeks.org/computer-organization-and-architecture-tutorials/)
@@ -110,6 +110,10 @@ code without obvious performance flaw.
 
 Such background knowledge is critical for you to understand the performance
 of dense numerical linear algebra.
+
+In order to gain an in-depth image on computer programming (whatever in
+interpreted language or compiled language), it is suggested to be aware
+of how compilers work.
 
 ### 0.5. Operating System and POSIX
 
@@ -137,9 +141,78 @@ for the system.
 
 #### 0.5.2. Core Utilities
 
-Including coreutils, findutils, etc.
+A non-exhaustive set of core utilities. Here I'll only list their names and main usage.
 
-[1] Missing Course of Your CS Education: https://missing.csail.mit.edu/
+Category 1: File and permission
+
+```bash
+ls         list files and directories
+stat       show file info incl. permission
+touch      create empty file
+rm         remove file
+rmdir      remove directory
+mv         move file or directory
+cp         copy file or directory
+ln         symlink and hardlink
+cat        show file content
+head       show first several lines of a file
+tail       show last several lines of a file
+less       inspect a file in pager
+sync       flush kernel IO buffers to disk
+file       tell the type of a file according to its magic
+tar        tarball creation or extraction
+gzip       compression, decompression
+xz         compression, decompression
+md5sum     calculate hashsum
+chmod      change mode of a file
+chown      change owner of a file
+chgrp      change group of a file
+```
+
+Category 2: Shell, processes, system resources
+
+```bash
+bash       the bash shell
+ps         process information (e.g. ps aux; ps ux)
+kill       send a signal to some processes
+top        system monitor
+nohup      block SIGHUP for the child process
+iostat     show system io statistics
+```
+
+Category 3: File manipulation
+
+```
+sed        stream editor, useful in scripts
+awk        awk programming language
+sort       sort text lines
+uniq       deduplicate text lines
+wc         character, word, line count
+find       file finder
+grep       file content searcher
+```
+
+Category 4: Network
+
+```
+wget       download from a given URI
+ssh        ssh client
+```
+
+For detailed tutorials see [*鸟哥的Linux私房菜*](http://linux.vbird.org)
+or [Missing semester of Your CS Education](https://missing.csail.mit.edu/).
+
+Besides, it is important to introduce some modern alternatives to the above
+core utilities:
+
+Category X: Modern Alternatives
+```
+rg         ripgrep, a much faster "grep"
+htop       TUI-based system monitor
+glances    TUI-based system monitor
+dstat      system monitor
+rsync      copy files between hosts
+```
 
 ### 0.7. Remote Access
 
