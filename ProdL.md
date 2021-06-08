@@ -199,7 +199,7 @@ wget       download from a given URI
 ssh        ssh client
 ```
 
-For detailed tutorials see [*鸟哥的Linux私房菜*](http://linux.vbird.org)
+For detailed tutorials see [[1]](http://linux.vbird.org)
 or [Missing semester of Your CS Education](https://missing.csail.mit.edu/).
 
 Besides, it is important to introduce some modern alternatives to the above
