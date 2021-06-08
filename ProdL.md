@@ -183,10 +183,8 @@ Color, Shapes, Lines, Layout, Fonts
 
 [1] A collection of guides to successful scientific communication: https://mitcommlab.mit.edu/eecs/use-the-commkit/
 
-## A. Algorithms
-
-## B. Python Libraries
+## A. Python Libraries
 
 Some very useful python libraries.
 
-## C. Editors and IDEs
+## B. Editors and IDEs
