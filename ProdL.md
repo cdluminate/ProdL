@@ -325,6 +325,10 @@ Extremely important for production sanity, safety, and reliability.
 
 ### 7.1. LaTeX Typesetting
 
+Advanced Techniques:
+
+1. https://github.com/simonharrer/latex-best-practices
+
 ### 7.2. Drafting a Conference Paper
 
 ### 7.3. Drafting a Journal Paper
