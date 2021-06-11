@@ -333,6 +333,8 @@ Extremely important for production sanity, safety, and reliability.
 
 ### 7.5. Conference Rebuttal
 
+1. Carefully read the official rebuttal instructions, e.g., the [ICCV2021 rebuttal instructions](http://iccv2021.thecvf.com/node/4#rebuttal-instructions), and fetch the template.
+
 ### 7.6. Journal Response
 
 ### 7.7. Slides and Poster
