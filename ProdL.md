@@ -11,10 +11,63 @@ that may help one boost their productivity in Deep Learning study.
 Since the author is more or less an old-school UNIX/Linux proponent,
 you may sense a strong odor of UNIX in this document.
 
+**Table of Contents**
+
+```md
+## 0. Prerequisites
+### 0.1. Critical Instinct
+### 0.2. Programming Languages
+### 0.3. Domain Specific Languages
+#### 0.3.1. Markup Languages for Documentation
+#### 0.3.2. GNU Make for Automation of Simple Tasks
+### 0.4. Computer Organization, Compiler, etc.
+### 0.5. Operating System and POSIX
+#### 0.5.1. POSIX Shell Scripting
+#### 0.5.2. Core Utilities
+### 0.7. Remote Access
+### 0.8. Software Engineering
+### 0.9. Git Workflow
+## 1. Correctly Understanding Deep Learning Framework
+### 1.1. Automatic Differentiation
+### 1.2. Computation Graph
+### 1.3. Deep Learning Framework Design
+## 2. A Bit of Scientific Computation Background
+### 2.1. Dense Numerical Linear Algebra
+### 2.2. Linear Algebra Acceleration
+## 3. High Performance Programming
+### 3.1. Profiling
+### 3.2. Server Architecture
+### 3.3. IO and Storage System
+### 3.4. High Performance Python (pure Python)
+### 3.5. Extending Python with Compiled Language
+## 4. Program Diagnosis and Debugging
+### 4.1. Program Tracing
+### 4.2. Program Debugging
+## 5. Scheduling Interactive Experiments
+### 5.1. Interactive Experiments
+### 5.2. Computational Debugging
+## 6. Paper Reading and Reviewing
+## 7. Organizing Preliminary Draft
+### 7.1. LaTeX Typesetting
+### 7.2. Drafting a Conference Paper
+### 7.3. Drafting a Journal Paper
+### 7.4. Polishing
+### 7.5. Conference Rebuttal
+### 7.6. Journal Response
+### 7.7. Slides and Poster
+## 8. A Tiny Bit on Art
+## Misc References
+## A. Python Libraries
+## B. Editors and IDEs
+```
+
 ## 0. Prerequisites
 
 In this section, I shall point out some keywords for background knowledge
 that would greatly help you throughout the journey on deep learning.
+Some audience may found these contents useless for graduation or some
+research works, but boosting one's productivity means theiy can enter
+a higher level in a much faster pace.
 
 ### 0.1. Critical Instinct
 
@@ -114,6 +167,8 @@ of dense numerical linear algebra.
 In order to gain an in-depth image on computer programming (whatever in
 interpreted language or compiled language), it is suggested to be aware
 of how compilers work.
+
+TODO: GPU is not always faster than CPU -- `cudaMemcpy` is not something trivial.
 
 ### 0.5. Operating System and POSIX
 
@@ -264,11 +319,23 @@ Extremely important for production sanity, safety, and reliability.
 
 ### 5.2. Computational Debugging
 
-## 6. Paper Reading
+## 6. Paper Reading and Reviewing
 
 ## 7. Organizing Preliminary Draft
 
 ### 7.1. LaTeX Typesetting
+
+### 7.2. Drafting a Conference Paper
+
+### 7.3. Drafting a Journal Paper
+
+### 7.4. Polishing
+
+### 7.5. Conference Rebuttal
+
+### 7.6. Journal Response
+
+### 7.7. Slides and Poster
 
 ## 8. A Tiny Bit on Art
 
