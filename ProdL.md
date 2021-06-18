@@ -271,6 +271,32 @@ rsync      copy files between hosts
 
 ### 0.7. Remote Access
 
+#### 0.7.1. OpenSSH (SSH)
+
+For what it's worth, I think OpenSSH is the most resilient remote access solution.
+Please refer the public materials for its basic usage. I shall point out some
+keys about it:
+
+1. **Automatic authorization using RSA key.** The simplest way for authentication
+is username + password, of course. However, it is widely known that many users
+tend to adopt very weak passwords lest they forget them. As a result, linux
+servers exposed to the public internet may be vulnerable to brute force SSH
+attack which enumerates commonly seen usernames and weak passwords from a
+pre-defined dictionary. Weak passwords can be easily compromised.
+However, I'd like to point out that SSH supports RSA-key authentication, which
+ensures a much stronger security level. To use such authentication method, you
+need to (1) generate a pair of RSA keys (private key and public key) using `ssh-keygen`;
+(2) Put yor public key as the `~/.ssh/authorized_keys` file on your server;
+(3) Configure your local SSH client, setting RSA key as the default authentication method.
+
+2. **Don't want to type the password again and again?** When we work on a linux server,
+we may need to start new ssh sessions regularly, and enter the password again and again.
+In fact, there is a deamon program named `ssh-agent` which can remember the password for
+your RSA private key. It helps you skip entering the password anytime when you need to
+authorize (e.g., ssh, scp, rsync, etc) until timeout or process termination.
+If your desktop environment does not automatically launch the
+daemon for you, you may need to do it manually somehow.
+
 ### 0.8. Software Engineering
 
 Functional programming.
