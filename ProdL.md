@@ -274,7 +274,7 @@ rsync      copy files between hosts
 #### 0.7.1. OpenSSH (SSH)
 
 For what it's worth, I think OpenSSH is the most resilient remote access solution.
-Please refer the public materials for its basic usage. I shall point out some
+Please refer to the public materials for its basic usage. I shall point out some
 keys about it:
 
 1. **Automatic authorization using RSA key.** The simplest way for authentication
