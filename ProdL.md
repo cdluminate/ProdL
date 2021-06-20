@@ -20,7 +20,11 @@ prefer to reference many external materials to reduce duplicated work.
 Since the author is more or less an old-school UNIX/Linux proponent,
 this document will not introduce any Windows-specific or MacOS-specific
 information, and everything will be written may sense a strong odor of UNIX
-in this document.
+in this document. As a convention in the UNIX/Linux world,
+a notation composed by a word and a parenthesized number
+denotes reference to a manual page. For instance, `signal(7)` means the
+topic "signal" in manual page section 7. Type `man 7 signal` in a linux shell
+to read the document.
 
 **Table of Contents**
 
@@ -310,12 +314,26 @@ authorize (e.g., ssh, scp, rsync, etc) until timeout or process termination.
 If your desktop environment does not automatically launch the
 daemon for you, you may need to do it manually somehow.
 
+3. **Network Interruption:** SSH session may accidently terminate under poor
+network condition. To prevent the ensuing and undesired remote process termination,
+we can (1) use `nohup(1)` to block `SIGHUP` (see `signal(7)`) for a child process;
+(2) use `mosh` to auto-reconnect (will be discussed later) ;
+(3) use `tmux` to manage working processes under a tmux session (will be discussed later).
+
 OpenSSH is usually a part of standard linux server installation, so we expect
 it to be available in most cases. In some special cases, such as remote login
 of embeded devices, the server side may be running Dropbear, which is another
 SSH implementation that implements the protocol-level compatibility.
 
 ### 0.7.2. Mosh -- Remote Terminal App that Supports Intermittent Connectivity
+
+Working through SSH under a problematic network condition is definitely
+frustrating. We can use `mosh` to avoid reconnecting the server again and
+again, as `mosh` is able to automatically reconnect to the server when
+the network is accessible again. Mosh relies on OpenSSH.
+
+Mosh is not a default part of linux server installation. The user may have
+to install the client and the server software on proper machines.
 
 ### 0.8. Software Engineering
 
