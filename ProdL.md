@@ -284,9 +284,9 @@ rsync      copy files between hosts
 
 ### 0.7. Remote Access
 
-#### 0.7.1. OpenSSH (SSH)
+#### 0.7.1. OpenSSH (SSH) -- Remote Login Client
 
-For what it's worth, I think OpenSSH is the most resilient remote access solution.
+For what it's worth, I think OpenSSH is the most robust and resilient remote access solution.
 Please refer to the public materials for its basic usage. I shall point out some
 keys about it:
 
@@ -309,6 +309,13 @@ your RSA private key. It helps you skip entering the password anytime when you n
 authorize (e.g., ssh, scp, rsync, etc) until timeout or process termination.
 If your desktop environment does not automatically launch the
 daemon for you, you may need to do it manually somehow.
+
+OpenSSH is usually a part of standard linux server installation, so we expect
+it to be available in most cases. In some special cases, such as remote login
+of embeded devices, the server side may be running Dropbear, which is another
+SSH implementation that implements the protocol-level compatibility.
+
+### 0.7.2. Mosh -- Remote Terminal App that Supports Intermittent Connectivity
 
 ### 0.8. Software Engineering
 
