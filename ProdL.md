@@ -15,7 +15,7 @@ high performance programming, program debugging, paper reading / reviewing,
 paper composing, rebuttal process, latex techniques, artistic design
 for diagrams, and integrated development environment.
 
-The author will try to deviver the content in a concise manner, and will
+The author will try to deliver the content in a concise manner, and will
 prefer to reference many external materials to reduce duplicated work.
 Since the author is more or less an old-school UNIX/Linux proponent,
 this document will not introduce any Windows-specific or MacOS-specific
@@ -33,12 +33,8 @@ to read the document.
 ### 0.1. Critical Instinct
 ### 0.2. Programming Languages
 ### 0.3. Domain Specific Languages
-#### 0.3.1. Markup Languages for Documentation
-#### 0.3.2. GNU Make for Automation of Simple Tasks
 ### 0.4. Computer Organization, Compiler, etc.
 ### 0.5. Operating System and POSIX
-#### 0.5.1. POSIX Shell Scripting
-#### 0.5.2. Core Utilities
 ### 0.7. Remote Access
 ### 0.8. Software Engineering
 ### 0.9. Git Workflow
@@ -74,6 +70,7 @@ to read the document.
 ## Misc References
 ## A. Python Libraries
 ## B. Editors and IDEs
+## C. Physical Server Management
 ```
 
 ## 0. Prerequisites
@@ -81,7 +78,7 @@ to read the document.
 In this section, I shall point out some keywords for background knowledge
 that would greatly help you throughout the journey on deep learning.
 Some audience may found these contents useless for graduation or some
-research works, but boosting one's productivity means theiy can enter
+research works, but boosting one's productivity means they can enter
 a higher level in a much faster pace.
 
 ### 0.1. Critical Instinct
@@ -175,7 +172,7 @@ Computer organization [[1]](https://www.coursera.org/learn/jisuanji-zucheng)
 [[2]](https://www.geeksforgeeks.org/computer-organization-and-architecture-tutorials/)
 [[3]](https://csapp.cs.cmu.edu/)
 is critical for you to correctly understand things that harms the performance
-of your program. It is also (partly) helpful for you to avoid writting prototype
+of your program. It is also (partly) helpful for you to avoid writing prototype
 code without obvious performance flaw.
 
 Such background knowledge is critical for you to understand the performance
@@ -205,8 +202,11 @@ defined.
 - [POSIX shell Tutorial](https://www.grymoire.com/Unix/Sh.html)
 - [Bash Documentation](https://www.gnu.org/software/bash/)
 
+`zsh` can be easily configured with third-party configuration provides such
+as [Oh-My-ZSH](https://ohmyz.sh/) to provide a rich set of features.
 There are also some shells not compliant to POSIX for their own considerations,
-such as `fish` (oriented for better user interaction).
+such as `fish` (oriented for better user interaction). `fish` can work out-of-box
+with a rich set of features without manually overriding any configuration.
 
 For most linux distributions, POSIX shell is recommended if you are scripting
 for the system.
@@ -286,7 +286,7 @@ dstat      system monitor
 rsync      copy files between hosts
 ```
 
-### 0.7. Remote Access
+### 0.7. Remote Access and File Transferring
 
 #### 0.7.1. OpenSSH (SSH) -- Remote Login Client
 
@@ -308,13 +308,13 @@ need to (1) generate a pair of RSA keys (private key and public key) using `ssh-
 
 2. **Don't want to type the password again and again?** When we work on a linux server,
 we may need to start new ssh sessions regularly, and enter the password again and again.
-In fact, there is a deamon program named `ssh-agent` which can remember the password for
+In fact, there is a daemon program named `ssh-agent` which can remember the password for
 your RSA private key. It helps you skip entering the password anytime when you need to
 authorize (e.g., ssh, scp, rsync, etc) until timeout or process termination.
 If your desktop environment does not automatically launch the
 daemon for you, you may need to do it manually somehow.
 
-3. **Network Interruption:** SSH session may accidently terminate under poor
+3. **Network Interruption:** SSH session may accidentally terminate under poor
 network condition. To prevent the ensuing and undesired remote process termination,
 we can (1) use `nohup(1)` to block `SIGHUP` (see `signal(7)`) for a child process;
 (2) use `mosh` to auto-reconnect (will be discussed later) ;
@@ -322,7 +322,7 @@ we can (1) use `nohup(1)` to block `SIGHUP` (see `signal(7)`) for a child proces
 
 OpenSSH is usually a part of standard linux server installation, so we expect
 it to be available in most cases. In some special cases, such as remote login
-of embeded devices, the server side may be running Dropbear, which is another
+of embedded devices, the server side may be running Dropbear, which is another
 SSH implementation that implements the protocol-level compatibility.
 
 ### 0.7.2. Mosh -- Remote Terminal App that Supports Intermittent Connectivity
@@ -344,6 +344,12 @@ much higher network bandwidth to function properly compared to SSH; (3) they
 are not scalable to a computer cluster or multiple remote servers.
 My suggestion is: use these on your preference, if it does not prevent
 you from improving productivity.
+
+### 0.7.4. Ansible
+
+### 0.7.5. Rsync -- Copying files across hosts
+
+### 0.7.6. SSHFS -- Mounting remote directory through SSH+FUSE
 
 ### 0.8. Software Engineering
 
@@ -432,3 +438,7 @@ Color, Shapes, Lines, Layout, Fonts
 Some very useful python libraries.
 
 ## B. Editors and IDEs
+
+## C. Physical Server Management
+
+### C.1. IPMI
