@@ -335,6 +335,16 @@ the network is accessible again. Mosh relies on OpenSSH.
 Mosh is not a default part of linux server installation. The user may have
 to install the client and the server software on proper machines.
 
+### 0.7.3. Graphical solutions such as VNC and RDP
+
+These solutions are fancy and, of course, have a much smoother and less steep
+learning curve. I think these solutions are generally less robust than text-based
+SSH solution, because (1) they have many vulnerabilities (CVEs); (2) they requires
+much higher network bandwidth to function properly compared to SSH; (3) they
+are not scalable to a computer cluster or multiple remote servers.
+My suggestion is: use these on your preference, if it does not prevent
+you from improving productivity.
+
 ### 0.8. Software Engineering
 
 Functional programming.
