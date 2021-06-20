@@ -8,8 +8,19 @@ This document is released under the [GNU Free Documentation License (GFDL-1.3)
 
 *ProdL* is a personal documentation project for collecting memos and hints
 that may help one boost their productivity in Deep Learning study.
+This project covers a wide range of topics, including but not limited to
+computer programming, computer organization, operating system, software
+engineering and practice, deep learning, scientific computing,
+high performance programming, program debugging, paper reading / reviewing,
+paper composing, rebuttal process, latex techniques, artistic design
+for diagrams, and integrated development environment.
+
+The author will try to deviver the content in a concise manner, and will
+prefer to reference many external materials to reduce duplicated work.
 Since the author is more or less an old-school UNIX/Linux proponent,
-you may sense a strong odor of UNIX in this document.
+this document will not introduce any Windows-specific or MacOS-specific
+information, and everything will be written may sense a strong odor of UNIX
+in this document.
 
 **Table of Contents**
 
@@ -78,6 +89,8 @@ Things may get much easier with the following instincts.
 * Carefully read and try to understand the output of programs.
 
 * [Ask questions in a smart way.](http://www.catb.org/~esr/faqs/smart-questions.html)
+
+* Be sensitive to the definitions of terms and mathematical things.
 
 ### 0.2. Programming Languages
 
