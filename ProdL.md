@@ -366,7 +366,7 @@ where you have to frequently synchronize directories among multiple hosts.
 a local directory to remote side by `rsync -Pav <local-directory> <user>@<ip-address>:~/my-work`,
 or transfer a remote directory to the local machine by `rsync -Pav <user>@<ip-address>:~/my-work <local-directory>`. Argument `P`, `a`, `v` mean "show progress", "archive mode", and "verbose", respectively.
 When the SSH service is listening on a non-standard port (instead of tcp/22), pass an extra argument
-to rsync to use the correct port number: `rsync -e "ssh -e <port>"`.
+to rsync to use the correct port number: `rsync -e "ssh -p <port>"`.
 
 A successful file transfer via `rsync` requires it to be installed on
 both the machines of client and the server sides.
