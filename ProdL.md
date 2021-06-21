@@ -382,6 +382,13 @@ to browse them. Besides, files under the mountpoint can be manipulated with
 standard file management tools such as cp, mv, etc as if are are manipulating
 local files.
 
+### 0.7.7. NFS
+
+Network File System (NFS) is used for exporting server's local directories for some
+specified clients, so that the clients are able to mount the exported directories
+locally. It is similar to sshfs, but is much more scalable and robust for computer
+clusters.
+
 ### 0.8. Software Engineering
 
 Functional programming.
