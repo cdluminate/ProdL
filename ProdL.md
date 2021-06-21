@@ -401,11 +401,13 @@ Extremely important for production sanity, safety, and reliability.
 
 ## 1. Correctly Understanding Deep Learning Framework
 
-### 1.1. Automatic Differentiation
+### 1.1. Computation Graph
 
-### 1.2. Computation Graph
+### 1.2. Automatic Differentiation
 
 ### 1.3. Deep Learning Framework Design
+
+[1] [MegEngine Design](https://www.bilibili.com/video/BV11C4y1t7xH?from=search&seid=4625351944580914076)
 
 ## 2. A Bit of Scientific Computation Background
 
