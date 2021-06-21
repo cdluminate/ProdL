@@ -33,6 +33,10 @@ denotes reference to a manual page. For instance, `signal(7)` means the
 topic "signal" in manual page section 7. Type `man 7 signal` in a linux shell
 to read the document.
 
+When talking about commands, `<keyword>` denotes a placeholder that should
+be replaced by a sensible value according to the context, instead of being
+copied from my examples literally.
+
 When talking about keybindings, `Mod` means the modifier key for a specifically
 discussed program. For example, the `Mod` key for `tmux` is `Ctrl+b` by default.
 Any keybinding discussed in this document is case-sensitive. Any text rendered
@@ -255,8 +259,11 @@ rsync      copy files between hosts
 
 ### 0.7. Remote Access and File Transferring
 
-#### 0.7.1. OpenSSH (SSH) -- Remote Login Client
-
+In this section, we mainly discuss some tools for accessing remote hosts
+(servers), as well as transferring files across different machines.
+  
+#### 0.7.1. OpenSSH -- Remote Login Client
+  
 For what it's worth, I think OpenSSH is the most robust and resilient remote access solution.
 Please refer to the public materials for its basic usage. I shall point out some
 keys about it:
@@ -342,6 +349,27 @@ you from improving productivity.
 ### 0.7.4. Ansible
 
 ### 0.7.5. Rsync -- Copying files across hosts
+
+You may be familiar with `scp`,
+a standard file transfer tool provided by OpenSSH. And you may have noticed
+that `scp` will transfer all file contents when copying a directory to the
+remote machine, even if we are overwriting a remote directory with merely some
+minor modifications. This could greatly hamper productivity once the directory
+to be transferred is huge.
+
+`rsync` is an incremental file transfer tool that does not suffer from such
+issue of `scp`. It is able to transfer and only transfer the incremental change
+to the remote host, hence vastly improving efficiency especially in cases
+where you have to frequently synchronize directories among multiple hosts.
+
+`rsync` is able to transfer files through SSH connection. For example, we can transfer
+a local directory to remote side by `rsync -Pav <local-directory> <user>@<ip-address>:~/my-work`,
+or transfer a remote directory to the local machine by `rsync -Pav <user>@<ip-address>:~/my-work <local-directory>`. Argument `P`, `a`, `v` mean "show progress", "archive mode", and "verbose", respectively.
+When the SSH service is listening on a non-standard port (instead of tcp/22), pass an extra argument
+to rsync to use the correct port number: `rsync -e "ssh -e <port>"`.
+
+A successful file transfer via `rsync` requires it to be installed on
+both the machines of client and the server sides.
 
 ### 0.7.6. SSHFS -- Mounting remote directory through SSH+FUSE
 
