@@ -26,11 +26,17 @@ prefer to reference many external materials to reduce duplicated work.
 Since the author is more or less an old-school UNIX/Linux proponent,
 this document will not introduce any Windows-specific or MacOS-specific
 information, and everything will be written may sense a strong odor of UNIX
-in this document. As a convention in the UNIX/Linux world,
-a notation composed by a word and a parenthesized number
+in this document.
+
+As a convention in the UNIX/Linux world, a notation composed by a word and a parenthesized number
 denotes reference to a manual page. For instance, `signal(7)` means the
 topic "signal" in manual page section 7. Type `man 7 signal` in a linux shell
 to read the document.
+
+When talking about keybindings, `Mod` means the modifier key for a specifically
+discussed program. For example, the `Mod` key for `tmux` is `Ctrl+b` by default.
+Any keybinding discussed in this document is case-sensitive. Any text rendered
+in mono-spaced font are case-sensitive.
 
 Table-of-Contents is only available in the PDF version of this document.
 
@@ -286,7 +292,7 @@ it to be available in most cases. In some special cases, such as remote login
 of embedded devices, the server side may be running Dropbear, which is another
 SSH implementation that implements the protocol-level compatibility.
 
-### 0.7.2. Mosh -- Remote Terminal App that Supports Intermittent Connectivity
+### 0.7.2. Mosh -- Supporting Intermittent Connectivity
 
 Working through SSH under a problematic network condition is definitely
 frustrating. We can use `mosh` to avoid reconnecting the server again and
@@ -295,6 +301,33 @@ the network is accessible again. Mosh relies on OpenSSH.
 
 Mosh is not a default part of linux server installation. The user may have
 to install the client and the server software on proper machines.
+
+### 0.7.3. Tmux -- Terminal Multiplexer
+
+Technically speaking tmux has no business with remote access, but tmux is
+usually used in conjunction with ssh (or mosh). Simply type `tmux` to start a
+tmux session.  With such a terminal multiplexer, you can start a new shell in
+the tmux session without a new SSH connection (Key: `Mod+c`).  New processes
+started in a tmux session will be put into different tmux windows. You can
+re-organize these windows flexibly. For example, you can split the window
+vertically (Key: `Mod+"`) or horizontally (Key: `Mod+%`) into two panes.  The
+`Mod` key by default is `Ctrl+b`.
+
+1. **Intermittent Connectivity:** Due to tmux's server-client architecture,
+accidental SSH connection interruption will not lead to termination of programs
+running under the tmux session. You can resume the last tmux session with
+`tmux attach`. You can even detach again from the session by `Mod+d`, and
+manually end the SSH connection.
+
+2. **Scheduling experiments:** Tmux is so flexible that it is even scriptable.
+Leveraging its advantages, we can schedule deep learning experiments with tmux
+and automate program execution. [Here is an example](https://github.com/cdluminate/advrank/blob/master/Code/pipeline/train-mnist.sh)
+for running four experiments under a new tmux session on four GPUs simultaneously.
+More complicated scheduling can be implemented in the shell script.
+
+An commonly used alternative to tmux is [GNU screen](https://www.gnu.org/software/screen/).
+[Byobu](https://www.byobu.org/) is a high level wrapper on tmux or screen that
+delivers out-of-box friendly experience.
 
 ### 0.7.3. Graphical solutions such as VNC and RDP
 
