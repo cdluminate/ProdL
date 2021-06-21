@@ -1,0 +1,2 @@
+main:
+	$(MAKE) -C src
