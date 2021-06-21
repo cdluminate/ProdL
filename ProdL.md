@@ -373,6 +373,15 @@ both the machines of client and the server sides.
 
 ### 0.7.6. SSHFS -- Mounting remote directory through SSH+FUSE
 
+`sshfs` allows you to mount a remote directory to a local path through
+SSH and FUSE. For example, if you want to mount a remote directory to
+a local path, in order to browse the images on the remote host later:
+`sshfs <user>@<remote-host>:/<remote-directory> ~/<local-path>`.
+In this way you don't have to copy these images to the local host in order
+to browse them. Besides, files under the mountpoint can be manipulated with
+standard file management tools such as cp, mv, etc as if are are manipulating
+local files.
+
 ### 0.8. Software Engineering
 
 Functional programming.
