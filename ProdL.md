@@ -181,12 +181,17 @@ There are also some shells not compliant to POSIX for their own considerations,
 such as `fish` (oriented for better user interaction). `fish` can work out-of-box
 with a rich set of features without manually overriding any configuration.
 
+Both `zsh` and `fish` can support syntax highlighting, automatic suggestion,
+and smarter command line completion. I think these features are beneficial
+for productivity.
+
 For most linux distributions, POSIX shell is recommended if you are scripting
 for the system.
 
 #### 0.5.2. Core Utilities
 
 A non-exhaustive set of core utilities. Here I'll only list their names and main usage.
+Most of these utilities are extremely important, and are extremely valuable to learn.
 
 Category 1: File and permission
 
@@ -415,9 +420,12 @@ Functional programming.
 
 Reference book: 
 
-### 0.9. Git Workflow
+### 0.9. Git Workflow (Version Control System)
 
 Extremely important for production sanity, safety, and reliability.
+I'm not interested in explaining exactly how important it is or why.
+
+There are some alternative version control systems to git, such as svn, hg, etc.
 
 ## 1. Correctly Understanding Deep Learning Framework
 
