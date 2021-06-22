@@ -540,7 +540,60 @@ Color, Shapes, Lines, Layout, Fonts
 
 [1] A collection of guides to successful scientific communication: https://mitcommlab.mit.edu/eecs/use-the-commkit/
 
-## A. Python Libraries
+## A. Python Proficiency
+
+### A.1. Proficiency
+
+I'd like the emphasize again that the [python official tutorial](https://docs.python.org/3/tutorial/index.html) is one of the best (free-of-charge) learning materials.
+
+Here I have some additional questions and hints on python programming.
+Note, please make sure that you can instantly verify your programming idea
+with `ipython`, and learn programming in an interactive way.
+
+1. Do you know what `'string'`, `"string"`, `"""string"""`, `r'string'`
+and `f'string'` mean in python? Which one should be used in what scenario?
+Besides, different people prefer to write formatted strings in different ways,
+such as `"..." & (...)`, `f"... {foobar} ..."`, `"...".format(...)`. You may
+need to understand these in order to understand other people's code.
+
+hints: [strings](https://docs.python.org/3/tutorial/introduction.html#strings)
+[f-string](https://docs.python.org/3/tutorial/inputoutput.html#fancier-output-formatting)
+
+2. Do you know that a python program will go through lexical analysis and
+syntax analysis before being interpreted? The following is a example of
+abstract syntax tree (AST).
+
+```python
+In [1]: import ast
+
+In [2]: src = '''
+   ...: a = 1
+   ...: b = 2
+   ...: c = a + b
+   ...: '''
+
+In [3]: print(ast.dump(ast.parse(src), indent=2))
+Module(
+  body=[
+    Assign(
+      targets=[
+        Name(id='a', ctx=Store())],
+      value=Constant(value=1)),
+    Assign(
+      targets=[
+        Name(id='b', ctx=Store())],
+      value=Constant(value=2)),
+    Assign(
+      targets=[
+        Name(id='c', ctx=Store())],
+      value=BinOp(
+        left=Name(id='a', ctx=Load()),
+        op=Add(),
+        right=Name(id='b', ctx=Load())))],
+  type_ignores=[])
+```
+
+### A.9. Python Library Recommendation
 
 Some very useful python libraries.
 
