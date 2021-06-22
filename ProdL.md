@@ -416,9 +416,13 @@ clusters.
 
 ### 0.8. Software Engineering
 
-Functional programming.
+Functional programming. (side effect)
+
+test-driven development.
 
 Reference book: 
+
+[1] Eric S. Raymond, The Art of UNIX Programming.
 
 ### 0.9. Git Workflow (Version Control System)
 
@@ -439,19 +443,46 @@ There are some alternative version control systems to git, such as svn, hg, etc.
 
 ## 2. A Bit of Scientific Computation Background
 
+Numerical system (Julia, matlab) v.s. symbolic system (Mathematica, maxima)
+
+### 2.1. IEEE 754 and Floating-Point Precision
+
+numerical stability
+
 ### 2.1. Dense Numerical Linear Algebra
+
+Dense v.s. sparse
+
+matrix multiplication (GEMM) (BLAS/LAPACK)
 
 ### 2.2. Linear Algebra Acceleration
 
+(1) cache access optimization (2) simd instruction sets (3) paralellelization
+(4) dedicated hardware (GPU, TPU, FGPA).
+
 ## 3. High Performance Programming
 
-### 3.1. Profiling
+### 3.1. Server Architecture
 
-### 3.2. Server Architecture
+### 3.2. Profiling
+
+linux perf (for elf executable)
+
+CPU bound: algorithm complexity.
+
+IO bound.
+
+GPU latency. (cudaMemcpy)
 
 ### 3.3. IO and Storage System
 
+IO bound: (1) /dev/shm (2) ssd (3) prefetch (4) parallel (5)...
+
 ### 3.4. High Performance Python (pure Python)
+
+profiling (cProfile)
+
+int is an object. overhead of magic methods.
 
 ### 3.5. Extending Python with Compiled Language
 
@@ -513,7 +544,21 @@ Color, Shapes, Lines, Layout, Fonts
 
 Some very useful python libraries.
 
+1. ipython3 (friendly REPL)
+2. multiprocess / joblib (paralellization)
+3. numba (jit for acceleration)
+4. pandas (XLSX in python)
+5. tqdm (progress bar + timer)
+
 ## B. Editors and IDEs
+
+vim 
+
+emacs
+
+vscode
+
+pycharm
 
 ## C. Physical Server Management
 
@@ -542,3 +587,13 @@ address `ping6 ff02::1%eno1`, and see which IPv6 addresses will respond. After
 taking out the local IPv6 address of `eno1` and the local IMPI IPv6 address (if
 any; use `sudo ipmitool lan print` to check the MAC address and IPv6) from the
 responder list, we should be able to identify the remote IPMI card IPv6 address.
+
+## D. Extra Linux Productivity Utilities
+
+1. Print image in a text-based remote shell: `catimg` and `chafa`.
+
+2. Composing latex document (including Table) very quickly: `lyx`.
+
+3. Vectorized graph editing: `inkscape`.
+
+4. Bitmap editing: `gimp`.
