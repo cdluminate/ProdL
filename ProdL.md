@@ -391,6 +391,26 @@ specified clients, so that the clients are able to mount the exported directorie
 locally. It is similar to sshfs, but is much more scalable and robust for computer
 clusters.
 
+### 0.7.8. Ansible
+
+[Ansible](https://docs.ansible.com/) can be used to manage a computer cluster
+(or multiple remote hosts) in a scalable way. With this tool, you can distribute
+some local files (directories) to remote machines, gather remote files (directories)
+to local machine, or execute commands on remote machines in parallel. Please
+refer its documentation for full description of its functionalities.
+
+1. **Query GPU usage:** We can query the GPU usage of a group of servers in
+parallel with ansible, which automates the boring manual check process.
+First you may create a `servers.txt` which contains the IP addresses of the
+remote hosts (an IP address per line). Make sure that the RSA key is properly
+setup for every remote hosts. Then we can quickly check whether these machines
+are online: `ansible -i servers.txt all -m ping -o`. Or query the GPU usage
+within several seconds: `ansible -i servers.txt all -m shell -a "gpustat"`.
+
+My project [gpu-load-watcher](https://github.com/cdluminate/gpu-load-watcher)
+is based on ansible for sqlite3 database collection, as well as remote command
+execution, etc.
+
 ### 0.8. Software Engineering
 
 Functional programming.
