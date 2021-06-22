@@ -31,7 +31,9 @@ in this document.
 As a convention in the UNIX/Linux world, a notation composed by a word and a parenthesized number
 denotes reference to a manual page. For instance, `signal(7)` means the
 topic "signal" in manual page section 7. Type `man 7 signal` in a linux shell
-to read the document.
+to read the document. If you find the manual for a specific comman too lenthy
+to read, you may also consult the [`tldr`](https://github.com/tldr-pages/tldr)
+pages.
 
 When talking about commands, `<keyword>` denotes a placeholder that should
 be replaced by a sensible value according to the context, instead of being
