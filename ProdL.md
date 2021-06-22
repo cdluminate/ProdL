@@ -1,6 +1,6 @@
 ---
 title: "ProdL: Productive Deep Learner"
-author: Copyright (C) 2020-2021, Mo Zhou `<cdluminate AT gmail.com>`
+author: Copyright (C) 2020-2021, Mo Zhou `<cdluminate@gmail.com>`
 date: Version WIP, GFDL-1.3 License, June 2021 
 ---
 
@@ -350,6 +350,24 @@ you from improving productivity.
 
 ### 0.7.4. Ansible
 
+[Ansible](https://docs.ansible.com/) can be used to manage a computer cluster
+(or multiple remote hosts) in a scalable way. With this tool, you can distribute
+some local files (directories) to remote machines, gather remote files (directories)
+to local machine, or execute commands on remote machines in parallel. Please
+refer its documentation for full description of its functionalities.
+
+1. **Query GPU usage:** We can query the GPU usage of a group of servers in
+parallel with ansible, which automates the boring manual check process.
+First you may create a `servers.txt` which contains the IP addresses of the
+remote hosts (an IP address per line). Make sure that the RSA key is properly
+setup for every remote hosts. Then we can quickly check whether these machines
+are online: `ansible -i servers.txt all -m ping -o`. Or query the GPU usage
+within several seconds: `ansible -i servers.txt all -m shell -a "gpustat"`.
+
+My project [gpu-load-watcher](https://github.com/cdluminate/gpu-load-watcher)
+is based on ansible for sqlite3 database collection, as well as remote command
+execution, etc.
+
 ### 0.7.5. Rsync -- Copying files across hosts
 
 You may be familiar with `scp`,
@@ -390,26 +408,6 @@ Network File System (NFS) is used for exporting server's local directories for s
 specified clients, so that the clients are able to mount the exported directories
 locally. It is similar to sshfs, but is much more scalable and robust for computer
 clusters.
-
-### 0.7.8. Ansible
-
-[Ansible](https://docs.ansible.com/) can be used to manage a computer cluster
-(or multiple remote hosts) in a scalable way. With this tool, you can distribute
-some local files (directories) to remote machines, gather remote files (directories)
-to local machine, or execute commands on remote machines in parallel. Please
-refer its documentation for full description of its functionalities.
-
-1. **Query GPU usage:** We can query the GPU usage of a group of servers in
-parallel with ansible, which automates the boring manual check process.
-First you may create a `servers.txt` which contains the IP addresses of the
-remote hosts (an IP address per line). Make sure that the RSA key is properly
-setup for every remote hosts. Then we can quickly check whether these machines
-are online: `ansible -i servers.txt all -m ping -o`. Or query the GPU usage
-within several seconds: `ansible -i servers.txt all -m shell -a "gpustat"`.
-
-My project [gpu-load-watcher](https://github.com/cdluminate/gpu-load-watcher)
-is based on ansible for sqlite3 database collection, as well as remote command
-execution, etc.
 
 ### 0.8. Software Engineering
 
@@ -512,3 +510,27 @@ Some very useful python libraries.
 ## C. Physical Server Management
 
 ### C.1. IPMI
+
+IPMI can be used to hardware-reset a machine remotely, in case of kernel panic
+or other server troubles. Let's assume that the IPv6 address of the IMPI card
+on the machine of interest is `fe80::abcd`. Then, we can first query its power
+status:
+```
+ipmitool -I lanplus -H fe80::abcd%eno1 \
+	-U <USER> -P <PASSWORD> chassis power status
+```
+Or directly reboot it (hardware reset):
+```
+ipmitool -I lanplus -H fe80::abcd%eno1 \
+	-U <USER> -P <PASSWORD> chassis power reset
+```
+
+Here I use IPv6 address because in some cases the IMPI card of the remote machine
+is unconfigured, and hence has no IPv4 address. Assume the ethernet port of our local
+host is directly connected to the RJ45 port of the IPMI card, we can first setup
+an IPv6 link-local connection (see network-manager `nmtui` for details). If our
+network device is called `eno1`, then we can ping the pre-defined IPv6 multicast
+address `ping6 ff02::1%eno1`, and see which IPv6 addresses will respond. After
+taking out the local IPv6 address of `eno1` and the local IMPI IPv6 address (if
+any; use `sudo ipmitool lan print` to check the MAC address and IPv6) from the
+responder list, we should be able to identify the remote IPMI card IPv6 address.
