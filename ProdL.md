@@ -467,7 +467,19 @@ a computational performance bottleneck of a deep neural network.
 
 ### 2.1. IEEE 754 and Floating-Point Precision
 
-numerical stability
+In [numerical analysis](https://en.wikipedia.org/wiki/Numerical_analysis#Generation_and_propagation_of_errors),
+the floating-point standard (IEEE 754) has a very strong implication on
+floating-point precision and error due to limited machine number presentation.
+There are round-off errors, truncation errors, discretization errors, and
+numerical stability issues.
+
+In the code implementation of some machine learning algorithms, you may have
+noticed that a very small constant `e` will be added to a fraction `a/(b+e)`
+in order to maintain numerical stability, espeically when `b` may be a very
+small value (will lead to a very large value, which eventually overflows to
+`+inf`). You may also see some mathematical operations transformed to other
+forms for sake of better numerical stability during computation. Refer to
+Section 4 of [Z2] for detail.
 
 ### 2.1. Numerical Linear Algebra
 
@@ -561,10 +573,6 @@ References:
 Reference material: [how to draw ugly diagrams?](assets/ugly-diagram.pdf) [(svg source)](assets/ugly-diagram.svg)
 
 Color, Shapes, Lines, Layout, Fonts
-
-## Misc References
-
-[1] A collection of guides to successful scientific communication: https://mitcommlab.mit.edu/eecs/use-the-commkit/
 
 ## A. Python Proficiency
 
@@ -676,3 +684,8 @@ responder list, we should be able to identify the remote IPMI card IPv6 address.
 3. Vectorized graph editing: `inkscape`.
 
 4. Bitmap editing: `gimp`.
+
+## Z. References
+
+[Z1] A collection of guides to successful scientific communication: https://mitcommlab.mit.edu/eecs/use-the-commkit/
+[Z2] Ian Goodfellow, et al., deep learning.
