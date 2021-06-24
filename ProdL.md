@@ -146,16 +146,16 @@ Computer organization [[1]](https://www.coursera.org/learn/jisuanji-zucheng)
 [[3]](https://csapp.cs.cmu.edu/)
 is critical for you to correctly understand things that harms the performance
 of your program. It is also (partly) helpful for you to avoid writing prototype
-code without obvious performance flaw.
-
-Such background knowledge is critical for you to understand the performance
+code without obvious performance flaw. Besides, such background knowledge is
+critical for you to understand the performance
 of dense numerical linear algebra.
 
 In order to gain an in-depth image on computer programming (whatever in
 interpreted language or compiled language), it is suggested to be aware
-of how compilers work.
-
-TODO: GPU is not always faster than CPU -- `cudaMemcpy` is not something trivial.
+of [how compilers work](https://en.wikipedia.org/wiki/Compilers:_Principles,_Techniques,_and_Tools).
+For example, the key concepts for a compiler involves
+lexical analysis, syntax analysis, intermediate
+representation, code optimization and target code generation.
 
 ### 0.5. Operating System and POSIX
 
@@ -443,19 +443,39 @@ There are some alternative version control systems to git, such as svn, hg, etc.
 
 ## 2. A Bit of Scientific Computation Background
 
-Numerical system (Julia, matlab) v.s. symbolic system (Mathematica, maxima)
+Mathematical software mainly involves two kinds: Numerical system (such as
+Julia, Matlab, NumPy) and symbolic system (e.g., Mathematica, Maxima, SymPy).
+Multi-dimensional numerical arrays are the central part of a numerical system,
+while symbolic systems aim to simplify (or solve, etc) equations in a symbolic
+form without actually calculating numbers.
+
+[Scientific computation](https://en.wikipedia.org/wiki/Computational_science)
+is the collection of tools, techniques, and theories required to solve on a
+computer mathematical models of problems in science and engineering.
+
+Numerical Linear algebra is a very important part of scientific computation. Where there
+is multi-dimensional arrays, there is numerical linear algebra. Judging on the difference
+in how multi-dimensional arrays are organized in the memory, numerical linear algebra
+can be either dense or sparse. Linear algebra operations that manipulates
+a contiguous chunk of memory belong to dense numerical linear algebra.
+
+The most computational intensive parts of deep neural networks, are covered
+by numerical linear algebra. Namely, numerical linear algebra is largely
+a computational performance bottleneck of a deep neural network.
+
+[1] https://www.scicomp.uni-kl.de/about/scientific-computing/
 
 ### 2.1. IEEE 754 and Floating-Point Precision
 
 numerical stability
 
-### 2.1. Dense Numerical Linear Algebra
+### 2.1. Numerical Linear Algebra
 
 Dense v.s. sparse
 
 matrix multiplication (GEMM) (BLAS/LAPACK)
 
-### 2.2. Linear Algebra Acceleration
+### 2.2. Dense Linear Algebra Acceleration
 
 (1) cache access optimization (2) simd instruction sets (3) paralellelization
 (4) dedicated hardware (GPU, TPU, FGPA).
@@ -473,6 +493,12 @@ CPU bound: algorithm complexity.
 IO bound.
 
 GPU latency. (cudaMemcpy)
+
+GPU is not always faster than CPU in terms of linear algebra operations, as
+`cudaMemcpy` is not something trivial. For instance, CPU could be much faster
+than GPU in terms of very small matrix multiplication, because the `cudaMemcpy`
+latency for transmitting the matrix from RAM to video memory already exceeded
+the time comsumption of CPU.
 
 ### 3.3. IO and Storage System
 
