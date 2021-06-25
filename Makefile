@@ -8,5 +8,8 @@ ProdL.pdf: clean
 		-f markdown -t pdf \
 		ProdL.md > ProdL.pdf
 
+ProdL.tex:
+	pandoc -f markdown -t latex ProdL.md --toc -r markdown-auto_identifiers --standalone > ProdL.tex
+
 clean:
 	-$(RM) ProdL.pdf
