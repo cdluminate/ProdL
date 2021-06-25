@@ -594,6 +594,13 @@ If nothing can be done subsequently, who will cite this paper then?
 
 ### 6.2. Writing a Review for Paper
 
+### 6.3. Surveying a New Area
+
+I. Read the latest top conference papers, as well as the highly cited papers in
+this field as the starting point. II. Recursively expand the network following
+the references (related works section) in the papers you read. III. Create a
+taxonomy to group and differentiate these works.
+
 ## 7. Organizing Preliminary Draft
 
 ### 7.1. LaTeX Typesetting
