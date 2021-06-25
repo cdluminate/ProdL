@@ -644,7 +644,19 @@ Advanced Techniques:
 
 ### 7.5. Conference Rebuttal
 
-1. Carefully read the official rebuttal instructions, e.g., the [ICCV2021 rebuttal instructions](http://iccv2021.thecvf.com/node/4#rebuttal-instructions), and fetch the template.
+Carefully read the official rebuttal instructions, e.g., the [ICCV2021
+rebuttal instructions](http://iccv2021.thecvf.com/node/4#rebuttal-instructions),
+and fetch the template. Then extract the questions from the reviews, and answer
+them one by one.
+
+TODO: key points for writing a rebuttal.
+
+Don't ever assume the reviewers are in good faith.  Always be prepared for the
+worst case and the ensuing implications, say, when the reviewer is somehow
+hostile or irresponsible. Whether or not such reviewer will devastate the
+reputation of the research community, for oneself the most important thing is
+happiness, as almost nothing can be done to fight against injustice or fate.
+Reaching your family for support might be a good idea at this point.
 
 References:
 
