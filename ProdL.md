@@ -594,6 +594,33 @@ If nothing can be done subsequently, who will cite this paper then?
 
 ### 6.2. Writing a Review for Paper
 
+The review mainly consists of five parts: (1) paper summary; (2) paper strengths;
+(3) paper weaknesses; (4) preliminary rating and justification; (5) detailed
+comments (including minor issues of the paper).
+
+Some aspects on which you can make a comment: Is the paper organization logically
+fluent? Is the survey of related works adequate? Is the technical contribution
+clearly described? Is the technical contribution original? Is the technical
+contribution sound? Are the experiments
+scientifically designed? Are the experiments sufficient to support the hypothesis
+or demonstrate the effectivensss? Are there enough details for the reader to
+reproduce this work? Can the performance improvement be attributed to the
+contribution of this paper? Be sure to be specific when giving comments
+on these aspects.
+
+Of course, the reviwers can make some subjective judgements. For instance,
+is the paper well written? Is the paper novel? Once you decide to give
+such subjective comments, please be sure to be specific. Namely, you should
+explain why the paper is (not) well-written (which paragraph / part, due to what?),
+or explain why this paper lacks novelty (or originality).
+Carelessly saying a paper lacks novelty without providing concrete reasons
+and evidence is irresponsible and harmful for the research community.
+
+If you find some errors in the manuscript, such as typo, small mathematical
+error, missing definition for a symbol, etc. As long as they do not considerably
+hamper understanding of this paper, they should be considered minor, and do
+not constitute any reason for lowering the rating.
+
 ### 6.3. Surveying a New Area
 
 I. Read the latest top conference papers, as well as the highly cited papers in
