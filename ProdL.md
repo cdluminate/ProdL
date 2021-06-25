@@ -540,6 +540,60 @@ int is an object. overhead of magic methods.
 
 ## 6. Paper Reading and Reviewing
 
+Paper reading and paper reviewing are two very similar process, but there
+are still some subtle differences. The motivation of paper reading is usually
+grasping new ideas and techniques and adding them into your knowledge graph,
+and sometimes seeking for inspirations. The process of paper reviewing is
+far beyond paper reading. One has to not only grasp the new ideas correctly,
+but also has to think critically -- Is the proposed method technically correct
+and sound? Is the paper logic fluent? Are the experiments designed scientifically?
+etc.
+
+In my opinion, when one is able to review a paper well, they are already
+able to understand the key points for reading a paper. Thus, I shall omit
+discusson on paper reading, and directly talk about paper reviewing.
+
+### 6.1. Paper Reviewing
+
+First we can refer to some paper review guidelines, e.g., [CVPR2020 reviewer
+guideline](http://cvpr2020.thecvf.com/submission/main-conference/reviewer-guidelines)
+in order to understand what is a good review, and what should a good review
+represent. You can also read the [CVPR AC Guide](http://cvpr2020.thecvf.com/submission/main-conference/reviewer-guidelines)
+to see what kind of review is helpful for the community, and what's not.
+
+Carefully think about the following questions when you try to review a paper:
+(I summarized these points based on external materials)
+
+1. What is the problem addressed in this paper? Is this problem important?
+A paper must has its core focus. An influential paper must be discussing about
+something important.
+
+2. What is the scientific hypothesis that the paper is trying to verify?
+A good paper must has a good motivation. And a good, deterministic motivation
+is highly likely leading to clear hypothesis before conducting experiments.
+
+3. What are the related works? What are the most related works? A good paper
+must has its uniqueness, and can be clearly differentiated from existing
+works. The related works can help you embed this paper
+in your knowledge network.
+
+4. What is the key of the proposed solution in this paper? This is the core
+contribution and novelty of this paper.
+
+5. How are experiments designed? Are the quantitative and qualitative experiments
+sufficient to support the effectiveness of the proposed method? Can the performance
+improvement be attributed to the core contribution? Does the experiments support
+the hypothesis of the paper?
+
+6. What is possibly remaining problems? Or what could be the future work?
+If nothing can be done subsequently, who will cite this paper then?
+
+[1] https://www.msra.cn/zh-cn/news/outreach-articles/%E5%BE%AE%E8%BD%AF%E5%AF%BC%E5%B8%88%E4%BA%B2%E6%8E%88%E8%AE%BA%E6%96%87%E7%A0%94%E8%AF%BB%E5%8D%81%E9%97%AE%E5%9B%9E%E7%AD%94%E9%80%9A%E5%88%99
+
+[2] https://zhuanlan.zhihu.com/p/163227375
+
+### 6.2. Writing a Review for Paper
+
 ## 7. Organizing Preliminary Draft
 
 ### 7.1. LaTeX Typesetting
