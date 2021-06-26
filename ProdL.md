@@ -777,7 +777,25 @@ problem; (3) the problem is valuable, while the solution is novel and original;
 and strong experimental evaluations; (6) instructive or inspiring for readers
 (potential to become a highly-cited paper).
 
-#### 7.2.2. Selecting a title.
+#### 7.2.2. Selecting a Title.
+
+The title conveys some key information to the reader -- what idea or method
+is proposed for what purpose? The title should be composed of a few key words
+covering: (1) the problem that this paper focuses on; (2) the idea, method, or 
+novelty of this paper. Besides conveying ideas to the reader, the title must
+also be easily searchable (unless you don't want to be cited).
+
+Sometimes we may see fancy titles using metaphors, etc. These titles, if the
+corresponding paper does not present very influential work, may impose
+difficulty on the readers to correctly understand what this paper is doing when
+they browse the paper lists. When you browse a list of papers, will you really
+read the abstract and pay more time on a paper with a strange title from which
+you cannot immediately grasp the underlying idea? Do you think you can find
+such related works (using fancy and indirect titles) with the commonly used
+keywords?  However, if the work will be influential, fancy titles may become a
+plus.
+
+#### 7.2.3. Abstract.
 
 ### 7.3. Drafting a Journal Paper
 
