@@ -12,6 +12,8 @@ Copyright (C) 2018-2021, Mo Zhou `<cdluminate@gmail.com>`
 This document is released under the [GNU Free Documentation License (GFDL-1.3)
 ](https://www.gnu.org/licenses/fdl-1.3.html) license.
 
+Click here to obtain the latest version of this document. [TODO]
+
 *ProdL* is a personal documentation project for collecting memos and hints
 that may help one boost their productivity in Deep Learning study.
 This project covers a wide range of topics, including but not limited to
@@ -43,6 +45,9 @@ When talking about keybindings, `Mod` means the modifier key for a specifically
 discussed program. For example, the `Mod` key for `tmux` is `Ctrl+b` by default.
 Any keybinding discussed in this document is case-sensitive. Any text rendered
 in mono-spaced font are case-sensitive.
+
+Should you find any error or discrepancy in the content, the author is willing
+to correct the content. Please file a bug through the Github issues channel [TODO].
 
 Table-of-Contents is only available in the PDF version of this document.
 
@@ -471,26 +476,86 @@ In [numerical analysis](https://en.wikipedia.org/wiki/Numerical_analysis#Generat
 the floating-point standard (IEEE 754) has a very strong implication on
 floating-point precision and error due to limited machine number presentation.
 There are round-off errors, truncation errors, discretization errors, and
-numerical stability issues.
+numerical stability (overflow, underflow) issues.
 
 In the code implementation of some machine learning algorithms, you may have
 noticed that a very small constant `e` will be added to a fraction `a/(b+e)`
-in order to maintain numerical stability, espeically when `b` may be a very
+in order to maintain numerical stability, especially when `b` may be a very
 small value (will lead to a very large value, which eventually overflows to
 `+inf`). You may also see some mathematical operations transformed to other
 forms for sake of better numerical stability during computation. Refer to
 Section 4 of [Z2] for detail.
 
-### 2.1. Numerical Linear Algebra
+All scientific computing libraries, especially those important ones, must be
+aware of floating-point precision, and ensure a sensible level of numerical
+stability. For example, partial differential equation solvers in the physics or
+chemistry fields are sensitive to precision (so they often use float64), while
+deep neural networks, which are not quite sensitive to precision, can converge
+to a proper state with lower precision (e.g., float32, bfloat16, float16) in
+return of much higher throughput. In practice, training neural networks using
+float64 is not necessary, and float32 is the default precision for most cases.
 
-Dense v.s. sparse
+### 2.2. Numerical Linear Algebra
 
-matrix multiplication (GEMM) (BLAS/LAPACK)
+**Numerical linear algebra** focuses on linear algebra operations on
+multi-dimensional numerical arrays, either dense or sparse. It covers
+vector-vector, matrix-vector, matrix-matrix operations such as addition and
+multiplication, as well as a series of matrix decomposition methods,
+matrix inversions, least squared solvers, etc.
 
-### 2.2. Dense Linear Algebra Acceleration
+**Dense numerical linear algebra** manipulates numerical arrays stored in a
+continuous chunk of memory (the whole array can be linearly indexed in the memory).
+Example libraries include Basic Linear Algebra Subroutines (BLAS) and
+Library of Linear Algebra Routines (LAPACK). The reference implementation for
+both of them are written in Fortran, and have a very stable set of API and ABI.
+Due to a very long history and very important roles in scientific computing,
+BLAS and LAPACK can be regarded as a standard.
+
+* BLAS: As you may have noticed, BLAS API follows a Fortran-flavor naming scheme.
+The first character indicates precision (`s` for single-precision (float32),
+`d` for double-precision (float64), `c` for single-precision complex, `z` for
+double-precision complex). The trailing letters describe the abbreviated operation name.
+BLAS functionalities can be divided into three groups: 
+vector-vector subroutines (also called level-1 BLAS;
+e.g., `sasum` for single-precision [s] absolute [a] sum [sum] of a vector;
+`saxpy` for single-precision [s] (constant) alpha [a] * (vector) x [x] + [p] (vector) y [y];
+`?scal` for scaling a vector by a constant; `?dot` for dot-product between two vectors;
+`?swap` for swapping values between two vectors; `?copy` for copying a vector to another;
+`?nrm2` for the L-2 norm of a vector),
+matrix-vector subroutines (also called level-2 BLAS;
+e.g., `sgemv` for single-precision [s] general [ge] matrix-vector [mv] multiplication;
+`?ger` for multiplying a column vector with a row vector into a matrix),
+and matrix-matrix subroutines (also called level-3 BLAS;
+e.g., `sgemm` for single-precision [s] general [ge] matrix-matrix [mm] multiplication.
+For level-2 and level-3 BLAS, there are operations for other types of matrices
+for better efficiency. For example, `ssymv` is for single-precision symmetric [sy]
+matrix-vector multiplication. BLAS also support specifying strides, matrix transpose,
+upper/lower-triangular, etc. Please refer the netlib blas cheatsheet [todo] for more details
+of the BLAS API.
+
+* LAPACK: LAPACK involves higher-level linear algebra subroutines built upon
+BLAS (BLAS is frequently used in LAPACK subroutines). For example, `?gesv` solves
+linear system `AX=B`, `?gels` for solving generalized (underdetermined or
+underdetermined) linear system using QR or LU decomposion, `?gesvd` performs
+general singular value decomposition, and `?gesdd` is an alternative algorithm
+to `?gesvd` for singular value decomposition in lower precision but faster speed.
+
+**Sparse numerical linear algebra**, as is named, manipulates sparse numerical
+arrays that are organized in specific ways (instead of a continuous chunk of
+memory), because there are different measures to efficiently store a matrix
+with most elements being zero. Example libraries include SuiteSparse and
+Scipy (`scipy.sparse`). Sparse linear algebra provides similar functionalities
+to dense linear algebra, and are simply specifically designed due to its special
+array organization.
+
+### 2.3. Dense Linear Algebra Acceleration
 
 (1) cache access optimization (2) simd instruction sets (3) paralellelization
 (4) dedicated hardware (GPU, TPU, FGPA).
+
+### 2.4. DNN Libraries
+
+cuDNN, oneDNN
 
 ## 3. High Performance Programming
 
