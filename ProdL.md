@@ -797,6 +797,40 @@ plus.
 
 #### 7.2.3. Abstract.
 
+Concise and fluent, but does not lack of technical detail -- that's what an
+abstract should look like.
+
+Abstract is the zoom-out version of the whole manuscript. It summarizes the
+content of the whole paper in a concise manner, while pointing out some of the
+key technical details. Ideally, the abstract is logically fluent, and a
+sentence in the abstract corresponds to a part in the introduction.  Thus, the
+**consistency** between the abstract and introduction will make the reading
+process easier, and avoids distraction of reader's attention due to anomaly
+(i.e., inconsistency). For example, the abstract covers our content A, but
+missed our content B. When we introduce content B in the introduction, it feels
+abnormal and abrupt, and hence distracting the reader.
+
+Try not to introduce too many new concepts in the abstract. They prevents the
+reader from quickly understanding your work. Replacing new concepts with plain
+and naive descriptions may be a good idea for reducing the understanding
+obstacle.
+
+After finishing a good abstract, the reader should be roughly aware of
+what the paper is doing, and what is the key point of this paper.
+Hence, the readers can properly build their attention based on such prior
+knowledge, and better understand the paper.
+
+Rethink of the abstract if your friend unfamiliar with related fields cannot
+grasp even a bit of idea from it.  Rewrite the abstract if your collaborator
+cannot obtain the discussed information from it.
+
+If you don't know how to write an abstract for your almost-finished paper,
+try to force yourself to present the work to the others within two or three
+minutes. This process may help you condense the paper and extract the core
+parts from it.
+
+#### 7.2.4. Introduction
+
 ### 7.3. Drafting a Journal Paper
 
 ### 7.4. Polishing
