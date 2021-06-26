@@ -716,7 +716,8 @@ them one by one.
 
 TODO: key points for writing a rebuttal.
 
-Don't ever assume the reviewers are in good faith.  Always be prepared for the
+Don't always assume the reviewers are in good faith if you feel some reviewer
+response strange. Always be prepared for the
 worst case and the ensuing implications, say, when the reviewer is somehow
 hostile or irresponsible. Whether or not such reviewer will devastate the
 reputation of the research community, for oneself the most important thing is
@@ -726,7 +727,9 @@ Reaching your family for support might be a good idea at this point.
 References:
 
 [1] https://www.zhihu.com/question/32055996
+
 [2] https://zhuanlan.zhihu.com/p/104298923
+
 [3] https://blog.csdn.net/Ema1997/article/details/107103487
 
 ### 7.6. Journal Response
@@ -853,4 +856,5 @@ responder list, we should be able to identify the remote IPMI card IPv6 address.
 ## Z. References
 
 [Z1] A collection of guides to successful scientific communication: https://mitcommlab.mit.edu/eecs/use-the-commkit/
+
 [Z2] Ian Goodfellow, et al., deep learning.
