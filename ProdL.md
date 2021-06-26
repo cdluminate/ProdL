@@ -699,6 +699,12 @@ this field as the starting point. II. Recursively expand the network following
 the references (related works section) in the papers you read. III. Create a
 taxonomy to group and differentiate these works.
 
+### 6.4. Incubation of New Ideas
+
+It will be interesting.
+
+TODO
+
 ## 7. Organizing Preliminary Draft
 
 This section mainly discuss latex typesetting, drafting
@@ -719,42 +725,59 @@ Advanced Techniques:
 
 ### 7.2. Drafting a Conference Paper
 
-I shall cover all aspects of drafting a conference paper.
-My discussion is based on CVPR submission.
-I'm not a experienced researcher, please don't take
-my personal opinions seriously. Only use the following
-content as a reference, please.
+I shall cover all aspects of drafting a conference paper.  My discussion is
+based on CVPR submission.  I'm not a experienced researcher, please don't take
+my personal opinions seriously. Only use the following content as a reference,
+please.
 
 #### 7.2.1. Selecting a Decent Research Topic
 
-If you have not determined a concrete topic to study, you
-may first try to find a research field of your interest
-and pleasure. Then assemble an informal survey (or mindmap)
-for this field. Be sensitive to the taxonomy of existing
-works, the trend of a field, the remaining (but important)
-problems in a field.
+If you have not determined a concrete topic to study, you may first try to find
+a research field of your interest and pleasure. Then assemble an informal
+survey (or mindmap) for this field. Be sensitive to the taxonomy of existing
+works, the trend of a field, the remaining (but important) problems in a field.
 
-In practice, a pure research topic might be saturated already
-(e.g., image classification), but cross-discipline topics
-can still provide an amount of low-hangning fruits, or new
-inspirations, or even new problems. But take heed, don't
-combine different topics directly and casually. Some
-of such combination problems are indeed not yet explored,
-but are they really valuable, reasonable, and novel?
+In practice, a pure research topic might be saturated already (e.g., image
+classification), but cross-discipline topics can still provide an amount of
+low-hanging fruits, or new inspirations, or even new problems. But take heed,
+don't combine different topics directly and casually. Some of such combination
+problems are indeed not yet explored, but are they really valuable, reasonable,
+and novel?
 
-Choice is sometimes more important than effort. Besides
-novelty and value, there are also some other practical
-factors to concern when you choose a research topic.
-For instance, computational resource and dataset access
-must be a concern for not rich researchers intending
-to study facial recognition techniques. Big rich companies
-can allocate thousands of GPUs for a group of researchers,
-while the demand for tens of GPUs could be an unsolvable
-problem for people in universities (especially non-top
-universities). Unless one has unique and ingenious idea
-in such fields, I think it is very hard to compete with
-the others. Anyway, one should probably carefully
-evaluate the demand of resource when choosing a concrete topic.
+Choice is sometimes more important than effort. Besides novelty and value,
+there are also some other practical factors to concern when you choose a
+research topic.  For instance, computational resource and dataset access must
+be a concern for not rich researchers intending to study facial recognition
+techniques. Big rich companies can allocate thousands of GPUs for a group of
+researchers, while the demand for tens of GPUs could be an unsolvable problem
+for people in universities (especially non-top universities). Unless one has
+unique and ingenious idea in such fields, I think it is very hard to compete
+with the others. Anyway, one should probably carefully evaluate the demand of
+resource when choosing a concrete topic.
+
+When your have a preliminary new idea, it is very important to instantly setup
+a prototype to validate the idea. Some ablation study or parameter search may
+involve in the process, but it should not take too long time for you to
+validate whether or not the new idea works. Not every new idea will work as
+you expected. Being able to quickly verify whether or not it works is equivalent
+to saving one's life, or at least buying more time and energy.
+The methodology of ablation study and parameter search is discussed in separate
+section of this material.
+
+For academic research, a good new idea and its prototype is not necessarily a
+complicated product.  Complicated products significantly increases the cost for
+the readers to understand, accept, and reproduce the work. On the contrary,
+small and delicate (simple and beautiful) ideas that works decently can also be
+influential, and widely adopted by the community. Recall one of the UNIX
+philosophies -- do one thing, and do it well. In my opinion, a good paper may
+have some of the following merits: (1) small, simple, delicate and beautiful
+mathematical core; (2) highly motivated, and focuses on a clear, specific
+problem; (3) the problem is valuable, while the solution is novel and original;
+(4) the logical flow of the paper is basically linear and fluent; (5) adequate
+and strong experimental evaluations; (6) instructive or inspiring for readers
+(potential to become a highly-cited paper).
+
+#### 7.2.2. Selecting a title.
 
 ### 7.3. Drafting a Journal Paper
 
