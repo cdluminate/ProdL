@@ -5,6 +5,8 @@ ProdL.pdf: clean
 		-V fontfamily=times \
 		-V geometry=margin=1in \
 		-V colorlinks \
+		--pdf-engine pdflatex \
+		-H assets/header.tex \
 		-f markdown -t pdf \
 		ProdL.md > ProdL.pdf
 

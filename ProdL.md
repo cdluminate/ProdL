@@ -126,7 +126,7 @@ For example, compiling documentations, or executing experiment pipelines.
 
 For example, I usually keep such a `Makefile` in my CVPR draft directory:
 
-```make
+```makefile
 main: cvpr
 
 cvpr: fig1.pdf
