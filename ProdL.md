@@ -605,6 +605,12 @@ int is an object. overhead of magic methods.
 
 ## 6. Paper Reading and Reviewing
 
+In the past, I used to ask my advisor: "I don't have idea about
+what to study next. Could you please give me some advice?".
+Now I realized that asking such kind of question basically
+indicates the lack of paper reading, or the reading technique
+and strategy is questionable.
+
 Paper reading and paper reviewing are two very similar process, but there
 are still some subtle differences. The motivation of paper reading is usually
 grasping new ideas and techniques and adding them into your knowledge graph,
@@ -695,13 +701,60 @@ taxonomy to group and differentiate these works.
 
 ## 7. Organizing Preliminary Draft
 
+This section mainly discuss latex typesetting, drafting
+conference / journal papers, polishing papers before submission,
+conference / journal rebuttal, slides and poster composing.
+
 ### 7.1. LaTeX Typesetting
+
+LaTeX is not a WYSIWYG text composing system, but it is
+prevalent for professional typesetting, such as paper
+composing.
+
+todo: lshort
 
 Advanced Techniques:
 
-1. https://github.com/simonharrer/latex-best-practices
+[1] https://github.com/simonharrer/latex-best-practices
 
 ### 7.2. Drafting a Conference Paper
+
+I shall cover all aspects of drafting a conference paper.
+My discussion is based on CVPR submission.
+I'm not a experienced researcher, please don't take
+my personal opinions seriously. Only use the following
+content as a reference, please.
+
+#### 7.2.1. Selecting a Decent Research Topic
+
+If you have not determined a concrete topic to study, you
+may first try to find a research field of your interest
+and pleasure. Then assemble an informal survey (or mindmap)
+for this field. Be sensitive to the taxonomy of existing
+works, the trend of a field, the remaining (but important)
+problems in a field.
+
+In practice, a pure research topic might be saturated already
+(e.g., image classification), but cross-discipline topics
+can still provide an amount of low-hangning fruits, or new
+inspirations, or even new problems. But take heed, don't
+combine different topics directly and casually. Some
+of such combination problems are indeed not yet explored,
+but are they really valuable, reasonable, and novel?
+
+Choice is sometimes more important than effort. Besides
+novelty and value, there are also some other practical
+factors to concern when you choose a research topic.
+For instance, computational resource and dataset access
+must be a concern for not rich researchers intending
+to study facial recognition techniques. Big rich companies
+can allocate thousands of GPUs for a group of researchers,
+while the demand for tens of GPUs could be an unsolvable
+problem for people in universities (especially non-top
+universities). Unless one has unique and ingenious idea
+in such fields, I think it is very hard to compete with
+the others. Anyway, one should probably carefully
+evaluate the demand of resource when choosing a concrete topic.
 
 ### 7.3. Drafting a Journal Paper
 
