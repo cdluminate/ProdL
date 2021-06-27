@@ -1054,6 +1054,52 @@ References:
 
 ### 7.7. Slides and Poster
 
+#### 7.7.1. Slides
+
+#### 7.7.2. Poster
+
+The core essense of a poster is a free-style composition to advertise your
+work, technical but easy to grasp.
+
+CVPR poster is usually a 48 inch x 96 inch long picture (aspect ratio is 2:1).
+Some other poster templates are based on the standard A0 sized paper. The
+concrete poster size varies across different conferences. When creating your
+poster, make sure to leave enough space to the paper margin, because you may
+want to cut the paper to fit the frame. Besides, check if your printer can
+print within 0.5 inch to the very edge of the paper.
+
+Font size recommendtation: Normal text 64pt. Small text 56pt. Fonts smaller
+than 48pt may be hard to read from a distant view point. Title font size can
+be some value bewtween 100pt to 144pt.
+
+Font recommendtation: Choose as your pleasure. Serief-free fonts may be easier
+to read from a far place. Serief fonts looks more consistent with mathematical
+equations in CVPR manuscript.
+
+Page layout recommendation: For A0 paper size (aspect ratio: 1:sqrt(2)),
+double-column typesetting is feasible. For long posters (aspect ratio is 1:2),
+three-column typesetting is feasible. Note, the poster session may be very
+crowded. A multi-column layout design enable your crowded audience to read
+your whole poster while walking from left side to right side.
+
+Content recommendation: Use pictures, diagrams, tables to tell the story.
+People like those. For ease of understanding, organize these informations in a
+linear logic. Put more visualizations than the main manuscript. Put important
+things that may attract the audience to read the main manuscript. Don't copy
+the main manuscript onto the poster. If a poster looks like a zoomed-in version
+of a manuscript, people may want to skip it and read the manuscript directly.
+
+How much portion on poster should some content occupy? The poster should mainly
+present visual informations, and use textual informations as supplementary.
+Somesay that the portion of textual information can be 20%~25%, that of visual
+information can be 40%~45%, while the rest space should be left blank.
+
+The upper left corner can be the logo of your university or organization, while
+the upper right corner can be the conference logo. Put your paper title at the
+top center position. Right below are author list and affiliations.  Add QR
+codes to your arxiv preprint and git repository at a proper corner of your
+poster. QR codes makes one's life easier.
+
 ### 7.8. Miscellaneous Questions and Answers
 
 - Uploading something to Arxiv? This is too tricky. This is not a proper place
