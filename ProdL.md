@@ -1230,6 +1230,15 @@ responder list, we should be able to identify the remote IPMI card IPv6 address.
 In this appendix section, we discuss English issues that frequently occurs,
 and some tips for technical writing.
 
+English issues are very minor (and useless) in the paper reviewing process, and
+do not constitute a reason for paper rejection. But a submission aboundant of
+English issues will look unprofessional, ugly and rude. It may also imply that
+the author has a careless attitude towards the submission, and hence trigger
+some reviewers.
+
+Anyway, once a paper is written in the English language, this language itself
+should be respected.
+
 ## Z. References
 
 [Z1] A collection of guides to successful scientific communication: https://mitcommlab.mit.edu/eecs/use-the-commkit/
