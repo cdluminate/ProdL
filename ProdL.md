@@ -842,6 +842,21 @@ to a word in the abstract. Namely, the introduction can be seen as an
 extended version of the abstract. Similarly, the storyline of the introduction
 should be logically linear for ease of writing and understanding.
 
+The introduction part has abound space for smooth connection between the key
+points of the paper to make the story line simple and linear. Some important
+but transitional sentences will not be written in the abstract -- the
+introduction is where they should be put.
+
+Being logically linear is quite important. Many readers will only skim the
+abstract (and figures). Some of them will skim more until the end of introduction.
+Abrupt logical organization or too much irrelevant content will definitely
+distract the reader from whatever they should focus on.
+
+A fast reading technique is to read only the first sentence of a paragraph.
+When you write a paragraph, it is also a good practice to only include one key
+point in a paragraph, and clearly state the key point of this paragraph in the
+first sentence. This is merely optional.
+
 In the end of the introduction, the contributions of a paper should be
 summarized following the convention. This summarization is also helpful
 for rushy reviewers that do not really have much spare time on the paper --
@@ -852,6 +867,8 @@ a contribution (in most cases). The experiments are a part of the proposed
 method for validating its effectiveness, instead of a standalone point.
 Besides, is "extensive experiments" something novel enough to highlight the
 paper?
+
+#### 7.2.5. Related Works
 
 ### 7.3. Drafting a Journal Paper
 
