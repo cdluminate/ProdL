@@ -884,6 +884,30 @@ emphasize any difference by contrast.
 
 #### 7.2.6. Our Approach
 
+This section mainly involves formulations and detailed solution. Try to keep
+the storyline as simple as possible. This section cannot be written along
+the logic of pseudo-code of your algorithm.
+
+Although we focus on technical (mathematical) details in this section, please
+don't hard-code any concrete parameter. Don't abruptly present conclusions
+from experimental results neither.
+
+Linearity is also important for this section. For example, our proposed method
+has several variants. In pseudo-code, these variants can be organized in an
+if-else (switch-case) structure, but writing a section 3 such structure is a
+disaster. In this case, which one is the default method? What is the difference
+between these variants? What variant should be used in what scenario?  Can
+these variants be generalized into a united form? What concrete variant should
+the reader pay most attention to? It is suggested to finish describing a whole
+variant first, and then discuss the way of adapting it into other variants.
+The adaptation procedure can be omitted if it's simple and repetitive.
+
+If you don't know how to start section 3, try to briefly review the
+mathematical definition of the problem that you are trying to solve. Then
+briefly review the common practice (from mathematical point of view) in related
+works. Next, it may be the time for you to describe your observed problems,
+your motivation, and smoothly transit to the discussion on core topic.
+
 #### 7.2.7. Experiments
 
 #### 7.2.8. Discussions
@@ -892,7 +916,7 @@ emphasize any difference by contrast.
 
 ### 7.3. Drafting a Journal Paper
 
-### 7.4. Polishing
+### 7.4. Self-Reviewing and Polishing
 
 ### 7.5. Conference Rebuttal
 
