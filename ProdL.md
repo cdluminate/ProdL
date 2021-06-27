@@ -1117,6 +1117,11 @@ responder list, we should be able to identify the remote IPMI card IPv6 address.
 
 4. Bitmap editing: `gimp`.
 
+## Y. English Corner
+
+In this appendix section, we discuss English issues that frequently occurs,
+and some tips for technical writing.
+
 ## Z. References
 
 [Z1] A collection of guides to successful scientific communication: https://mitcommlab.mit.edu/eecs/use-the-commkit/
