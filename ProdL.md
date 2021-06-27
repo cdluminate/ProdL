@@ -829,7 +829,29 @@ try to force yourself to present the work to the others within two or three
 minutes. This process may help you condense the paper and extract the core
 parts from it.
 
+A good abstract should not waste too much space for the background. It is
+suggested to fastly transit from background introduction to the observations,
+motivations, and core contributions.
+
+TODO: a simple template of abstract
+
 #### 7.2.4. Introduction
+
+In the most ideal case, every part of the introduction can be corresponded
+to a word in the abstract. Namely, the introduction can be seen as an
+extended version of the abstract. Similarly, the storyline of the introduction
+should be logically linear for ease of writing and understanding.
+
+In the end of the introduction, the contributions of a paper should be
+summarized following the convention. This summarization is also helpful
+for rushy reviewers that do not really have much spare time on the paper --
+explicit pointers on the paper contribution sometimes help.
+
+By the way, I don't think things like "extensive experiments" can be listed as
+a contribution (in most cases). The experiments are a part of the proposed
+method for validating its effectiveness, instead of a standalone point.
+Besides, is "extensive experiments" something novel enough to highlight the
+paper?
 
 ### 7.3. Drafting a Journal Paper
 
