@@ -730,6 +730,10 @@ based on CVPR submission.  I'm not a experienced researcher, please don't take
 my personal opinions seriously. Only use the following content as a reference,
 please.
 
+Those influential (highly-cited) papers are very good examples from which
+you can learn how a good paper is composed. Try to analysis their organization,
+think about why each part exists, and how each part is connected.
+
 #### 7.2.1. Selecting a Decent Research Topic
 
 If you have not determined a concrete topic to study, you may first try to find
@@ -833,7 +837,11 @@ A good abstract should not waste too much space for the background. It is
 suggested to fastly transit from background introduction to the observations,
 motivations, and core contributions.
 
-TODO: a simple template of abstract
+A preliminary abstract may look like a combination of four key points: (1)
+background introduction; (2) observation and motivation; (3) insightful
+solution for such problem; (4) how the proposed solution is evaluted; (5)
+conclusion from the experiments. Note, abstract is flexible, and this template
+can at most serve for a preliminary draft.
 
 #### 7.2.4. Introduction
 
