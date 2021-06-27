@@ -965,6 +965,22 @@ explain the physical meaning first. Don't throw equations on the reader's face.
 
 #### 7.2.9. Conclusion
 
+The conclusion is more or less a "conjugate" version of the abstract. Their
+difference is subtle. The abstract can be written in a somewhat hypothetical
+tone (e.g., we think some problem should be solved in what way), while the
+conclusion can be written in a "determined" tone (e.g., we discover what way
+can properly solve what problem).
+
+If there is still enough space to write some words, you may also discuss
+the potential future works or research directions for the reader's reference.
+
+Anyway, redirect your energy for designing a good conclusion into designing a
+good abstract. Although I should not say something like "only a small portion
+of readers will read till the end of conclusion", do you really carefully read
+the conclusion of a paper?
+
+#### 7.2.10. Supplementary Material
+
 ### 7.3. Drafting a Journal Paper
 
 ### 7.4. Self-Reviewing and Polishing
@@ -997,6 +1013,12 @@ References:
 ### 7.6. Journal Response
 
 ### 7.7. Slides and Poster
+
+### 7.8. Miscellaneous Questions and Answers
+
+- Uploading something to Arxiv? This is too tricky. This is not a proper place
+for discussing arxiv usage, as the reasons may be subjective, which makes it
+extremely hard to tell true reasons from false reasons.
 
 ## 8. A Tiny Bit on Art
 
