@@ -981,6 +981,19 @@ the conclusion of a paper?
 
 #### 7.2.10. Supplementary Material
 
+You may include (but not limited to) these things into the supplementary
+material: (1) more visualizations; (2) a detailed explanation of some condensed
+content in the main manuscript, e.g., mathematical proofs; (3) less important
+experiments that are not necessary to be presented in the main manuscript; etc.
+
+Note, if you really have some important experiments in the supplementary
+material because there is no enough space in the main manuscript, you may
+simply mention the experiments and its most important conclusions at a proper
+place of the main manuscript.
+
+Don't break your promise in the main manuscript that you will put something in
+the supplementary material. Don't put unrealiable bits in the supplementary.
+
 ### 7.3. Drafting a Journal Paper
 
 ### 7.4. Self-Reviewing and Polishing
