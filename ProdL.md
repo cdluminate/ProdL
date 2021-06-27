@@ -870,6 +870,26 @@ paper?
 
 #### 7.2.5. Related Works
 
+An adequate survey work will make writing this section much easier.
+
+Instead of simply introducing the related works, it is suggested to organize
+these works in a clear rule: publish time? influence? or a cerntain taxonomy?
+In general, a part of related works focuses on a key word. In the related works
+section, these parts can be sorted by relevance to the main topic of the whole
+paper.
+
+Besides introducing related works, you can also clearly state the difference
+between this paper and the existing works. This section is a good place to
+emphasize any difference by contrast.
+
+#### 7.2.6. Our Approach
+
+#### 7.2.7. Experiments
+
+#### 7.2.8. Discussions
+
+#### 7.2.9. Conclusion
+
 ### 7.3. Drafting a Journal Paper
 
 ### 7.4. Polishing
