@@ -708,6 +708,33 @@ error, missing definition for a symbol, etc. As long as they do not
 considerably hamper understanding of this paper, they should be considered
 minor, and do not constitute any reason for lowering the rating.
 
+#### 6.2.1. Excerpt from CVPR reviewer guide
+
+This is directly taken from CVPR reviewer guide for your reference.
+
+**Summary:** explain the key ideas contributions, and their significance. This
+is your abstract of this paper. This summary helps the AC and the authors
+understand the rest of your review and be confident that you understand the
+paper.
+
+**Strengths:** what about the paper provides value -- interesting ideas that
+are experimentally validated, an insightful organization of related work, new
+tools, impressive results, something else? most importantly, what can someone
+interested in the topic learn from the paper?
+
+**Weakness:** what detracts from the contributions? does the paper lack
+controlled experiments to validate the contributions? are there misleading
+claims or technical errors? is it possible to understand (and ideally
+reproduce) the method and experimental setups by reading the paper?
+
+**Rating and Justification:** carefully explain why the paper should be
+accepted or not, this section should make clear which of the strengths and
+weaknesses you consider most significant.
+
+**Additional comments:** minor suggestions, questions, corrections, etc. that
+can help the authors improve the paper, but are not crucial for the overall
+recommendation.
+
 ### 6.3. Surveying a New Area
 
 I. Read the latest top conference papers, as well as the highly cited papers in
