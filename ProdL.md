@@ -14,50 +14,50 @@ This document is released under the [GNU Free Documentation License (GFDL-1.3)
 
 Click here to obtain the latest version of this document. [TODO]
 
-*ProdL* is a personal documentation project for collecting memos and hints
-that may help one boost their productivity in Deep Learning study.
-This project covers a wide range of topics, including but not limited to
-computer programming, computer organization, operating system, software
-engineering and practice, deep learning, scientific computing,
-high performance programming, program debugging, paper reading / reviewing,
-paper composing, rebuttal process, latex techniques, artistic design
-for diagrams, and integrated development environment.
+*ProdL* is a personal documentation project for collecting memos and hints that
+may help one boost their productivity in Deep Learning study.  This project
+covers a wide range of topics, including but not limited to computer
+programming, computer organization, operating system, software engineering and
+practice, deep learning, scientific computing, high performance programming,
+program debugging, paper reading / reviewing, paper composing, rebuttal
+process, latex techniques, artistic design for diagrams, and integrated
+development environment.
 
-The author will try to deliver the content in a concise manner, and will
-prefer to reference many external materials to reduce duplicated work.
-Since the author is more or less an old-school UNIX/Linux proponent,
-this document will not introduce any Windows-specific or MacOS-specific
-information, and everything will be written may sense a strong odor of UNIX
-in this document.
+The author will try to deliver the content in a concise manner, and will prefer
+to reference many external materials to reduce duplicated work.  Since the
+author is more or less an old-school UNIX/Linux proponent, this document will
+not introduce any Windows-specific or MacOS-specific information, and
+everything will be written may sense a strong odor of UNIX in this document.
 
-As a convention in the UNIX/Linux world, a notation composed by a word and a parenthesized number
-denotes reference to a manual page. For instance, `signal(7)` means the
-topic "signal" in manual page section 7. Type `man 7 signal` in a linux shell
-to read the document. If you find the manual for a specific comman too lenthy
-to read, you may also consult the [`tldr`](https://github.com/tldr-pages/tldr)
-pages.
+As a convention in the UNIX/Linux world, a notation composed by a word and a
+parenthesized number denotes reference to a manual page. For instance,
+`signal(7)` means the topic "signal" in manual page section 7. Type `man 7
+signal` in a linux shell to read the document. If you find the manual for a
+specific command too lengthy to read, you may also consult the
+[`tldr`](https://github.com/tldr-pages/tldr) pages.
 
-When talking about commands, `<keyword>` denotes a placeholder that should
-be replaced by a sensible value according to the context, instead of being
-copied from my examples literally.
+When talking about commands, `<keyword>` denotes a placeholder that should be
+replaced by a sensible value according to the context, instead of being copied
+from my examples literally.
 
 When talking about keybindings, `Mod` means the modifier key for a specifically
-discussed program. For example, the `Mod` key for `tmux` is `Ctrl+b` by default.
-Any keybinding discussed in this document is case-sensitive. Any text rendered
-in mono-spaced font are case-sensitive.
+discussed program. For example, the `Mod` key for `tmux` is `Ctrl+b` by
+default.  Any keybinding discussed in this document is case-sensitive. Any text
+rendered in mono-spaced font are case-sensitive.
 
 Should you find any error or discrepancy in the content, the author is willing
-to correct the content. Please file a bug through the Github issues channel [TODO].
+to correct the content. Please file a bug through the Github issues channel
+[TODO].
 
 Table-of-Contents is only available in the PDF version of this document.
 
 ## 0. Prerequisites
 
-In this section, I shall point out some keywords for background knowledge
-that would greatly help you throughout the journey on deep learning.
-Some audience may found these contents useless for graduation or some
-research works, but boosting one's productivity means they can enter
-a higher level in a much faster pace.
+In this section, I shall point out some keywords for background knowledge that
+would greatly help you throughout the journey on deep learning.  Some audience
+may found these contents useless for graduation or some research works, but
+boosting one's productivity means they can enter a higher level in a much
+faster pace.
 
 ### 0.1. Critical Instinct
 
@@ -73,9 +73,9 @@ Things may get much easier with the following instincts.
 
 ### 0.2. Programming Languages
 
-For deep learning, I personally think some background knowledge on ANSI C,
-C++ will be beneficial (in various aspects). Of course, one has to be proficient
-in Python as well.
+For deep learning, I personally think some background knowledge on ANSI C, C++
+will be beneficial (in various aspects). Of course, one has to be proficient in
+Python as well.
 
 * ANSI C. It provides fundamental knowledge for programming in many other languages.
 Reference book: [K&R C](https://en.wikipedia.org/wiki/The_C_Programming_Language)
@@ -88,40 +88,44 @@ performance-critical tasks.
 called `cpython`, which suffers from poor performance (compared to compiled
 languages), and GIL for multi-thread programming.
 
-I recommend the [Python Official Tutorial](https://docs.python.org/3/tutorial/index.html)
-as the core reference if you are new to Python. Note, please stay away from
-the ancient Python2 in case you intend to learn Python from other resources.
+I recommend the [Python Official
+Tutorial](https://docs.python.org/3/tutorial/index.html) as the core reference
+if you are new to Python. Note, please stay away from the ancient Python2 in
+case you intend to learn Python from other resources.
 
-It is also recommended to correctly understand the difference between
-compiled languages and interpreted languages. Generally speaking, interpreted
-languages are friendly to human efficiency, while compiled languages are
-friendly to machine efficiency.
+It is also recommended to correctly understand the difference between compiled
+languages and interpreted languages. Generally speaking, interpreted languages
+are friendly to human efficiency, while compiled languages are friendly to
+machine efficiency.
+
+TODO: discuss on languages (including modern languages)
 
 ### 0.3. Domain Specific Languages
 
 #### 0.3.1. Markup Languages for Documentation
 
 `Markdown` is a very useful markup language when you are going to write
-documentation for your software project. Yet, its usage is not limited
-to documenting. Given a correct tool such as `pandoc`, you can even write
-slides and article draft, etc.
+documentation for your software project. Yet, its usage is not limited to
+documenting. Given a correct tool such as `pandoc`, you can even write slides
+and article draft, etc.
 
 `RestructuredText` is a markup language that is very useful for documenting
-Python projects. Likewise, you can write slides or articles with it given
-a correct conversion tool such as `pandoc`.
+Python projects. Likewise, you can write slides or articles with it given a
+correct conversion tool such as `pandoc`.
 
-`Pandoc` accepts many types of input format (incl. markdown, restructuredtext, etc),
-and can convert them into latex, docx, etc.
+`Pandoc` accepts many types of input format (incl. markdown, restructured-text,
+etc), and can convert them into latex, docx, etc.
 
 References:
-- [Github Markdown Tutorial](https://guides.github.com/features/mastering-markdown/)
-- [Pandoc](https://github.com/jgm/pandoc)
+
+- [Github Markdown Tutorial](https://guides.github.com/features/mastering-markdown/)  
+- [Pandoc](https://github.com/jgm/pandoc)  
 
 #### 0.3.2. GNU Make for Automation of Simple Tasks
 
 [GNU Make](https://www.gnu.org/software/make/) is mostly used for compiling
-software projects written in C, C++, etc. That said, it is also suitable
-for automating simple (or complicated) task pipelines in non-software projects.
+software projects written in C, C++, etc. That said, it is also suitable for
+automating simple (or complicated) task pipelines in non-software projects.
 For example, compiling documentations, or executing experiment pipelines.
 
 For example, I usually keep such a `Makefile` in my CVPR draft directory:
@@ -148,26 +152,26 @@ fig1.pdf:
 
 Computer organization [[1]](https://www.coursera.org/learn/jisuanji-zucheng)
 [[2]](https://www.geeksforgeeks.org/computer-organization-and-architecture-tutorials/)
-[[3]](https://csapp.cs.cmu.edu/)
-is critical for you to correctly understand things that harms the performance
-of your program. It is also (partly) helpful for you to avoid writing prototype
-code without obvious performance flaw. Besides, such background knowledge is
-critical for you to understand the performance
-of dense numerical linear algebra.
+[[3]](https://csapp.cs.cmu.edu/) is critical for you to correctly understand
+things that harms the performance of your program. It is also (partly) helpful
+for you to avoid writing prototype code without obvious performance flaw.
+Besides, such background knowledge is critical for you to understand the
+performance of dense numerical linear algebra.
 
 In order to gain an in-depth image on computer programming (whatever in
-interpreted language or compiled language), it is suggested to be aware
-of [how compilers work](https://en.wikipedia.org/wiki/Compilers:_Principles,_Techniques,_and_Tools).
-For example, the key concepts for a compiler involves
-lexical analysis, syntax analysis, intermediate
-representation, code optimization and target code generation.
+interpreted language or compiled language), it is suggested to be aware of [how
+compilers
+work](https://en.wikipedia.org/wiki/Compilers:_Principles,_Techniques,_and_Tools).
+For example, the key concepts for a compiler involves lexical analysis, syntax
+analysis, intermediate representation, code optimization and target code
+generation.
 
 ### 0.5. Operating System and POSIX
 
 [POSIX](https://en.wikipedia.org/wiki/POSIX) is a standard for UNIX operating
-system, which defines some invariance between different Unix and other 
-operating systems such as linux. Specifically, it covers system API,
-shell and a set of core utilities.
+system, which defines some invariance between different Unix and other
+operating systems such as linux. Specifically, it covers system API, shell and
+a set of core utilities.
 
 Some important tools and programming interfaces under linux follow POSIX.
 
@@ -180,23 +184,24 @@ defined.
 - [POSIX shell Tutorial](https://www.grymoire.com/Unix/Sh.html)
 - [Bash Documentation](https://www.gnu.org/software/bash/)
 
-`zsh` can be easily configured with third-party configuration provides such
-as [Oh-My-ZSH](https://ohmyz.sh/) to provide a rich set of features.
-There are also some shells not compliant to POSIX for their own considerations,
-such as `fish` (oriented for better user interaction). `fish` can work out-of-box
-with a rich set of features without manually overriding any configuration.
+`zsh` can be easily configured with third-party configuration provides such as
+[Oh-My-ZSH](https://ohmyz.sh/) to provide a rich set of features.  There are
+also some shells not compliant to POSIX for their own considerations, such as
+`fish` (oriented for better user interaction). `fish` can work out-of-box with
+a rich set of features without manually overriding any configuration.
 
 Both `zsh` and `fish` can support syntax highlighting, automatic suggestion,
-and smarter command line completion. I think these features are beneficial
-for productivity.
+and smarter command line completion. I think these features are beneficial for
+productivity.
 
 For most linux distributions, POSIX shell is recommended if you are scripting
 for the system.
 
 #### 0.5.2. Core Utilities
 
-A non-exhaustive set of core utilities. Here I'll only list their names and main usage.
-Most of these utilities are extremely important, and are extremely valuable to learn.
+A non-exhaustive set of core utilities. Here I'll only list their names and
+main usage.  Most of these utilities are extremely important, and are extremely
+valuable to learn.
 
 Category 1: File and permission
 
@@ -254,8 +259,8 @@ wget       download from a given URI
 ssh        ssh client
 ```
 
-For detailed tutorials see [[1]](http://linux.vbird.org)
-or [Missing semester of Your CS Education](https://missing.csail.mit.edu/).
+For detailed tutorials see [[1]](http://linux.vbird.org) or [Missing semester
+of Your CS Education](https://missing.csail.mit.edu/).
 
 Besides, it is important to introduce some modern alternatives to the above
 core utilities:
@@ -276,35 +281,38 @@ In this section, we mainly discuss some tools for accessing remote hosts
   
 #### 0.7.1. OpenSSH -- Remote Login Client
   
-For what it's worth, I think OpenSSH is the most robust and resilient remote access solution.
-Please refer to the public materials for its basic usage. I shall point out some
-keys about it:
+For what it's worth, I think OpenSSH is the most robust and resilient remote
+access solution.  Please refer to the public materials for its basic usage. I
+shall point out some keys about it:
 
-1. **Automatic authorization using RSA key.** The simplest way for authentication
-is username + password, of course. However, it is widely known that many users
-tend to adopt very weak passwords lest they forget them. As a result, linux
-servers exposed to the public internet may be vulnerable to brute force SSH
-attack which enumerates commonly seen usernames and weak passwords from a
-pre-defined dictionary. Weak passwords can be easily compromised.
-However, I'd like to point out that SSH supports RSA-key authentication, which
-ensures a much stronger security level. To use such authentication method, you
-need to (1) generate a pair of RSA keys (private key and public key) using `ssh-keygen`;
-(2) Put yor public key as the `~/.ssh/authorized_keys` file on your server;
-(3) Configure your local SSH client, setting RSA key as the default authentication method.
+1. **Automatic authorization using RSA key.** The simplest way for
+authentication is username + password, of course. However, it is widely
+known that many users tend to adopt very weak passwords lest they forget them.
+As a result, linux servers exposed to the public internet may be vulnerable to
+brute force SSH attack which enumerates commonly seen usernames and weak
+passwords from a pre-defined dictionary. Weak passwords can be easily
+compromised.  However, I'd like to point out that SSH supports RSA-key
+authentication, which ensures a much stronger security level. To use such
+authentication method, you need to (1) generate a pair of RSA keys (private key
+and public key) using `ssh-keygen`; (2) Put yor public key as the
+`~/.ssh/authorized_keys` file on your server; (3) Configure your local SSH
+client, setting RSA key as the default authentication method.
 
-2. **Don't want to type the password again and again?** When we work on a linux server,
-we may need to start new ssh sessions regularly, and enter the password again and again.
-In fact, there is a daemon program named `ssh-agent` which can remember the password for
-your RSA private key. It helps you skip entering the password anytime when you need to
-authorize (e.g., ssh, scp, rsync, etc) until timeout or process termination.
-If your desktop environment does not automatically launch the
-daemon for you, you may need to do it manually somehow.
+2. **Don't want to type the password again and again?** When we work on a linux
+   server, we may need to start new ssh sessions regularly, and enter the
+password again and again.  In fact, there is a daemon program named `ssh-agent`
+which can remember the password for your RSA private key. It helps you skip
+entering the password anytime when you need to authorize (e.g., ssh, scp,
+rsync, etc) until timeout or process termination.  If your desktop environment
+does not automatically launch the daemon for you, you may need to do it
+manually somehow.
 
 3. **Network Interruption:** SSH session may accidentally terminate under poor
-network condition. To prevent the ensuing and undesired remote process termination,
-we can (1) use `nohup(1)` to block `SIGHUP` (see `signal(7)`) for a child process;
-(2) use `mosh` to auto-reconnect (will be discussed later) ;
-(3) use `tmux` to manage working processes under a tmux session (will be discussed later).
+   network condition. To prevent the ensuing and undesired remote process
+termination, we can (1) use `nohup(1)` to block `SIGHUP` (see `signal(7)`) for
+a child process; (2) use `mosh` to auto-reconnect (will be discussed later);
+and (3) use `tmux` to manage working processes under a tmux session (will be
+discussed later).
 
 OpenSSH is usually a part of standard linux server installation, so we expect
 it to be available in most cases. In some special cases, such as remote login
@@ -315,11 +323,11 @@ SSH implementation that implements the protocol-level compatibility.
 
 Working through SSH under a problematic network condition is definitely
 frustrating. We can use `mosh` to avoid reconnecting the server again and
-again, as `mosh` is able to automatically reconnect to the server when
-the network is accessible again. Mosh relies on OpenSSH.
+again, as `mosh` is able to automatically reconnect to the server when the
+network is accessible again. Mosh relies on OpenSSH.
 
-Mosh is not a default part of linux server installation. The user may have
-to install the client and the server software on proper machines.
+Mosh is not a default part of linux server installation. The user may have to
+install the client and the server software on proper machines.
 
 ### 0.7.3. Tmux -- Terminal Multiplexer
 
@@ -333,38 +341,42 @@ vertically (Key: `Mod+"`) or horizontally (Key: `Mod+%`) into two panes.  The
 `Mod` key by default is `Ctrl+b`.
 
 1. **Intermittent Connectivity:** Due to tmux's server-client architecture,
-accidental SSH connection interruption will not lead to termination of programs
-running under the tmux session. You can resume the last tmux session with
-`tmux attach`. You can even detach again from the session by `Mod+d`, and
+accidental SSH connection interruption will not lead to termination of
+programs running under the tmux session. You can resume the last tmux session
+with `tmux attach`. You can even detach again from the session by `Mod+d`, and
 manually end the SSH connection.
 
 2. **Scheduling experiments:** Tmux is so flexible that it is even scriptable.
-Leveraging its advantages, we can schedule deep learning experiments with tmux
-and automate program execution. [Here is an example](https://github.com/cdluminate/advrank/blob/master/Code/pipeline/train-mnist.sh)
-for running four experiments under a new tmux session on four GPUs simultaneously.
-More complicated scheduling can be implemented in the shell script.
+Leveraging its advantages, we can schedule deep learning experiments with
+tmux and automate program execution. [Here is an
+example](https://github.com/cdluminate/advrank/blob/master/Code/pipeline/train-mnist.sh)
+for running four experiments under a new tmux session on four GPUs
+simultaneously.  More complicated scheduling can be implemented in the shell
+script.
 
-An commonly used alternative to tmux is [GNU screen](https://www.gnu.org/software/screen/).
-[Byobu](https://www.byobu.org/) is a high level wrapper on tmux or screen that
-delivers out-of-box friendly experience.
+An commonly used alternative to tmux is [GNU
+screen](https://www.gnu.org/software/screen/).  [Byobu](https://www.byobu.org/)
+is a high level wrapper on tmux or screen that delivers out-of-box friendly
+experience.
 
 ### 0.7.3. Graphical solutions such as VNC and RDP
 
 These solutions are fancy and, of course, have a much smoother and less steep
-learning curve. I think these solutions are generally less robust than text-based
-SSH solution, because (1) they have many vulnerabilities (CVEs); (2) they requires
-much higher network bandwidth to function properly compared to SSH; (3) they
-are not scalable to a computer cluster or multiple remote servers.
-My suggestion is: use these on your preference, if it does not prevent
-you from improving productivity.
+learning curve. I think these solutions are generally less robust than
+text-based SSH solution, because (1) they have many vulnerabilities (CVEs); (2)
+they requires much higher network bandwidth to function properly compared to
+SSH; (3) they are not scalable to a computer cluster or multiple remote
+servers.  My suggestion is: use these on your preference, if it does not
+prevent you from improving productivity.
 
 ### 0.7.4. Ansible
 
 [Ansible](https://docs.ansible.com/) can be used to manage a computer cluster
-(or multiple remote hosts) in a scalable way. With this tool, you can distribute
-some local files (directories) to remote machines, gather remote files (directories)
-to local machine, or execute commands on remote machines in parallel. Please
-refer its documentation for full description of its functionalities.
+(or multiple remote hosts) in a scalable way. With this tool, you can
+distribute some local files (directories) to remote machines, gather remote
+files (directories) to local machine, or execute commands on remote machines in
+parallel. Please refer its documentation for full description of its
+functionalities.
 
 1. **Query GPU usage:** We can query the GPU usage of a group of servers in
 parallel with ansible, which automates the boring manual check process.
@@ -380,44 +392,45 @@ execution, etc.
 
 ### 0.7.5. Rsync -- Copying files across hosts
 
-You may be familiar with `scp`,
-a standard file transfer tool provided by OpenSSH. And you may have noticed
-that `scp` will transfer all file contents when copying a directory to the
-remote machine, even if we are overwriting a remote directory with merely some
-minor modifications. This could greatly hamper productivity once the directory
-to be transferred is huge.
+You may be familiar with `scp`, a standard file transfer tool provided by
+OpenSSH. And you may have noticed that `scp` will transfer all file contents
+when copying a directory to the remote machine, even if we are overwriting a
+remote directory with merely some minor modifications. This could greatly
+hamper productivity once the directory to be transferred is huge.
 
 `rsync` is an incremental file transfer tool that does not suffer from such
 issue of `scp`. It is able to transfer and only transfer the incremental change
-to the remote host, hence vastly improving efficiency especially in cases
-where you have to frequently synchronize directories among multiple hosts.
+to the remote host, hence vastly improving efficiency especially in cases where
+you have to frequently synchronize directories among multiple hosts.
 
-`rsync` is able to transfer files through SSH connection. For example, we can transfer
-a local directory to remote side by `rsync -Pav <local-directory> <user>@<ip-address>:~/my-work`,
-or transfer a remote directory to the local machine by `rsync -Pav <user>@<ip-address>:~/my-work <local-directory>`. Argument `P`, `a`, `v` mean "show progress", "archive mode", and "verbose", respectively.
-When the SSH service is listening on a non-standard port (instead of tcp/22), pass an extra argument
-to rsync to use the correct port number: `rsync -e "ssh -p <port>"`.
+`rsync` is able to transfer files through SSH connection. For example, we can
+transfer a local directory to remote side by `rsync -Pav <local-directory>
+<user>@<ip-address>:~/my-work`, or transfer a remote directory to the local
+machine by `rsync -Pav <user>@<ip-address>:~/my-work <local-directory>`.
+Argument `P`, `a`, `v` mean "show progress", "archive mode", and "verbose",
+respectively.  When the SSH service is listening on a non-standard port
+(instead of tcp/22), pass an extra argument to rsync to use the correct port
+number: `rsync -e "ssh -p <port>"`.
 
-A successful file transfer via `rsync` requires it to be installed on
-both the machines of client and the server sides.
+A successful file transfer via `rsync` requires it to be installed on both the
+machines of client and the server sides.
 
 ### 0.7.6. SSHFS -- Mounting remote directory through SSH+FUSE
 
-`sshfs` allows you to mount a remote directory to a local path through
-SSH and FUSE. For example, if you want to mount a remote directory to
-a local path, in order to browse the images on the remote host later:
-`sshfs <user>@<remote-host>:/<remote-directory> ~/<local-path>`.
-In this way you don't have to copy these images to the local host in order
-to browse them. Besides, files under the mountpoint can be manipulated with
-standard file management tools such as cp, mv, etc as if are are manipulating
-local files.
+`sshfs` allows you to mount a remote directory to a local path through SSH and
+FUSE. For example, if you want to mount a remote directory to a local path, in
+order to browse the images on the remote host later: `sshfs
+<user>@<remote-host>:/<remote-directory> ~/<local-path>`.  In this way you
+don't have to copy these images to the local host in order to browse them.
+Besides, files under the mount-point can be manipulated with standard file
+management tools such as cp, mv, etc as if are are manipulating local files.
 
 ### 0.7.7. NFS
 
-Network File System (NFS) is used for exporting server's local directories for some
-specified clients, so that the clients are able to mount the exported directories
-locally. It is similar to sshfs, but is much more scalable and robust for computer
-clusters.
+Network File System (NFS) is used for exporting server's local directories for
+some specified clients, so that the clients are able to mount the exported
+directories locally. It is similar to sshfs, but is much more scalable and
+robust for computer clusters.
 
 ### 0.8. Software Engineering
 
@@ -431,10 +444,10 @@ Reference book:
 
 ### 0.9. Git Workflow (Version Control System)
 
-Extremely important for production sanity, safety, and reliability.
-I'm not interested in explaining exactly how important it is or why.
+Extremely important for production sanity, safety, and reliability.  I'm not
+interested in explaining exactly how important it is or why.
 
-There are some alternative version control systems to git, such as svn, hg, etc.
+There are also alternative version control systems, such as svn, hg, etc.
 
 ## 1. Correctly Understanding Deep Learning Framework
 
@@ -458,33 +471,35 @@ form without actually calculating numbers.
 is the collection of tools, techniques, and theories required to solve on a
 computer mathematical models of problems in science and engineering.
 
-Numerical Linear algebra is a very important part of scientific computation. Where there
-is multi-dimensional arrays, there is numerical linear algebra. Judging on the difference
-in how multi-dimensional arrays are organized in the memory, numerical linear algebra
-can be either dense or sparse. Linear algebra operations that manipulates
-a contiguous chunk of memory belong to dense numerical linear algebra.
+Numerical Linear algebra is a very important part of scientific computation.
+Where there is multi-dimensional arrays, there is numerical linear algebra.
+Judging on the difference in how multi-dimensional arrays are organized in the
+memory, numerical linear algebra can be either dense or sparse. Linear algebra
+operations that manipulates a contiguous chunk of memory belong to dense
+numerical linear algebra.
 
-The most computational intensive parts of deep neural networks, are covered
-by numerical linear algebra. Namely, numerical linear algebra is largely
-a computational performance bottleneck of a deep neural network.
+The most computational intensive parts of deep neural networks, are covered by
+numerical linear algebra. Namely, numerical linear algebra is largely a
+computational performance bottleneck of a deep neural network.
 
 [1] https://www.scicomp.uni-kl.de/about/scientific-computing/
 
 ### 2.1. IEEE 754 and Floating-Point Precision
 
-In [numerical analysis](https://en.wikipedia.org/wiki/Numerical_analysis#Generation_and_propagation_of_errors),
+In [numerical
+analysis](https://en.wikipedia.org/wiki/Numerical_analysis#Generation_and_propagation_of_errors),
 the floating-point standard (IEEE 754) has a very strong implication on
 floating-point precision and error due to limited machine number presentation.
 There are round-off errors, truncation errors, discretization errors, and
 numerical stability (overflow, underflow) issues.
 
 In the code implementation of some machine learning algorithms, you may have
-noticed that a very small constant `e` will be added to a fraction `a/(b+e)`
-in order to maintain numerical stability, especially when `b` may be a very
-small value (will lead to a very large value, which eventually overflows to
-`+inf`). You may also see some mathematical operations transformed to other
-forms for sake of better numerical stability during computation. Refer to
-Section 4 of [Z2] for detail.
+noticed that a very small constant `e` will be added to a fraction `a/(b+e)` in
+order to maintain numerical stability, especially when `b` may be a very small
+value (will lead to a very large value, which eventually overflows to `+inf`).
+You may also see some mathematical operations transformed to other forms for
+sake of better numerical stability during computation. Refer to Section 4 of
+[Z2] for detail.
 
 All scientific computing libraries, especially those important ones, must be
 aware of floating-point precision, and ensure a sensible level of numerical
@@ -495,57 +510,60 @@ to a proper state with lower precision (e.g., float32, bfloat16, float16) in
 return of much higher throughput. In practice, training neural networks using
 float64 is not necessary, and float32 is the default precision for most cases.
 
+TODO: simple examples in C language
+
 ### 2.2. Numerical Linear Algebra
 
 **Numerical linear algebra** focuses on linear algebra operations on
 multi-dimensional numerical arrays, either dense or sparse. It covers
 vector-vector, matrix-vector, matrix-matrix operations such as addition and
-multiplication, as well as a series of matrix decomposition methods,
-matrix inversions, least squared solvers, etc.
+multiplication, as well as a series of matrix decomposition methods, matrix
+inversions, least squared solvers, etc.
 
 **Dense numerical linear algebra** manipulates numerical arrays stored in a
-continuous chunk of memory (the whole array can be linearly indexed in the memory).
-Example libraries include Basic Linear Algebra Subroutines (BLAS) and
+continuous chunk of memory (the whole array can be linearly indexed in the
+memory).  Example libraries include Basic Linear Algebra Subroutines (BLAS) and
 Library of Linear Algebra Routines (LAPACK). The reference implementation for
 both of them are written in Fortran, and have a very stable set of API and ABI.
 Due to a very long history and very important roles in scientific computing,
 BLAS and LAPACK can be regarded as a standard.
 
-* BLAS: As you may have noticed, BLAS API follows a Fortran-flavor naming scheme.
-The first character indicates precision (`s` for single-precision (float32),
-`d` for double-precision (float64), `c` for single-precision complex, `z` for
-double-precision complex). The trailing letters describe the abbreviated operation name.
-BLAS functionalities can be divided into three groups: 
-vector-vector subroutines (also called level-1 BLAS;
-e.g., `sasum` for single-precision [s] absolute [a] sum [sum] of a vector;
-`saxpy` for single-precision [s] (constant) alpha [a] * (vector) x [x] + [p] (vector) y [y];
-`?scal` for scaling a vector by a constant; `?dot` for dot-product between two vectors;
-`?swap` for swapping values between two vectors; `?copy` for copying a vector to another;
-`?nrm2` for the L-2 norm of a vector),
-matrix-vector subroutines (also called level-2 BLAS;
-e.g., `sgemv` for single-precision [s] general [ge] matrix-vector [mv] multiplication;
-`?ger` for multiplying a column vector with a row vector into a matrix),
-and matrix-matrix subroutines (also called level-3 BLAS;
-e.g., `sgemm` for single-precision [s] general [ge] matrix-matrix [mm] multiplication.
-For level-2 and level-3 BLAS, there are operations for other types of matrices
-for better efficiency. For example, `ssymv` is for single-precision symmetric [sy]
-matrix-vector multiplication. BLAS also support specifying strides, matrix transpose,
-upper/lower-triangular, etc. Please refer the netlib blas cheatsheet [todo] for more details
-of the BLAS API.
+* BLAS: As you may have noticed, BLAS API follows a Fortran-flavor naming
+scheme.  The first character indicates precision (`s` for single-precision
+(float32), `d` for double-precision (float64), `c` for single-precision
+complex, `z` for double-precision complex). The trailing letters describe the
+abbreviated operation name.  BLAS functionalities can be divided into three
+groups: vector-vector subroutines (also called level-1 BLAS; e.g., `sasum` for
+single-precision [s] absolute [a] sum [sum] of a vector; `saxpy` for
+single-precision [s] (constant) alpha [a] * (vector) x [x] + [p] (vector) y
+[y]; `?scal` for scaling a vector by a constant; `?dot` for dot-product between
+two vectors; `?swap` for swapping values between two vectors; `?copy` for
+copying a vector to another; `?nrm2` for the L-2 norm of a vector),
+matrix-vector subroutines (also called level-2 BLAS; e.g., `sgemv` for
+single-precision [s] general [ge] matrix-vector [mv] multiplication; `?ger` for
+multiplying a column vector with a row vector into a matrix), and matrix-matrix
+subroutines (also called level-3 BLAS; e.g., `sgemm` for single-precision [s]
+general [ge] matrix-matrix [mm] multiplication.  For level-2 and level-3 BLAS,
+there are operations for other types of matrices for better efficiency. For
+example, `ssymv` is for single-precision symmetric [sy] matrix-vector
+multiplication. BLAS also support specifying strides, matrix transpose,
+upper/lower-triangular, etc. Please refer the netlib blas cheatsheet [todo] for
+more details of the BLAS API.
 
 * LAPACK: LAPACK involves higher-level linear algebra subroutines built upon
-BLAS (BLAS is frequently used in LAPACK subroutines). For example, `?gesv` solves
-linear system `AX=B`, `?gels` for solving generalized (underdetermined or
-underdetermined) linear system using QR or LU decomposion, `?gesvd` performs
+BLAS (BLAS is frequently used in LAPACK subroutines). For example, `?gesv`
+solves linear system `AX=B`, `?gels` for solving generalized (under-determined
+or over-determined) linear system using QR or LU decomposition, `?gesvd` performs
 general singular value decomposition, and `?gesdd` is an alternative algorithm
-to `?gesvd` for singular value decomposition in lower precision but faster speed.
+to `?gesvd` for singular value decomposition in lower precision but faster
+speed.
 
 **Sparse numerical linear algebra**, as is named, manipulates sparse numerical
 arrays that are organized in specific ways (instead of a continuous chunk of
 memory), because there are different measures to efficiently store a matrix
-with most elements being zero. Example libraries include SuiteSparse and
-Scipy (`scipy.sparse`). Sparse linear algebra provides similar functionalities
-to dense linear algebra, and are simply specifically designed due to its special
+with most elements being zero. Example libraries include SuiteSparse and Scipy
+(`scipy.sparse`). Sparse linear algebra provides similar functionalities to
+dense linear algebra, and are simply specifically designed due to its special
 array organization.
 
 ### 2.3. Dense Linear Algebra Acceleration
@@ -575,7 +593,7 @@ GPU is not always faster than CPU in terms of linear algebra operations, as
 `cudaMemcpy` is not something trivial. For instance, CPU could be much faster
 than GPU in terms of very small matrix multiplication, because the `cudaMemcpy`
 latency for transmitting the matrix from RAM to video memory already exceeded
-the time comsumption of CPU.
+the time consumption of CPU.
 
 ### 3.3. IO and Storage System
 
@@ -605,48 +623,50 @@ int is an object. overhead of magic methods.
 
 ## 6. Paper Reading and Reviewing
 
-In the past, I used to ask my advisor: "I don't have idea about
-what to study next. Could you please give me some advice?".
-Now I realized that asking such kind of question basically
-indicates the lack of paper reading, or the reading technique
-and strategy is questionable.
+In the past, I used to ask my advisor: "I don't have idea about what to study
+next. Could you please give me some advice?".  Now I realized that asking such
+kind of question basically indicates the lack of paper reading, or the reading
+technique and strategy is questionable.
 
-Paper reading and paper reviewing are two very similar process, but there
-are still some subtle differences. The motivation of paper reading is usually
+Paper reading and paper reviewing are two very similar process, but there are
+still some subtle differences. The motivation of paper reading is usually
 grasping new ideas and techniques and adding them into your knowledge graph,
-and sometimes seeking for inspirations. The process of paper reviewing is
-far beyond paper reading. One has to not only grasp the new ideas correctly,
-but also has to think critically -- Is the proposed method technically correct
-and sound? Is the paper logic fluent? Are the experiments designed scientifically?
+and sometimes seeking for inspirations. The process of paper reviewing is far
+beyond paper reading. One has to not only grasp the new ideas correctly, but
+also has to think critically -- Is the proposed method technically correct and
+sound? Is the paper logic fluent? Are the experiments designed scientifically?
 etc.
 
-In my opinion, when one is able to review a paper well, they are already
-able to understand the key points for reading a paper. Thus, I shall omit
-discusson on paper reading, and directly talk about paper reviewing.
+In my opinion, when one is able to review a paper well, they are already able
+to understand the key points for reading a paper. Thus, I shall omit discussion
+on paper reading, and directly talk about paper reviewing.
 
 ### 6.1. Paper Reviewing
 
 First we can refer to some paper review guidelines, e.g., [CVPR2020 reviewer
 guideline](http://cvpr2020.thecvf.com/submission/main-conference/reviewer-guidelines)
 in order to understand what is a good review, and what should a good review
-represent. You can also read the [CVPR AC Guide](http://cvpr2020.thecvf.com/submission/main-conference/reviewer-guidelines)
+represent. You can also read the [CVPR AC
+Guide](http://cvpr2020.thecvf.com/submission/main-conference/reviewer-guidelines)
 to see what kind of review is helpful for the community, and what's not.
 
 Carefully think about the following questions when you try to review a paper:
 (I summarized these points based on external materials)
 
-1. What is the problem addressed in this paper? Is this problem important?
-A paper must has its core focus. An influential paper must be discussing about
-something important.
+1. What is the problem addressed in this paper? Is this problem important?  How
+well is the problem addressed? What are possibly remaining but valuable
+problems? A paper must has its core focus. An influential paper must be
+discussing about something important. Besides, if nothing can be done following
+this work, then who will cite this paper?
 
 2. What is the scientific hypothesis that the paper is trying to verify?
 A good paper must has a good motivation. And a good, deterministic motivation
 is highly likely leading to clear hypothesis before conducting experiments.
 
-3. What are the related works? What are the most related works? A good paper
-must has its uniqueness, and can be clearly differentiated from existing
-works. The related works can help you embed this paper
-in your knowledge network.
+3. What are the related works? Are the differences compared to the most
+relevant works clearly justified? A good paper must has its uniqueness, and
+can be clearly differentiated from existing works. The related works can help
+you embed this paper in your knowledge network.
 
 4. What is the key of the proposed solution in this paper? This is the core
 contribution and novelty of this paper.
@@ -656,41 +676,37 @@ sufficient to support the effectiveness of the proposed method? Can the performa
 improvement be attributed to the core contribution? Does the experiments support
 the hypothesis of the paper?
 
-6. What is possibly remaining problems? Or what could be the future work?
-If nothing can be done subsequently, who will cite this paper then?
-
-[1] https://www.msra.cn/zh-cn/news/outreach-articles/%E5%BE%AE%E8%BD%AF%E5%AF%BC%E5%B8%88%E4%BA%B2%E6%8E%88%E8%AE%BA%E6%96%87%E7%A0%94%E8%AF%BB%E5%8D%81%E9%97%AE%E5%9B%9E%E7%AD%94%E9%80%9A%E5%88%99
+[1] [external reference](https://www.msra.cn/zh-cn/news/outreach-articles/%E5%BE%AE%E8%BD%AF%E5%AF%BC%E5%B8%88%E4%BA%B2%E6%8E%88%E8%AE%BA%E6%96%87%E7%A0%94%E8%AF%BB%E5%8D%81%E9%97%AE%E5%9B%9E%E7%AD%94%E9%80%9A%E5%88%99)
 
 [2] https://zhuanlan.zhihu.com/p/163227375
 
 ### 6.2. Writing a Review for Paper
 
-The review mainly consists of five parts: (1) paper summary; (2) paper strengths;
-(3) paper weaknesses; (4) preliminary rating and justification; (5) detailed
-comments (including minor issues of the paper).
+The review mainly consists of five parts: (1) paper summary; (2) paper
+strengths; (3) paper weaknesses; (4) preliminary rating and justification; (5)
+detailed comments (including minor issues of the paper).
 
-Some aspects on which you can make a comment: Is the paper organization logically
-fluent? Is the survey of related works adequate? Is the technical contribution
-clearly described? Is the technical contribution original? Is the technical
-contribution sound? Are the experiments
-scientifically designed? Are the experiments sufficient to support the hypothesis
-or demonstrate the effectivensss? Are there enough details for the reader to
-reproduce this work? Can the performance improvement be attributed to the
-contribution of this paper? Be sure to be specific when giving comments
-on these aspects.
+Some aspects on which you can make a comment: Is the paper organization
+logically fluent? Is the survey of related works adequate? Is the technical
+contribution clearly described? Is the technical contribution original? Is the
+technical contribution sound? Are the experiments scientifically designed? Are
+the experiments sufficient to support the hypothesis or demonstrate the
+effectiveness? Are there enough details for the reader to reproduce this work?
+Can the performance improvement be attributed to the contribution of this
+paper? Be sure to be specific when giving comments on these aspects.
 
-Of course, the reviwers can make some subjective judgements. For instance,
-is the paper well written? Is the paper novel? Once you decide to give
-such subjective comments, please be sure to be specific. Namely, you should
-explain why the paper is (not) well-written (which paragraph / part, due to what?),
-or explain why this paper lacks novelty (or originality).
-Carelessly saying a paper lacks novelty without providing concrete reasons
-and evidence is irresponsible and harmful for the research community.
+Of course, the reviewers can make some subjective judgements. For instance, is
+the paper well written? Is the paper novel? Once you decide to give such
+subjective comments, please be sure to be specific. Namely, you should explain
+why the paper is (not) well-written (which paragraph / part, due to what?), or
+explain why this paper lacks novelty (or originality).  Carelessly saying a
+paper lacks novelty without providing concrete reasons and evidence is
+irresponsible and harmful for the research community.
 
 If you find some errors in the manuscript, such as typo, small mathematical
-error, missing definition for a symbol, etc. As long as they do not considerably
-hamper understanding of this paper, they should be considered minor, and do
-not constitute any reason for lowering the rating.
+error, missing definition for a symbol, etc. As long as they do not
+considerably hamper understanding of this paper, they should be considered
+minor, and do not constitute any reason for lowering the rating.
 
 ### 6.3. Surveying a New Area
 
@@ -707,15 +723,14 @@ TODO
 
 ## 7. Organizing Preliminary Draft
 
-This section mainly discuss latex typesetting, drafting
-conference / journal papers, polishing papers before submission,
-conference / journal rebuttal, slides and poster composing.
+This section mainly discuss latex typesetting, drafting conference / journal
+papers, polishing papers before submission, conference / journal rebuttal,
+slides and poster composing.
 
 ### 7.1. LaTeX Typesetting
 
-LaTeX is not a WYSIWYG text composing system, but it is
-prevalent for professional typesetting, such as paper
-composing.
+LaTeX is not a WYSIWYG text composing system, but it is prevalent for
+professional typesetting, such as paper composing.
 
 todo: lshort
 
@@ -730,15 +745,15 @@ based on CVPR submission.  I'm not a experienced researcher, please don't take
 my personal opinions seriously. Only use the following content as a reference,
 please.
 
-Those influential (highly-cited) papers are very good examples from which
-you can learn how a good paper is composed. Try to analysis their organization,
+Those influential (highly-cited) papers are very good examples from which you
+can learn how a good paper is composed. Try to analysis their organization,
 think about why each part exists, and how each part is connected.
 
 #### 7.2.1. Selecting a Decent Research Topic
 
 If you have not determined a concrete topic to study, you may first try to find
 a research field of your interest and pleasure. Then assemble an informal
-survey (or mindmap) for this field. Be sensitive to the taxonomy of existing
+survey (or mind-map) for this field. Be sensitive to the taxonomy of existing
 works, the trend of a field, the remaining (but important) problems in a field.
 
 In practice, a pure research topic might be saturated already (e.g., image
@@ -762,11 +777,11 @@ resource when choosing a concrete topic.
 When your have a preliminary new idea, it is very important to instantly setup
 a prototype to validate the idea. Some ablation study or parameter search may
 involve in the process, but it should not take too long time for you to
-validate whether or not the new idea works. Not every new idea will work as
-you expected. Being able to quickly verify whether or not it works is equivalent
-to saving one's life, or at least buying more time and energy.
-The methodology of ablation study and parameter search is discussed in separate
-section of this material.
+validate whether or not the new idea works. Not every new idea will work as you
+expected. Being able to quickly verify whether or not it works is equivalent to
+saving one's life, or at least buying more time and energy.  The methodology of
+ablation study and parameter search is discussed in separate section of this
+material.
 
 For academic research, a good new idea and its prototype is not necessarily a
 complicated product.  Complicated products significantly increases the cost for
@@ -783,9 +798,9 @@ and strong experimental evaluations; (6) instructive or inspiring for readers
 
 #### 7.2.2. Selecting a Title.
 
-The title conveys some key information to the reader -- what idea or method
-is proposed for what purpose? The title should be composed of a few key words
-covering: (1) the problem that this paper focuses on; (2) the idea, method, or 
+The title conveys some key information to the reader -- what idea or method is
+proposed for what purpose? The title should be composed of a few key words
+covering: (1) the problem that this paper focuses on; (2) the idea, method, or
 novelty of this paper. Besides conveying ideas to the reader, the title must
 also be easily searchable (unless you don't want to be cited).
 
@@ -819,17 +834,17 @@ reader from quickly understanding your work. Replacing new concepts with plain
 and naive descriptions may be a good idea for reducing the understanding
 obstacle.
 
-After finishing a good abstract, the reader should be roughly aware of
-what the paper is doing, and what is the key point of this paper.
-Hence, the readers can properly build their attention based on such prior
-knowledge, and better understand the paper.
+After finishing a good abstract, the reader should be roughly aware of what the
+paper is doing, and what is the key point of this paper.  Hence, the readers
+can properly build their attention based on such prior knowledge, and better
+understand the paper.
 
 Rethink of the abstract if your friend unfamiliar with related fields cannot
 grasp even a bit of idea from it.  Rewrite the abstract if your collaborator
 cannot obtain the discussed information from it.
 
-If you don't know how to write an abstract for your almost-finished paper,
-try to force yourself to present the work to the others within two or three
+If you don't know how to write an abstract for your almost-finished paper, try
+to force yourself to present the work to the others within two or three
 minutes. This process may help you condense the paper and extract the core
 parts from it.
 
@@ -839,16 +854,16 @@ motivations, and core contributions.
 
 A preliminary abstract may look like a combination of four key points: (1)
 background introduction; (2) observation and motivation; (3) insightful
-solution for such problem; (4) how the proposed solution is evaluted; (5)
+solution for such problem; (4) how the proposed solution is evaluated; (5)
 conclusion from the experiments. Note, abstract is flexible, and this template
 can at most serve for a preliminary draft.
 
 #### 7.2.4. Introduction
 
-In the most ideal case, every part of the introduction can be corresponded
-to a word in the abstract. Namely, the introduction can be seen as an
-extended version of the abstract. Similarly, the storyline of the introduction
-should be logically linear for ease of writing and understanding.
+In the most ideal case, every part of the introduction can be corresponded to a
+word in the abstract. Namely, the introduction can be seen as an extended
+version of the abstract. Similarly, the storyline of the introduction should be
+logically linear for ease of writing and understanding.
 
 The introduction part has abound space for smooth connection between the key
 points of the paper to make the story line simple and linear. Some important
@@ -856,9 +871,9 @@ but transitional sentences will not be written in the abstract -- the
 introduction is where they should be put.
 
 Being logically linear is quite important. Many readers will only skim the
-abstract (and figures). Some of them will skim more until the end of introduction.
-Abrupt logical organization or too much irrelevant content will definitely
-distract the reader from whatever they should focus on.
+abstract (and figures). Some of them will skim more until the end of
+introduction.  Abrupt logical organization or too much irrelevant content will
+definitely distract the reader from whatever they should focus on.
 
 A fast reading technique is to read only the first sentence of a paragraph.
 When you write a paragraph, it is also a good practice to only include one key
@@ -866,8 +881,8 @@ point in a paragraph, and clearly state the key point of this paragraph in the
 first sentence. This is merely optional.
 
 In the end of the introduction, the contributions of a paper should be
-summarized following the convention. This summarization is also helpful
-for rushy reviewers that do not really have much spare time on the paper --
+summarized following the convention. This summarization is also helpful for
+rushy reviewers that do not really have much spare time on the paper --
 explicit pointers on the paper contribution sometimes help.
 
 By the way, I don't think things like "extensive experiments" can be listed as
@@ -881,7 +896,7 @@ paper?
 An adequate survey work will make writing this section much easier.
 
 Instead of simply introducing the related works, it is suggested to organize
-these works in a clear rule: publish time? influence? or a cerntain taxonomy?
+these works in a clear rule: publish time? Influence? Or a certain taxonomy?
 In general, a part of related works focuses on a key word. In the related works
 section, these parts can be sorted by relevance to the main topic of the whole
 paper.
@@ -893,12 +908,12 @@ emphasize any difference by contrast.
 #### 7.2.6. Our Approach
 
 This section mainly involves formulations and detailed solution. Try to keep
-the storyline as simple as possible. This section cannot be written along
-the logic of pseudo-code of your algorithm.
+the storyline as simple as possible. This section cannot be written along the
+logic of pseudo-code of your algorithm.
 
 Although we focus on technical (mathematical) details in this section, please
-don't hard-code any concrete parameter. Don't abruptly present conclusions
-from experimental results neither.
+don't hard-code any concrete parameter. Don't abruptly present conclusions from
+experimental results neither.
 
 Linearity is also important for this section. For example, our proposed method
 has several variants. In pseudo-code, these variants can be organized in an
@@ -928,20 +943,20 @@ your motivation, and smoothly transit to the discussion on core topic.
 
 ### 7.5. Conference Rebuttal
 
-Carefully read the official rebuttal instructions, e.g., the [ICCV2021
-rebuttal instructions](http://iccv2021.thecvf.com/node/4#rebuttal-instructions),
-and fetch the template. Then extract the questions from the reviews, and answer
+Carefully read the official rebuttal instructions, e.g., the [ICCV2021 rebuttal
+instructions](http://iccv2021.thecvf.com/node/4#rebuttal-instructions), and
+fetch the template. Then extract the questions from the reviews, and answer
 them one by one.
 
 TODO: key points for writing a rebuttal.
 
 Don't always assume the reviewers are in good faith if you feel some reviewer
-response strange. Always be prepared for the
-worst case and the ensuing implications, say, when the reviewer is somehow
-hostile or irresponsible. Whether or not such reviewer will devastate the
-reputation of the research community, for oneself the most important thing is
-happiness, as almost nothing can be done to fight against injustice or fate.
-Reaching your family for support might be a good idea at this point.
+response strange. Always be prepared for the worst case and the ensuing
+implications, say, when the reviewer is somehow hostile or irresponsible.
+Whether or not such reviewer will devastate the reputation of the research
+community, for oneself the most important thing is happiness, as almost nothing
+can be done to fight against injustice or fate.  Reaching your family for
+support might be a good idea at this point.
 
 References:
 
@@ -965,11 +980,13 @@ Color, Shapes, Lines, Layout, Fonts
 
 ### A.1. Proficiency
 
-I'd like the emphasize again that the [python official tutorial](https://docs.python.org/3/tutorial/index.html) is one of the best (free-of-charge) learning materials.
+I'd like the emphasize again that the [python official
+tutorial](https://docs.python.org/3/tutorial/index.html) is one of the best
+(free-of-charge) learning materials.
 
-Here I have some additional questions and hints on python programming.
-Note, please make sure that you can instantly verify your programming idea
-with `ipython`, and learn programming in an interactive way.
+Here I have some additional questions and hints on python programming.  Note,
+please make sure that you can instantly verify your programming idea with
+`ipython`, and learn programming in an interactive way.
 
 1. Do you know what `'string'`, `"string"`, `"""string"""`, `r'string'`
 and `f'string'` mean in python? Which one should be used in what scenario?
