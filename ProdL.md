@@ -933,6 +933,34 @@ your motivation, and smoothly transit to the discussion on core topic.
 
 #### 7.2.7. Experiments
 
+This part is relatively easy to write, as long as you have a clear mind on
+what to experiment or verify, and what result supports what hypothesis.
+
+In convention, we may first introduce the experimental settings, such as
+dataset information and the model details such as hyper-parameters, optimizer
+parameters, data pre-processing pipeline, and some minor implementation details
+that better ensures the reproducibility of this work. Anyway, don't hide
+important details.
+
+Then, you may try to describe how your experiment is organized and conducted,
+as well as why you do such experiment. Then you may explain how the result
+tables and figures mean, and compare your solution with the previous works.
+Besides some shallow conclusions (e.g., the results demonstrate the
+effectiveness of our proposed method), try to dive deeper into the reason why
+your solution works, while surpassing the existing works (e.g., the solution
+overcomes the XXX problem that the previous methods unanimously neglected; of
+course, you may immediately realize that you need some ablation study or
+parameter search to support your claim).
+
+In brief, the template for the experiments section is (1) what to do; (2) why
+doing it; (3) how to do it; (4) what is the result, and how good is it
+comparing with previous works; (5) what does the result imply; (6) why do we
+obtain such a result, or can we attribute the improvement to our core
+contribution; (7) what's possibly the remaining limitation.
+
+Note, if you need to add equations in the experiments section, please always
+explain the physical meaning first. Don't throw equations on the reader's face.
+
 #### 7.2.8. Discussions
 
 #### 7.2.9. Conclusion
