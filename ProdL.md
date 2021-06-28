@@ -381,7 +381,7 @@ it to be available in most cases. In some special cases, such as remote login
 of embedded devices, the server side may be running Dropbear, which is another
 SSH implementation that implements the protocol-level compatibility.
 
-### 0.7.2. Mosh -- Supporting Intermittent Connectivity
+#### 0.7.2. Mosh -- Supporting Intermittent Connectivity
 
 Working through SSH under a problematic network condition is definitely
 frustrating. We can use `mosh` to avoid reconnecting the server again and
@@ -391,7 +391,7 @@ network is accessible again. Mosh relies on OpenSSH.
 Mosh is not a default part of linux server installation. The user may have to
 install the client and the server software on proper machines.
 
-### 0.7.3. Tmux -- Terminal Multiplexer
+#### 0.7.3. Tmux -- Terminal Multiplexer
 
 Technically speaking tmux has no business with remote access, but tmux is
 usually used in conjunction with ssh (or mosh). Simply type `tmux` to start a
@@ -421,7 +421,7 @@ screen](https://www.gnu.org/software/screen/).  [Byobu](https://www.byobu.org/)
 is a high level wrapper on tmux or screen that delivers out-of-box friendly
 experience.
 
-### 0.7.3. Graphical solutions such as VNC and RDP
+#### 0.7.3. Graphical solutions such as VNC and RDP
 
 These solutions are fancy and, of course, have a much smoother and less steep
 learning curve. I think these solutions are generally less robust than
@@ -431,7 +431,7 @@ SSH; (3) they are not scalable to a computer cluster or multiple remote
 servers.  My suggestion is: use these on your preference, if it does not
 prevent you from improving productivity.
 
-### 0.7.4. Ansible
+#### 0.7.4. Ansible
 
 [Ansible](https://docs.ansible.com/) can be used to manage a computer cluster
 (or multiple remote hosts) in a scalable way. With this tool, you can
@@ -452,7 +452,7 @@ My project [gpu-load-watcher](https://github.com/cdluminate/gpu-load-watcher)
 is based on ansible for sqlite3 database collection, as well as remote command
 execution, etc.
 
-### 0.7.5. Rsync -- Copying files across hosts
+#### 0.7.5. Rsync -- Copying files across hosts
 
 You may be familiar with `scp`, a standard file transfer tool provided by
 OpenSSH. And you may have noticed that `scp` will transfer all file contents
@@ -477,7 +477,7 @@ number: `rsync -e "ssh -p <port>"`.
 A successful file transfer via `rsync` requires it to be installed on both the
 machines of client and the server sides.
 
-### 0.7.6. SSHFS -- Mounting remote directory through SSH+FUSE
+#### 0.7.6. SSHFS -- Mounting remote directory through SSH+FUSE
 
 `sshfs` allows you to mount a remote directory to a local path through SSH and
 FUSE. For example, if you want to mount a remote directory to a local path, in
@@ -487,7 +487,7 @@ don't have to copy these images to the local host in order to browse them.
 Besides, files under the mount-point can be manipulated with standard file
 management tools such as cp, mv, etc as if are are manipulating local files.
 
-### 0.7.7. NFS
+#### 0.7.7. NFS
 
 Network File System (NFS) is used for exporting server's local directories for
 some specified clients, so that the clients are able to mount the exported
