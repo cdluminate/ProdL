@@ -52,7 +52,7 @@ channel](https://github.com/cdluminate/ProdL/issues).
 
 Table-of-Contents is only available in the PDF version of this document.
 
-## 0. Prerequisites
+## 0. Miscellaneous Prerequisites
 
 In this section, I shall point out some keywords for background knowledge that
 would greatly help you throughout the journey on deep learning.  Some audience
@@ -64,13 +64,17 @@ faster pace.
 
 Things may get much easier with the following instincts.
 
-* Be aware of what you are doing, and what you intend to do.
+* **Be aware of what you are doing, and what you intend to do.**
 
-* Carefully read and try to understand the output of programs.
+* **Carefully read and try to understand the output of programs.**
 
-* [Ask questions in a smart way.](http://www.catb.org/~esr/faqs/smart-questions.html)
+* [**Ask questions in a smart way.**](http://www.catb.org/~esr/faqs/smart-questions.html)
 
-* Be sensitive to the definitions of terms and mathematical things.
+* **Be sensitive to the definitions of terms and mathematical things.**
+
+That this subsection does not contain bulky texts does not mean it's not
+important. Let me omit explanations and negative examples regarding the above
+points.
 
 ### 0.2. Programming Languages
 
@@ -85,9 +89,12 @@ Reference book: [K&R C](https://en.wikipedia.org/wiki/The_C_Programming_Language
 libraries such as OpenCV are written in C++. It is suitable for some
 performance-critical tasks.
 
-* Python. An interpreted "glue" language. The standard Python interpreter is
-called `cpython`, which suffers from poor performance (compared to compiled
-languages), and GIL for multi-thread programming.
+* Python. An interpreted "glue" language. The standard Python interpreter
+implementation is called `cpython`, which suffers from poor performance
+(compared to compiled languages), and GIL for multi-thread programming.  Other
+python implementations such as [Pypy](https://www.pypy.org/) and RustPython
+exist, but, for instance, [Pypy's support for numpy is still not mature
+enough](https://doc.pypy.org/en/latest/faq.html?highlight=numpy#what-about-numpy-numpypy-micronumpy).
 
 I recommend the [Python Official
 Tutorial](https://docs.python.org/3/tutorial/index.html) as the core reference
@@ -99,7 +106,25 @@ languages and interpreted languages. Generally speaking, interpreted languages
 are friendly to human efficiency, while compiled languages are friendly to
 machine efficiency.
 
-TODO: discuss on languages (including modern languages)
+Python, in terms of language design, is still not perfect. It still lacks some
+features in modern languages. To some extent, it is good to know the existence
+of some other existing languages and there highlights.
+
+* [Julia](https://julialang.org/) is a modern language for scientfic computing.
+It is a compiled language that provides a feeling of interpreted language. It
+is designed for high performance via LLVM's JIT compilation. It supports many
+good language features that does not ever exist in python. Julia suffers from
+some issues such as significant JIT compilation time consumption for the
+first-time-plot. By the way, Julia uses column-major indexing for internal
+arrays following Fortran instead of C.
+
+* [Rust programming language](https://www.rust-lang.org/) is a modern compiled
+language that aims for performance and reliability. It helps the programmer
+eliminate the need to run valgrind from time to time when debugging memory
+issues for a C++ program. Rust has a relatively steep learning curve.
+
+Refer to the [TIOBE list](https://www.tiobe.com/tiobe-index/) for more
+reference on programming languages.
 
 ### 0.3. Domain Specific Languages
 
