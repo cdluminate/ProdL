@@ -1,7 +1,7 @@
 ---
 title: "ProdL: Productive Deep Learner"
-author: Copyright (C) 2020-2021, Mo Zhou `<cdluminate@gmail.com>`
-date: Version WIP, GFDL-1.3 License, June 2021 
+author: Mo Zhou `<cdluminate@gmail.com>`
+date: June 2021, GFDL-1.3 License
 ---
 
 ProdL: Productive Deep Learner (WIP)
@@ -11,8 +11,9 @@ Copyright (C) 2018-2021, Mo Zhou `<cdluminate@gmail.com>`
 
 This document is released under the [GNU Free Documentation License (GFDL-1.3)
 ](https://www.gnu.org/licenses/fdl-1.3.html) license.
+[Click here to obtain the latest version of this document.](https://github.com/cdluminate/ProdL)
 
-Click here to obtain the latest version of this document. [TODO]
+Document Version: WIP.
 
 *ProdL* is a personal documentation project for collecting memos and hints that
 may help one boost their productivity in Deep Learning study.  This project
@@ -46,8 +47,8 @@ default.  Any keybinding discussed in this document is case-sensitive. Any text
 rendered in mono-spaced font are case-sensitive.
 
 Should you find any error or discrepancy in the content, the author is willing
-to correct the content. Please file a bug through the Github issues channel
-[TODO].
+to correct the content. Please file a bug through the [Github issues
+channel](https://github.com/cdluminate/ProdL/issues).
 
 Table-of-Contents is only available in the PDF version of this document.
 
@@ -533,30 +534,33 @@ scheme.  The first character indicates precision (`s` for single-precision
 (float32), `d` for double-precision (float64), `c` for single-precision
 complex, `z` for double-precision complex). The trailing letters describe the
 abbreviated operation name.  BLAS functionalities can be divided into three
-groups: vector-vector subroutines (also called level-1 BLAS; e.g., `sasum` for
-single-precision [s] absolute [a] sum [sum] of a vector; `saxpy` for
+groups: vector-vector subroutines (also called level-1 BLAS; e.g., `sasum`
+for single-precision [s] absolute [a] sum [sum] of a vector; `saxpy` for
 single-precision [s] (constant) alpha [a] * (vector) x [x] + [p] (vector) y
-[y]; `?scal` for scaling a vector by a constant; `?dot` for dot-product between
-two vectors; `?swap` for swapping values between two vectors; `?copy` for
-copying a vector to another; `?nrm2` for the L-2 norm of a vector),
+[y]; `?scal` for scaling a vector by a constant; `?dot` for dot-product
+between two vectors; `?swap` for swapping values between two vectors; `?copy`
+for copying a vector to another; `?nrm2` for the L-2 norm of a vector),
 matrix-vector subroutines (also called level-2 BLAS; e.g., `sgemv` for
-single-precision [s] general [ge] matrix-vector [mv] multiplication; `?ger` for
-multiplying a column vector with a row vector into a matrix), and matrix-matrix
-subroutines (also called level-3 BLAS; e.g., `sgemm` for single-precision [s]
-general [ge] matrix-matrix [mm] multiplication.  For level-2 and level-3 BLAS,
-there are operations for other types of matrices for better efficiency. For
-example, `ssymv` is for single-precision symmetric [sy] matrix-vector
-multiplication. BLAS also support specifying strides, matrix transpose,
-upper/lower-triangular, etc. Please refer the netlib blas cheatsheet [todo] for
-more details of the BLAS API.
+single-precision [s] general [ge] matrix-vector [mv] multiplication; `?ger`
+for multiplying a column vector with a row vector into a matrix), and
+matrix-matrix subroutines (also called level-3 BLAS; e.g., `sgemm` for
+single-precision [s] general [ge] matrix-matrix [mm] multiplication.  For
+level-2 and level-3 BLAS, there are operations for other types of matrices
+for better efficiency. For example, `ssymv` is for single-precision symmetric
+[sy] matrix-vector multiplication. BLAS also support specifying strides,
+matrix transpose, upper/lower-triangular, etc. Please refer the [netlib blas
+quick reference](http://www.netlib.org/blas/blasqr.pdf) for more details of
+the BLAS API.
 
 * LAPACK: LAPACK involves higher-level linear algebra subroutines built upon
 BLAS (BLAS is frequently used in LAPACK subroutines). For example, `?gesv`
-solves linear system `AX=B`, `?gels` for solving generalized (under-determined
-or over-determined) linear system using QR or LU decomposition, `?gesvd` performs
-general singular value decomposition, and `?gesdd` is an alternative algorithm
-to `?gesvd` for singular value decomposition in lower precision but faster
-speed.
+solves linear system `AX=B`, `?gels` for solving generalized
+(under-determined or over-determined) linear system using QR or LU
+decomposition, `?gesvd` performs general singular value decomposition, and
+`?gesdd` is an alternative algorithm to `?gesvd` for singular value
+decomposition in lower precision but faster speed. Please refer to the
+[lapack user guide](http://www.netlib.org/lapack/lug/lapack_lug.html) for
+more details.
 
 **Sparse numerical linear algebra**, as is named, manipulates sparse numerical
 arrays that are organized in specific ways (instead of a continuous chunk of
@@ -756,12 +760,15 @@ slides and poster composing.
 
 ### 7.1. LaTeX Typesetting
 
-LaTeX is not a WYSIWYG text composing system, but it is prevalent for
-professional typesetting, such as paper composing.
+LaTeX is not a What-You-See-Is-What-You-Get (WYSIWYG) text composing system,
+but it is prevalent for professional typesetting, such as paper composing.
 
-todo: lshort
+My most recommended quick reference for LaTeX is ["A short introduction to
+latex 2e"](https://ctan.org/pkg/lshort). If you want to master latex, you
+may directly read [Knuth's original TexBook](https://ctan.org/pkg/texbook).
 
-Advanced Techniques:
+The following are some additional resources about latex, including tips and
+some advanced techniques:
 
 [1] https://github.com/simonharrer/latex-best-practices
 
