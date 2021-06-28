@@ -1294,13 +1294,10 @@ Some very useful python libraries.
 
 ## B. Editors and IDEs
 
-vim 
+The two traditional text editors for Linux are `vim` and `emacs`. I personally
+recommend `vim`.
 
-emacs
-
-vscode
-
-pycharm
+Currently I have no idea on how to discuss modern editors such as vscode and pycharm.
 
 ## C. Physical Server Management
 
@@ -1332,13 +1329,73 @@ responder list, we should be able to identify the remote IPMI card IPv6 address.
 
 ## D. Extra Linux Productivity Utilities
 
-1. Print image in a text-based remote shell: `catimg` and `chafa`.
+All these utilities are available under linux. I don't know whether they are
+available on windows or macosx.
 
-2. Composing latex document (including Table) very quickly: `lyx`.
+1. Printing image in a text-based terminal: `catimg` and `chafa`.
+
+2. Composing latex document very quickly: `lyx`. It has a brilliant GUI for
+drawing tables easity, and can export the document into pdflatex format.
 
 3. Vectorized graph editing: `inkscape`.
 
 4. Bitmap editing: `gimp`.
+
+5. `build-essential` is the meta-package containing compiler toolchains
+for Debian-based linux distributions (e.g., Ubuntu).
+
+6. `codespell` can be used for fixing typos in your code project.
+
+7. `fail2ban` enhances security of your linux server against brute force attack.
+
+8. `filezilla` is a GUI program for transmitting files via sftp protocol, etc.
+
+9. `fish` and `zsh` are two user-friendly feature-rich shells.
+
+10. `flameshot` is used for taking screenshots.
+
+11. `freeplane` for mind-map.
+
+12. `fd` (rust) as an alternative to `find` in findutils.
+
+13. `fzf` (go) for fuzzy file searching.
+
+14. `gdb` for debugging binary programs.
+
+15. `git` for version control.
+
+16. `gitea` and `gitlab` for hosting your own git service.
+
+17. `htop`, `dstat` and `glances` for system monitoring.
+
+18. `grc` for colorizing linux command outputs.
+
+19. `ufw` linux firewall (Ubuntu). `gufw` GUI for ufw.
+
+20. `ipython3` for interactive python project development.
+
+21. `ncdu` disk usage analysis.
+
+22. `ranger` text-based file browser.
+
+23. `octave` free alternative to matlab.
+
+24. `ipdb` ipython-based python debugger.
+
+25. `sagemath` free alternative to commercial math systems.
+
+26. `smartmontools` for SMART statistics of hard drives.
+
+27. `testdisk` data rescue.
+
+28. `tig` Git TUI.
+
+29. `wxmaxima` free symbolic math system.
+
+This list is selected based on an assumption that they may be helpful for
+deep learning related works.
+
+More insights and details can be found my other documentation project: LiSG. [todo]
 
 ## Y. English Corner
 
