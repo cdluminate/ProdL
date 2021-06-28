@@ -123,6 +123,10 @@ language that aims for performance and reliability. It helps the programmer
 eliminate the need to run valgrind from time to time when debugging memory
 issues for a C++ program. Rust has a relatively steep learning curve.
 
+* [Awk](https://www.gnu.org/software/gawk/manual/gawk.html) is a small language
+that works like magic especially when you are processing line-based texts in
+a shell. Most proficient linux users should be aware of its fundamental usage.
+
 Refer to the [TIOBE list](https://www.tiobe.com/tiobe-index/) for more
 reference on programming languages.
 
