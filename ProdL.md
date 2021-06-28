@@ -339,7 +339,96 @@ utilities](https://github.com/ibraheemdev/modern-unix). But take heed, although
 we may love fancy (sometimes faster) tools, a fact is that the availability of
 the traditional tools is still higher than these fancy alternatives.
 
-#### 0.6.1. Awk Magic for Quick Text Processing
+### 0.6. UNIX Magics
+
+This part will discuss some important UNIX tools that works like a charm.  They
+are also frequently used in shell scripting. I like them.
+
+#### 0.6.1. Awk for Quick Text Processing
+
+Let's start with an example.
+
+Assume that we have the following text output from a program:
+```
+some noise ...
+Batch[0] accuracy 0.2542995026760726
+some noise ...
+Batch[1] accuracy 0.009208118471664362
+Batch[2] accuracy 0.7542131873404234
+some noise ...
+Batch[3] accuracy 0.37011115810462947
+some noise ...
+Batch[4] accuracy 0.09099862645817958
+Batch[5] accuracy 0.5073895063975833
+some noise ...
+Batch[6] accuracy 0.5207971298596508
+Batch[7] accuracy 0.19669099449350658
+some noise ...
+Batch[8] accuracy 0.6605649333264325
+some noise ...
+Batch[9] accuracy 0.12726328140498144
+```
+which is actually produced by a toy program
+```python
+import random
+for i in range(10):
+    if random.random() > 0.5:
+        print('some noise ...')
+    print(f'Batch[{i}] accuracy {random.random()}')
+```
+What should we do if we want to calculate the averaged accuracy across batches?
+
+We may want to write another python script, including lines like this
+```python
+for line in [x.split(' ') for x in lines]:
+	if does_not_contain_accuracy():
+		continue
+	accuracy += float(line[-1])
+	n += 1
+accuracy /= n
+```
+But actually this can be done with a one-liner:
+```shell
+$ python3 foobar.py | awk '/Batch/{a+=$3;n+=1}END{print a/n}'
+0.604364
+```
+
+The `/Batch/{a+=$3;n+=1}END{print a/n}` is a complete Awk program.  Awk can be
+understood as a text-line-oriented state machine. Before scanning text lines,
+it execute code in the `BEGIN{}` block, which is omitted in this case. The
+`/Batch/` is for regex matching, which means only lines that match the regex
+`Batch` will be processed by the following code block `{a+=$3;n+=1}`. After
+scanning all lines, Awk executes code in the `END{}` block. Awk variables
+can be initialized implicitly. In brief, such awk one-liner is much more
+efficient than python code, especially if the python code will not be reused
+in foreseeable future.
+
+If you don't want to use awk, there are still other magics:
+```shell
+$ python3 foobar.py | grep Batch | cut -d' ' -f3
+0.2529907447588151
+0.24730314298222944
+0.4739566597503019
+0.40976192552727086
+0.22660965559362434
+0.48954082611477445
+0.9067330192751845
+0.2698054854245503
+0.13595466616301244
+0.8901862421743295
+$ python3 foobar.py | grep Batch | cut -d' ' -f3 > array.txt
+```
+I shall not expand on the piped command as this part is for awk.
+Anyway, `numpy` is able to directly load the resulting `array.txt`.
+
+Dirty hacks are also possible. In some terminals (e.g., gnome-terminal), you
+can select several column of text by pressing Ctrl and the left mouse button.
+Copying the columns containing accuracy values and pasting the text to octave
+or julia is feasible for the average value calculation. If gnome-terminal is
+not available, vim can also select multiple columns of text (`Ctrl^v`).
+
+Refer to the [GNU Awk Manual](https://www.gnu.org/software/gawk/manual/gawk.html)
+if you are interested in this language.
 
 ### 0.7. Remote Access and File Transferring
 
