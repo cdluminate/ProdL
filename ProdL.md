@@ -509,12 +509,59 @@ Reference book:
 
 [1] Eric S. Raymond, The Art of UNIX Programming.
 
-### 0.9. Git Workflow (Version Control System)
+### 0.9. Git Version Control System and Workflow
 
-Extremely important for production sanity, safety, and reliability.  I'm not
-interested in explaining exactly how important it is or why.
+Extremely important for production sanity, safety, and reliability.  There are
+also alternative version control systems, such as svn, hg, etc., but Git is the
+most prevalent one of its kind.
 
-There are also alternative version control systems, such as svn, hg, etc.
+I shall skip explaining exactly how important it is or why, but I can
+list some pains that will hardly exist with a good git practice.
+
+1. Wrongly edited and broken the code / paper, and wanted to revert the change.  
+2. Forgotten the exact work progress of yesterday and felt unhappy.  
+3. The code stopped working (or the paper stopped compiling) again, but didn't
+know what latest change triggered that problem.  
+4. Difficulty in understanding why a line of code exists.  
+5. Afraid of unrecoverable loss due to large-scale rewrite or refactor, but still
+suffer from the problematic old code architecture.  
+6. Hundreds of copies of similar code in the comment lines -- and finally started
+to be confused by the different versions of commented code.  
+7. Hundreds of working copies of similar code -- the code eventually becomes
+messy and nearly unreadable.  
+8. Deleted the code or paper by mistake.  
+9. The server where my only copy of code and paper is stored is down.  
+10. Wanted to elegantly edit the same code with collaborators simultaneously.  
+11. Collaborators gave some advices regarding paper draft v3, but the paper
+draft is already revised into v4.  
+12. Wanted to check a historical version of code / paper.  
+13. Wanted to collaborate with others but have no idea on synchronization and workflow.  
+14. Identified a bug and wanted to know when the bug was introduced and how many
+conclusions were affected, as well as some other implications.  
+15. Difficulty in locating a hidden bug introduced in some historical version.  
+16. Wanted to implement some bold ideas based on the code, but hesitate to break the
+code due to fear of unrecoverable lost.  
+17. I copied my code to my 100 remote servers -- each server a copy. I don't know
+whether I have modified some of these copies on the servers.  
+18. I'm not interested in academics, but I still find Git important for the industry.  
+
+Documentations as well as tutorials can be found following the [official site
+of Git](https://git-scm.com/). We are not doing duplicated work to write another
+Git tutorials here, but at least we can group the Git subcommands and mention
+some keywords. 
+
+* Linear Workflow (simple commands): config, init, clone, add (adding files to
+staging area), commit, push, pull, clean (`.gitignore`), diff, show, log,
+grep, tag, status. These should be enough for a linear workflow.
+
+* Non-linear workflow: branch, checkout, cherry-pick, fetch, merge, rebase (`rebase -i`),
+revert, stash, worktree, bisect, format-patch, am.
+
+* Other: archive, gc, repack, submodule, remote, blame, 
+
+Manpages are also a good resource for learning Git. `gittutorial(7)` is a
+tutorial introduction to Git, `gitworkflows(7)` is an overview of recommended
+workflows with Git.
 
 ## 1. Correctly Understanding Deep Learning Framework
 
