@@ -1281,11 +1281,65 @@ Color, Shapes, Lines, Layout, Fonts
 
 ## A. Python Proficiency
 
-### A.1. Proficiency
+### A.1. Python Library Recommendation
+
+The [python standard libraries](https://docs.python.org/3/library/index.html)
+are already extremely useful. Before looking for external python libraries,
+make sure whether the [python standard
+library](https://docs.python.org/3/library/index.html) provides what you need.
+Here are some standard libraries that I think are sometimes useful in the
+context of deep learning research:
+
+1. `re` -- regular expression  
+2. `collections.abc` -- abstract base classes for containers  
+3. `itertools`, `functools`, `operator` -- functional programming  
+4. `glob` -- unix style pathname pattern expansion  
+5. `csv` -- CSV file reading and writing  
+6. `configparser` -- configuration file (.ini) parser  
+7. `ctypes` -- foreign function library  
+8. `multiprocessing` -- process-based parallelism  
+9. `subprocess` -- subprocess management  
+10. `json` -- JSON encoder and decoder  
+11. `urllib` -- URL handling modules  
+12. `typing` -- type hints  
+13. `dataclases` -- data classes  
+14. `contextlib` -- utilities for `with`-statement contexts  
+15. `gc` -- garbage collector interface  
+16. `importlib` -- implementation of `import`  
+
+In scientific computing context, standard libraries like `math`, `random` and
+`statistics` are very likely replaced by `numpy`. Standard library `pickle`
+is well-wrapped by `torch.save`. Very frequently used standard libraries
+such as `os`, `sys`, `io`, `time`, `argparse` are needless to discuss.
+
+Here are some useful third-party python libraries (I may also mention the
+standard library if there is an alternative).
+
+1. `ipython3` (friendly REPL)  
+2. `multiprocess` / `joblib` (paralellization)  
+3. `numba` (acceleration with JIT compilation)  
+4. `pandas` (XLSX in python)  
+5. `tqdm` (progress bar + timer)  
+6. `h5py` (storing large amount of data)  
+7. `click`, `fire` (alternative to `argparse`)  
+8. `pytest` (unit testing)  
+9. `faiss` (fast clustering and similarity search)  
+10. `nltk`, `spacy` (many tasks in the NLP field)  
+11. `rich` (beautiful terminal output)  
+12. `seaborn` (beautiful statistics graphs)  
+13. `ujson` (faster `json` alternative)  
+
+Standard scientific computing and machine learning libraries such as `numpy`,
+`tensorflow`, `torch`, `scipy`, `skimage`, `sklearn`, `matplotlib` are needless
+to mention here.
+
+### A.2. Proficiency
 
 I'd like the emphasize again that the [python official
 tutorial](https://docs.python.org/3/tutorial/index.html) is one of the best
-(free-of-charge) learning materials.
+(free-of-charge) learning materials. It is also recommended to read the
+changelogs of minor python releases (e.g., python 3.8, python 3.9, python
+3.10), and be aware of language changes and new features.
 
 Here I have some additional questions and hints on python programming.  Note,
 please make sure that you can instantly verify your programming idea with
@@ -1333,16 +1387,6 @@ Module(
         right=Name(id='b', ctx=Load())))],
   type_ignores=[])
 ```
-
-### A.9. Python Library Recommendation
-
-Some very useful python libraries.
-
-1. ipython3 (friendly REPL)
-2. multiprocess / joblib (paralellization)
-3. numba (jit for acceleration)
-4. pandas (XLSX in python)
-5. tqdm (progress bar + timer)
 
 ## B. Editors and IDEs
 
