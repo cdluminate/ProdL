@@ -257,7 +257,7 @@ productivity.
 For most linux distributions, POSIX shell is recommended if you are scripting
 for the system.
 
-#### 0.5.2. Core Utilities
+#### 0.5.2. Frequently Used Utilities
 
 A non-exhaustive set of core utilities. Here I'll only list their names and
 main usage.  Most of these utilities are extremely important, and are extremely
@@ -333,6 +333,11 @@ glances    TUI-based system monitor
 dstat      system monitor
 rsync      copy files between hosts
 ```
+
+There are [more modern alternative to traditional unix
+utilities](https://github.com/ibraheemdev/modern-unix). But take heed, although
+we may love fancy (sometimes faster) tools, a fact is that the availability of
+the traditional tools is still higher than these fancy alternatives.
 
 #### 0.6.1. Awk Magic for Quick Text Processing
 
