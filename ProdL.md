@@ -78,6 +78,8 @@ points.
 
 ### 0.2. Programming Languages
 
+[Wikipedia: programming language](https://en.wikipedia.org/wiki/Programming_language)
+
 For deep learning, I personally think some background knowledge on ANSI C, C++
 will be beneficial (in various aspects). Of course, one has to be proficient in
 Python as well.
@@ -132,6 +134,10 @@ reference on programming languages.
 
 ### 0.3. Domain Specific Languages
 
+[Wikipedia: domain-specific language](https://en.wikipedia.org/wiki/Domain-specific_language)
+
+Domain-specific languages are not necessarily turing-incomplete.
+
 #### 0.3.1. Markup Languages for Documentation
 
 `Markdown` is a very useful markup language when you are going to write
@@ -146,10 +152,21 @@ correct conversion tool such as `pandoc`.
 `Pandoc` accepts many types of input format (incl. markdown, restructured-text,
 etc), and can convert them into latex, docx, etc.
 
+For example, this document you are currently reading is written in Markdown.
+Its online version is rendered into HTML by Github. Its PDF version is
+converted from Markdown source by Pandoc.
+
+Writting source code without documentation is one of the best ways to prevent
+yourself from understanding your own code written in the last week. *Although
+writing splendid code with clear documentation may also mean your job can be
+easier taken away by collegues or newcomers in some business context, at least
+there should be some documentation for personal research projects.*
+
 References:
 
 - [Github Markdown Tutorial](https://guides.github.com/features/mastering-markdown/)  
 - [Pandoc](https://github.com/jgm/pandoc)  
+- [Learn X in Y minutes: RST](https://learnxinyminutes.com/docs/rst/)  
 
 #### 0.3.2. GNU Make for Automation of Simple Tasks
 
@@ -177,6 +194,19 @@ clean:
 fig1.pdf:
 	inkscape -o fig1.pdf fig1.svg
 ```
+
+In the above Makefile, the main (default) target is `cvpr` PDF compilation.
+The target `cvpr` depends on target (file) `fig1.pdf`. Since target `fig1.pdf`
+is not PHONY, `make` will convert the SVG into PDF first using `inkscape` if
+the corresponding PDF file does not exist, or skip the PDF conversion if it
+already exists.  The `evince` is the PDF viewer for Gnome3 desktop environment.
+The leading dash sign `-` to `evince` means that the target may continue even
+if the `evince` command failed. After compilation of the `cvpr.pdf`, temporary
+files are automatically cleaned.
+
+And I also use Makefile to process miscellaneous works in code repositories.
+For example, here is the [Makefile for
+my RobBank project](https://github.com/cdluminate/robrank/blob/main/Makefile).
 
 ### 0.4. Computer Organization, Compiler, etc.
 
@@ -303,6 +333,8 @@ glances    TUI-based system monitor
 dstat      system monitor
 rsync      copy files between hosts
 ```
+
+#### 0.6.1. Awk Magic for Quick Text Processing
 
 ### 0.7. Remote Access and File Transferring
 
