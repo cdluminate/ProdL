@@ -579,11 +579,48 @@ array organization.
 
 cuDNN, oneDNN
 
-## 3. High Performance Programming
+## 3. Program Review, Diagnosis and Debugging
 
-### 3.1. Server Architecture
+### 3.1. Program Review
 
-### 3.2. Profiling
+### 3.1. Program Tracing
+
+### 3.2. Program Debugging
+
+## 4. High Performance Programming
+
+### 4.1. System Monitoring
+
+Linux kernel provides a wide range of statistics through `sysfs` and `procfs`,
+etc.  You may directly read the system informations such as CPU idle time and
+available RAM from these special file systems (in fact, you have to read data
+in this way if you want to write a system monitor). However, for sake of higher
+efficiency, we usually use some sweet utilities.
+
+Here are some decent system monitoring tools.
+
+1. `htop`. You may be aware of `top`, a traditional tool for displaying unix
+system resource. `htop` is a friently alternative to it. Using `htop`, you may
+monitor: CPU usage, RAM usage, SWAP usage, ZFS ARC usage, System Load, CPU
+usage per process, RAM usage per process, etc. Example command line: `htop`.
+
+2. `iostat`. This utility can monitor the real-time IO statistics for all block
+devices attached to the current system. If you want to investigate whether
+your program performance is limited by the IO performance of some block device,
+you may use this utility to help diagnosis based on the configuration of the
+physical device (SATA HDD, SATA SSD, M.2 NVMe SSD, U.2 NVMe SSD, Device Mapper,
+etc).
+
+3. `dstat` is an overall system monitor that provides condensed summary.
+
+4. `glances` is also an overall system monitor that provides detailed summary.
+
+There are many other unmentioned alternatives. Here we only talk about a
+couple of them.
+
+### 4.1. Server Architecture
+
+### 4.2. Profiling
 
 linux perf (for elf executable)
 
@@ -599,25 +636,21 @@ than GPU in terms of very small matrix multiplication, because the `cudaMemcpy`
 latency for transmitting the matrix from RAM to video memory already exceeded
 the time consumption of CPU.
 
-### 3.3. IO and Storage System
+### 4.3. IO and Storage System
 
 IO bound: (1) /dev/shm (2) ssd (3) prefetch (4) parallel (5)...
 
-### 3.4. High Performance Python (pure Python)
+### 4.4. High Performance Python (pure Python)
 
 profiling (cProfile)
 
 int is an object. overhead of magic methods.
 
-### 3.5. Extending Python with Compiled Language
+### 4.5. Extending Python with Compiled Language
 
-## 4. Program Review, Diagnosis and Debugging
+python extension
 
-### 4.1. Program Review
-
-### 4.1. Program Tracing
-
-### 4.2. Program Debugging
+Foreign Function Interface (FFI)
 
 ## 5. Scheduling Interactive Experiments
 
