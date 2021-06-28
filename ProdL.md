@@ -226,7 +226,7 @@ For example, the key concepts for a compiler involves lexical analysis, syntax
 analysis, intermediate representation, code optimization and target code
 generation.
 
-### 0.5. Operating System and POSIX
+### 0.5. POSIX Operating System and Shell Script
 
 [POSIX](https://en.wikipedia.org/wiki/POSIX) is a standard for UNIX operating
 system, which defines some invariance between different Unix and other
@@ -1206,6 +1206,20 @@ poster. QR codes makes one's life easier.
 - Uploading something to Arxiv? This is too tricky. This is not a proper place
 for discussing arxiv usage, as the reasons may be subjective, which makes it
 extremely hard to tell true reasons from false reasons.
+
+- Suggestions towards mistakes frequently made by authors? (1) Plan ahead and
+stick to your plan. The plan may be subject to change, but there should be a
+plan. A good plan makes your work with collaborators error-tolerant; (2)
+Improve the workflow. When there is multiple collaborators working on the same
+project, a sane version control system is mandatory for ensuring safety and
+efficiency; (3) Keep specific terms and typesetting consistent throughtout the
+whole manuscript; (4) Don't introduce too many unnecessary terms in the
+manuscript; (5) Don't resue mathematical symbols. You may borrow the
+mathematical symbol definitions from ICLR tex template; (6) Write smooth
+story line and avoid making it fork-shaped; (7) Parameter settings is not a
+part of Section 3; (8) Captions may imply groupping of a set of subfigures;
+(9) Avoid ugly diagrams with problematic color, shape, size, layout, alignment
+and content.
 
 ## 8. A Tiny Bit on Art
 
