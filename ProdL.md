@@ -430,6 +430,10 @@ not available, vim can also select multiple columns of text (`Ctrl^v`).
 Refer to the [GNU Awk Manual](https://www.gnu.org/software/gawk/manual/gawk.html)
 if you are interested in this language.
 
+#### 0.6.2. Find and Grep
+
+#### 0.6.3. Some other command pipeline examples
+
 ### 0.7. Remote Access and File Transferring
 
 In this section, we mainly discuss some tools for accessing remote hosts
