@@ -1174,6 +1174,25 @@ place of the main manuscript.
 Don't break your promise in the main manuscript that you will put something in
 the supplementary material. Don't put unrealiable bits in the supplementary.
 
+#### 7.2.11. Meta Key-Points
+
+There are still some key-points that applies to a large portion of this paper.
+
+1. **Ratio of original content.** Apart from Section 2, most of rest part of
+the paper should be discussing your original work. They are stages for you
+to present your own work, instead of the others'. Even if we have to recall
+the previous works in order to make the paper self-contained or provide enough
+technical background for the reader, why should we drown our own contribution
+by showing others' work?
+
+2. **Tense and Tone.** Keeping a consistent simple present tense is enough.
+Try to reduce the use of "we" as a leading word of sentences. These
+sentences are relatively subjective compared to those written in passive tense
+(relatively objective).
+
+3. **Logical flow.** Important things can be repeated many times. The logical
+flow should be as simple and linear as possible.
+
 ### 7.3. Drafting a Journal Paper
 
 ### 7.4. Self-Reviewing and Polishing
