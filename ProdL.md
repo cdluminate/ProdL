@@ -226,6 +226,11 @@ For example, the key concepts for a compiler involves lexical analysis, syntax
 analysis, intermediate representation, code optimization and target code
 generation.
 
+Some extra background knowledge on programming paradigms is helpful.
+For example, [**Functional programming**](https://en.wikipedia.org/wiki/Functional_programming)
+introduces concepts such as "pure functions" (free of side effects).
+Try to follow some of these paradigms may help you write more robust code.
+
 ### 0.5. POSIX Operating System and Shell Script
 
 [POSIX](https://en.wikipedia.org/wiki/POSIX) is a standard for UNIX operating
@@ -594,11 +599,10 @@ robust for computer clusters.
 
 ### 0.8. Software Engineering
 
-Functional programming. (side effect)
+For software architecture (design), book [1] is a good reference.
 
-test-driven development.
-
-Reference book: 
+For people who like the `pytest` library, "test-driven development" is
+something good to know. 
 
 [1] Eric S. Raymond, The Art of UNIX Programming.
 
@@ -1604,6 +1608,8 @@ This list is selected based on an assumption that they may be helpful for
 deep learning related works.
 
 More insights and details can be found my other documentation project: LiSG. [todo]
+
+## X. Fun Bits
 
 ## Y. English Corner
 
