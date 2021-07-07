@@ -47,6 +47,10 @@ Vecotr, Matrix, Tensor shapes are annotated under the corresponding symbols.
 Throughout the whole document, $L$ denotes any loss function (\emph{i.e.},
 objective function) of interest.
 
+Jacobian matrix. Hessian matrix.
+
+\section{Computation Graph}
+
 \section{Automatic Differentiation}
 
 \section{Atomic Modules}
@@ -168,6 +172,23 @@ objective function) of interest.
 \begin{enumerate}[leftmargin=*]
 \item \textbf{Affine Transformation Layer} (Affine)
 
+\begin{align}
+	\underset{(n)}{\vy} = \underset{(n\times m)}{\mW}
+		\underset{(m)}{\vx} + \underset{(n)}{\vb}
+\end{align}
+
+\begin{align}
+	\underset{(m)}{\frac{\partial L}{\partial \vx}} &=
+	\underset{(m\times n)}{\frac{\partial \vy^T}{\partial \vx}} \cdot
+	\underset{(n)}{\frac{\partial L}{\partial \vy}} \\
+	\underset{(n)}{\frac{\partial L}{\partial \vb}} &=
+	\underset{(n\times n)}{\frac{\partial \vy^T}{\partial \vb}} \cdot
+	\underset{(n)}{\frac{\partial L}{\partial \vy}} \\
+	\underset{(n\times m)}{\frac{\partial L}{\partial \mW}} &=
+	\underset{(n)}{\frac{\partial L}{\partial \vy}}
+	\underset{(1\times m)}{\vx^T}
+\end{align}
+
 \item \textbf{Mean Square Error} (MSE)
 \begin{equation}
 	\frac{1}{H} \sum_{i=1}^H
@@ -182,6 +203,14 @@ objective function) of interest.
 	\caption{MSE: $\frac{1}{H} \sum_{i=1}^H \|\vx_i - \hat{\vx}_i\|_2^2 = L$.}
 \end{figure}
 
+\begin{equation}
+	\underset{(n)}{\frac{\partial L}{\partial x}} =
+	\frac{2}{n}(
+	\underset{(n)}{\hat{\vx}} - \underset{(n)}{\vx} )
+\end{equation}
+
+\item \textbf{Negative Log Likelihood Loss} (NLL Loss)
+
 \item \textbf{Softmax Layer} (Softmax)
 
 \item \textbf{Batch Normalization} (BN)
@@ -192,5 +221,13 @@ objective function) of interest.
 \subsection{Convolutional Neural Networks}
 
 \subsection{Recurrent Neural Networks}
+
+\section*{References}
+
+1. Jake Bouvrie, Notes on Convolutional Neural Networks
+
+2. Alex Graves, Supervised Sequence Labelling with RecurrentNeural Networks
+
+3. Ian Goodfellow, et al., Deep Learning
 
 \end{document}
