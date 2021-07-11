@@ -785,6 +785,9 @@ array organization.
 (1) cache access optimization (2) simd instruction sets (3) paralellelization
 (4) dedicated hardware (GPU, TPU, FGPA).
 
+batched operation and unfolded operation: cache misses
+(http://ithare.com/infographics-operation-costs-in-cpu-clock-cycles/)
+
 ### 2.4. DNN Libraries
 
 cuDNN, oneDNN
