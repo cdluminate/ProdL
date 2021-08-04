@@ -193,6 +193,12 @@ clean:
 
 fig1.pdf:
 	inkscape -o fig1.pdf fig1.svg
+
+# This target for generating PDF (from SVG) is more generic.
+%.pdf:
+	inkscape -o $@ $(subst .pdf,.svg,$@)
+	pdfcrop $@
+	mv $(subst .pdf,,$@)-crop.pdf $@
 ```
 
 In the above Makefile, the main (default) target is `cvpr` PDF compilation.
