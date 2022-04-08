@@ -66,6 +66,8 @@ a keypair (private key at `~/.ssh/id_rsa`, public key at `~/.ssh/id_rsa.pub`).
 
 Then copy the public key, login into every server with password and configure
 the remote:
+(you may use `ssh-copy-id <JHED>@<servers>` to distribute keys instead of
+using the following manual process)
 
 ```shell
 (local):~$ cd .ssh
@@ -128,6 +130,15 @@ directly without typing any password anymore.
 Ansible documentation is available here
 https://docs.ansible.com/ansible/latest/index.html
 
+Some environment vairables may be helpful for ansible:
+https://docs.ansible.com/ansible/latest/reference_appendices/config.html ,
+such as `ANSIBLE_FORCE_COLOR`, and `ANSIBLE_INVENTORY`, etc.
+
+```
+export ANSIBLE_FORCE_COLOR=True
+export ANSIBLE_INVENTORY=~/servers.txt
+```
+
 ## 2. Server Storage
 
 ### 2.1. Storage Area
@@ -184,6 +195,93 @@ ansible -i servers.txt all -m shell -a 'mkdir -p /data/<JHED>/anaconda3'
 ansible -i servers.txt all -m shell -a 'ln -s /data/<JHED>/anaconda3 .'
 ansible -i servers.txt all -m shell -a 'bash Downloads/Anaconda3-2021.11-Linux-x86_64.sh -b -p ~/anaconda3 -u'
 ```
+
+Then you may setup your shell following the instruction here https://docs.anaconda.com/anaconda/install/silent-mode/
+
+I did not setup the shell variables for the Conda. So my following commands
+will also work whether you have set it up or not.  Now we install `gpustat` for
+quick GPU status lookup. 
+
+```
+ansible -i servers.txt all -m shell -a '~/anaconda3/bin/pip3 install gpustat'
+```
+
+### 3.3. Parallel Server Status query
+
+#### 3.3.1. GPU Status
+
+Following the above instructions step-by-step, we should be able to query
+the GPU status in parallel.
+
+```
+ansible -i servers.txt all -m shell -a '~/anaconda3/bin/gpustat'
+```
+
+You may lookup command usage with `man` or `tldr`.
+
+And the output of gpustat will look like this:
+
+```
+xxx4.wse.jhu.edu | CHANGED | rc=0 >>
+xxx4                 Thu Apr  7 20:53:17 2022  510.47.03
+[0] NVIDIA RTX A6000 | 67'C, 100 % | 45168 / 49140 MB | xxxxx(44705M) gdm(4M)
+[1] NVIDIA RTX A6000 | 75'C,  99 % | 45062 / 49140 MB | xxxxx(44599M) gdm(4M)
+[2] NVIDIA RTX A6000 | 77'C,  99 % | 45158 / 49140 MB | xxxxx(44695M) gdm(4M)
+[3] NVIDIA RTX A6000 | 78'C,  99 % | 45256 / 49140 MB | xxxxx(44793M) gdm(4M)
+[4] NVIDIA RTX A6000 | 35'C,   0 % |   460 / 49140 MB | gdm(4M)
+[5] NVIDIA RTX A6000 | 32'C,   0 % |   460 / 49140 MB | gdm(4M)
+[6] NVIDIA RTX A6000 | 33'C,   0 % |   460 / 49140 MB | gdm(4M)
+[7] NVIDIA RTX A6000 | 33'C,   0 % |   460 / 49140 MB | gdm(4M)
+[8] NVIDIA RTX A6000 | 32'C,   0 % |   460 / 49140 MB | gdm(4M)
+[9] NVIDIA RTX A6000 | 32'C,   0 % |   460 / 49140 MB | gdm(4M)
+xxx2.wse.jhu.edu | CHANGED | rc=0 >>
+xxx2                 Thu Apr  7 20:53:17 2022  510.47.03
+[0] NVIDIA RTX A5000 | 31'C,   0 % |   308 / 24564 MB |
+[1] NVIDIA RTX A5000 | 32'C,   0 % |   308 / 24564 MB |
+[2] NVIDIA RTX A5000 | 31'C,   0 % |   308 / 24564 MB |
+[3] NVIDIA RTX A5000 | 31'C,   0 % |   308 / 24564 MB |
+[4] NVIDIA RTX A5000 | 32'C,   0 % |   308 / 24564 MB |
+[5] NVIDIA RTX A5000 | 32'C,   0 % |   308 / 24564 MB |
+[6] NVIDIA RTX A5000 | 33'C,   0 % |   308 / 24564 MB |
+[7] NVIDIA RTX A5000 | 31'C,   0 % |   308 / 24564 MB |
+[8] NVIDIA RTX A5000 | 33'C,   0 % |   308 / 24564 MB |
+[9] NVIDIA RTX A5000 | 33'C,   0 % |   308 / 24564 MB |
+xxx3.wse.jhu.edu | CHANGED | rc=0 >>
+xxx3                 Thu Apr  7 20:53:17 2022  510.47.03
+[0] NVIDIA RTX A5000 | 31'C,   0 % |   308 / 24564 MB |
+[1] NVIDIA RTX A5000 | 32'C,   0 % |   308 / 24564 MB |
+[2] NVIDIA RTX A5000 | 31'C,   0 % |   308 / 24564 MB |
+[3] NVIDIA RTX A5000 | 31'C,   0 % |   308 / 24564 MB |
+[4] NVIDIA RTX A5000 | 32'C,   0 % |   308 / 24564 MB |
+[5] NVIDIA RTX A5000 | 31'C,   0 % |   308 / 24564 MB |
+[6] NVIDIA RTX A5000 | 32'C,   0 % |   308 / 24564 MB |
+[7] NVIDIA RTX A5000 | 31'C,   0 % |   308 / 24564 MB |
+[8] NVIDIA RTX A5000 | 32'C,   0 % |   308 / 24564 MB |
+[9] NVIDIA RTX A5000 | 34'C,   0 % |   308 / 24564 MB |
+xxx1.wse.jhu.edu | CHANGED | rc=0 >>
+xxx1                 Thu Apr  7 20:53:18 2022  510.47.03
+[0] NVIDIA RTX A6000 | 32'C,   0 % |   460 / 49140 MB | gdm(4M)
+[1] NVIDIA RTX A6000 | 35'C,   0 % |   460 / 49140 MB | gdm(4M)
+[2] NVIDIA RTX A6000 | 34'C,   0 % |   460 / 49140 MB | gdm(4M)
+[3] NVIDIA RTX A6000 | 35'C,   0 % |   460 / 49140 MB | gdm(4M)
+[4] NVIDIA RTX A6000 | 35'C,   0 % |   460 / 49140 MB | gdm(4M)
+[5] NVIDIA RTX A6000 | 34'C,   0 % |   460 / 49140 MB | gdm(4M)
+[6] NVIDIA RTX A6000 | 37'C,   0 % |   460 / 49140 MB | gdm(4M)
+[7] NVIDIA RTX A6000 | 34'C,   0 % |   460 / 49140 MB | gdm(4M)
+[8] NVIDIA RTX A6000 | 33'C,   0 % |   460 / 49140 MB | gdm(4M)
+[9] NVIDIA RTX A6000 | 36'C,   0 % |   460 / 49140 MB | gdm(4M)
+```
+
+### 3.3.2. Other System Status
+
+CPU / Ram status
+
+```
+ansible -i servers.txt all -m shell -a 'top -b -n1 | head -n5'
+```
+
+System status with Inxi (we need to optionally install this)
+ansible -i servers.txt all -m shell -a '~/anaconda3/bin/pip3 install inxi'
 
 ## A. Server List / Definitions / Misc.
 
