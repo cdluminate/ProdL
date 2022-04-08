@@ -206,6 +206,15 @@ quick GPU status lookup.
 ansible -i servers.txt all -m shell -a '~/anaconda3/bin/pip3 install gpustat'
 ```
 
+In the future, if the shell tells you it cannot find commands such as `conda`,
+you must have forgotten to setup the shell variables following the anaconda
+instructions. If you are as lazy as me, just use this to configure anaconda
+in bash (or zsh):
+
+```
+ansible -i servers.txt all -m shell -a 'echo export PATH="/home/mzhou32/anaconda3/bin:\$PATH" >> ~/.bashrc'
+```
+
 ### 3.3. Parallel Server Status query
 
 #### 3.3.1. GPU Status
@@ -299,14 +308,30 @@ Redhat has an article on inxi as well: https://www.redhat.com/sysadmin/learn-mor
 
 ## 3.4. Install Pytorch
 
-Following https://pytorch.org , I personally chooise Pytorch 1.8.2 (LTS)
+Following https://pytorch.org , I personally chooise the latest version (1.11.0)
 for example. So I just directly copy that installation command:
 
 ```
-ansible -i servers.txt all -m shell -a '~/anaconda3/bin/conda install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch-lts -c nvidia -y'
+ansible -i servers.txt all -m shell -a '~/anaconda3/bin/conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch -y'
 ```
 
 Note, the argument `-y` is appended to the install command in order to avoid conda prompt.
+Wait for several minutes untill the installation is finished.
+
+Then let's do a quick test:
+
+```shell
+$ ansible -i servers.txt all -m shell -a '~/anaconda3/bin/python3 -c \'import torch as th; print(th.__version__, "|", th.cuda.device_count())\''
+
+xxx4.wse.jhu.edu | CHANGED | rc=0 >>
+1.11.0 | 10
+xxx3.wse.jhu.edu | CHANGED | rc=0 >>
+1.11.0 | 10
+xxx2.wse.jhu.edu | CHANGED | rc=0 >>
+1.11.0 | 10
+xxx1.wse.jhu.edu | CHANGED | rc=0 >>
+1.11.0 | 10
+```
 
 ## A. Server List / Definitions / Misc.
 
