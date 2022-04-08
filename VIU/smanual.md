@@ -179,7 +179,7 @@ We install it in the [silent-mode](https://docs.anaconda.com/anaconda/install/si
 ansible -i servers.txt all -m shell -a 'chdir=Downloads wget -c https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh'
 ansible -i servers.txt all -m shell -a 'mkdir -p /data/<JHED>/anaconda3'
 ansible -i servers.txt all -m shell -a 'ln -s /data/<JHED>/anaconda3 .'
-ansible -i servers.txt all -m shell -a 'bash Downloads/Anaconda3-2021.11-Linux-x86_64.sh -b -p ~/anaconda -u'
+ansible -i servers.txt all -m shell -a 'bash Downloads/Anaconda3-2021.11-Linux-x86_64.sh -b -p ~/anaconda3 -u'
 ```
 
 ## A. Server List / Definitions / Misc.
