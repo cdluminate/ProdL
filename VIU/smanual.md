@@ -287,6 +287,7 @@ CPU / Ram status
 
 ```
 ansible -i servers.txt all -m shell -a 'top -b -n1 | head -n5'
+ansible -i servers.txt all -m setup -a 'filter="*mem*"'
 ```
 
 System status with Inxi (we need to optionally install this)
