@@ -4,6 +4,10 @@ Server Manual
 Author: 2022, Mo Zhou
 License: CC-0
 
+## 0. Architecture and Definition
+
+TODO
+
 ## 1. Network and Access
 
 ### 1.1. Network Requirement
