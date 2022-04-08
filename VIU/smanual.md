@@ -281,7 +281,21 @@ ansible -i servers.txt all -m shell -a 'top -b -n1 | head -n5'
 ```
 
 System status with Inxi (we need to optionally install this)
-ansible -i servers.txt all -m shell -a '~/anaconda3/bin/pip3 install inxi'
+
+```
+# install this perl script
+ansible -i servers.txt all -m shell -a 'mkdir bin'
+ansible -i servers.txt all -m shell -a 'chdir=bin wget -c https://github.com/smxi/inxi/raw/master/inxi'
+ansible -i servers.txt all -m shell -a 'chmod +x bin/inxi'
+# show basic system information
+ansible -i servers.txt all -m shell -a '~/bin/inxi'
+# show full system information
+ansible -i servers.txt all -m shell -a '~/bin/inxi -Fz'
+# show some system information (I picked these sections)
+ansible -i servers.txt all -m shell -a '~/bin/inxi -CmGNRDPI'
+```
+
+Redhat has an article on inxi as well: https://www.redhat.com/sysadmin/learn-more-inxi
 
 ## A. Server List / Definitions / Misc.
 
