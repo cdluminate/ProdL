@@ -272,7 +272,7 @@ xxx1                 Thu Apr  7 20:53:18 2022  510.47.03
 [9] NVIDIA RTX A6000 | 36'C,   0 % |   460 / 49140 MB | gdm(4M)
 ```
 
-### 3.3.2. Other System Status
+#### 3.3.2. Other System Status
 
 CPU / Ram status
 
@@ -296,6 +296,17 @@ ansible -i servers.txt all -m shell -a '~/bin/inxi -mDPI'
 ```
 
 Redhat has an article on inxi as well: https://www.redhat.com/sysadmin/learn-more-inxi
+
+## 3.4. Install Pytorch
+
+Following https://pytorch.org , I personally chooise Pytorch 1.8.2 (LTS)
+for example. So I just directly copy that installation command:
+
+```
+ansible -i servers.txt all -m shell -a '~/anaconda3/bin/conda install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch-lts -c nvidia -y'
+```
+
+Note, the argument `-y` is appended to the install command in order to avoid conda prompt.
 
 ## A. Server List / Definitions / Misc.
 
