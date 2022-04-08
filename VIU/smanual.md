@@ -58,7 +58,7 @@ ssh -v <JHED>@<server>
 The password is the same as your JHED account. So the SSH authentication
 was setup with LDAP.
 
-### 1.2.1. SSH Connextion w/ RSA Key
+#### 1.2.1. SSH Connextion w/ RSA Key
 
 Google `ssh-keygen` and create a keypair for ssh access. This step can be
 skipped if you want to use existing keypairs. Let's assume now we have
@@ -122,10 +122,59 @@ ansible -i servers.txt all -m shell -a 'nvidia-smi'
 Note, 'gpustat' is better for querying GPU status in parallel. We will cover
 that later.
 
-## 2. Go through Basic Deep Learning Setup
+Ansible documentation is available here
+https://docs.ansible.com/ansible/latest/index.html
+
+## 2. Server Storage
+
+### 2.1. Storage Area
+
+1. maintenance team: "These servers are not running RAID.
+So any data stored on these servers is at risk of sudden irreversible loss."
+The NVME disks are simply combined into a large volume group (8TB), which
+looks like a RAID0 setup. (a single broken disk could render the whole
+storage pool inaccessible).
+**Keep it in mind: properly and regularly backup your important data.**
+
+2. maintenance team: "These servers have been configured with two different
+storage areas. `/home` should be used minimally. `/data` is a higher performing file system,
+and any data that needs to be processed should reside here.
+`/home` only has 100GB space (although resizable), so please really don't
+put datasets and bulky files here.
+
+### 2.2. Coordination
+
+5. Everyone has write access to /data. I suggest the following layout for
+using the public storage area:
+
+```
+/data/common : put your bulky dataset here
+/data/<JHED> : other files
+```
+
+You may want to use symlink between `/home/<JHED>/*` and `/data/<JHED>/*` to
+redirect your files. We will follow this convention throughout this document.
+
+## 3. Reference Setup of Deep Learning Environment
+
+In this section, we setup the servers in parallel, following a consistent
+and uniform configuration.
+
+### 3.1. Create directories and symlinks
 
 ```shell
-ansible -i servers.txt all -m shell -a 'wget -c https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh'
+ansible -i servers.txt all -m shell -a 'ls /data'
+ansible -i servers.txt all -m shell -a 'mkdir -p /data/<JHED>/Downloads'
+ansible -i servers.txt all -m file -a 'src=/data/<JHED>/Downloads dest=/home/<JHED>/Downloads state=link'
+```
+
+Document for [ansible.builtin.shell](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/shell_module.html),
+[ansible.builtin.file](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/file_module.html)
+
+### 3.2. Download and Setup Anaconda
+
+```shell
+ansible -i servers.txt all -m shell -a 'chdir=Downloads wget -c https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh'
 ```
 
 ## A. Server List / Definitions / Misc.
