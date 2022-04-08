@@ -292,7 +292,7 @@ ansible -i servers.txt all -m shell -a '~/bin/inxi'
 # show full system information
 ansible -i servers.txt all -m shell -a '~/bin/inxi -Fz'
 # show some system information (I picked these sections)
-ansible -i servers.txt all -m shell -a '~/bin/inxi -CmGNRDPI'
+ansible -i servers.txt all -m shell -a '~/bin/inxi -mDPI'
 ```
 
 Redhat has an article on inxi as well: https://www.redhat.com/sysadmin/learn-more-inxi
