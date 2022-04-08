@@ -122,6 +122,9 @@ ansible -i servers.txt all -m shell -a 'nvidia-smi'
 Note, 'gpustat' is better for querying GPU status in parallel. We will cover
 that later.
 
+Now, if you have `ssh-agent` or any daemon progress who keeps your password
+for the private RSA key, then you should be able to access these servers
+directly without typing any password anymore.
 Ansible documentation is available here
 https://docs.ansible.com/ansible/latest/index.html
 
