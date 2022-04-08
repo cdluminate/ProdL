@@ -347,3 +347,12 @@ that may reveal identity.
 `wsehelp @jhu.edu` is the best contact point for WSE IT.
 
 driver version: nvidia-smi saying cuda 11.6 means up to 11.6, not must equal 11.6.
+
+
+homebrew https://docs.brew.sh/Installation
+```
+ansible -i servers.txt all -m shell -a 'mkdir homebrew; curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew'
+ansible -i servers.txt all -m shell -a 'echo export PATH="/home/<JHED>/homebrew/bin:\$PATH" >> ~/.bashrc'
+ansible -i servers.txt all -m shell -a '~/homebrew/bin/brew search fish'
+ansible -i servers.txt all -m shell -a '~/homebrew/bin/brew install fish'
+```
