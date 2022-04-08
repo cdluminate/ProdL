@@ -355,4 +355,9 @@ ansible -i servers.txt all -m shell -a 'mkdir homebrew; curl -L https://github.c
 ansible -i servers.txt all -m shell -a 'echo export PATH="/home/<JHED>/homebrew/bin:\$PATH" >> ~/.bashrc'
 ansible -i servers.txt all -m shell -a '~/homebrew/bin/brew search fish'
 ansible -i servers.txt all -m shell -a '~/homebrew/bin/brew install fish'
+ansible -i servers.txt all -m shell -a '~/homebrew/bin/brew install fzf'
+ansible -i servers.txt all -m shell -a '~/homebrew/bin/brew install ncdu'
+ansible -i servers.txt all -m shell -a '~/homebrew/bin/brew install fzf'
+ansible -i servers.txt all -m shell -a '~/homebrew/bin/brew install ranger'
+ansible -i servers.txt all -m shell -a '~/homebrew/bin/brew install julia'
 ```
