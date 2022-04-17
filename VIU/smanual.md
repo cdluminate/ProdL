@@ -62,6 +62,10 @@ ssh -v <JHED>@<server>
 The password is the same as your JHED account. So the SSH authentication
 was setup with LDAP.
 
+Troubleshooting: If you get denied for ssh connection due to too many times
+of wrong password, your IP address will be temporarily banned for ~15 minutes.
+Use RSA key to avoid that.
+
 #### 1.2.1. SSH Connextion w/ RSA Key
 
 Google `ssh-keygen` and create a keypair for ssh access. This step can be
