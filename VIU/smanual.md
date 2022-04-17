@@ -96,7 +96,9 @@ Host <server1> <server2> <server3> <...>
 ```
 
 Now exit from the current SSH sessions. Reconnect and we should be using
-the RSA key for authentication.
+the RSA key for authentication. If the server still requests your JHED
+password, you must have missed this step editing your local `~/.ssh/config`
+file.
 
 ### 1.3. Parallel SSH Commands
 
