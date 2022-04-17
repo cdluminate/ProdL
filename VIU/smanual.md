@@ -6,7 +6,11 @@ License: CC-0
 
 ## 0. Architecture and Definition
 
-TODO
+Current architecture: Each server is treated as an individual standalone
+GPU server. We have direct access to all these servers and the GPUs on them.
+This is not a computer cluster setup.
+
+WSE IT Contact: `wsehelp @jhu.edu`
 
 ## 1. Network and Access
 
@@ -132,7 +136,8 @@ ansible -i servers.txt all -m shell -a 'nvidia-smi'
 ```
 
 Note, 'gpustat' is better for querying GPU status in parallel. We will cover
-that later.
+that later. As for driver version... `nvidia-smi` saying cuda 11.6 means *up to*
+11.6, not *must equal* 11.6.
 
 Now, if you have `ssh-agent` or any daemon progress who keeps your password
 for the private RSA key, then you should be able to access these servers
@@ -179,7 +184,7 @@ using the public storage area:
 You may want to use symlink between `/home/<JHED>/*` and `/data/<JHED>/*` to
 redirect your files. We will follow this convention throughout this document.
 
-## 3. Reference Setup of Deep Learning Environment
+## 3. Parallel Setup of Deep Learning Environment
 
 In this section, we setup the servers in parallel, following a consistent
 and uniform configuration.
@@ -344,27 +349,36 @@ xxx1.wse.jhu.edu | CHANGED | rc=0 >>
 1.11.0 | 10
 ```
 
-## A. Server List / Definitions / Misc.
+## 3.5. Parallel Setup of Homebrew (Linuxbrew)
 
-Please lookup my email. This manual is public, so the domain names or IP
-addresses are not supposed to be written here. Neither does any information
-that may reveal identity.
+Since we do not have root access (which is a good thing to some extent as
+we have dedicated admins), we are only able to use package managers which
+does not require root access, like homebrew. The standard `apt` for
+Ubuntu/Debian system is not valid here.
 
-`wsehelp @jhu.edu` is the best contact point for WSE IT.
+According to homebrew installation guide (https://docs.brew.sh/Installation),
+we can do the following steps to install homebrew in parallel:
 
-driver version: nvidia-smi saying cuda 11.6 means up to 11.6, not must equal 11.6.
-
-
-homebrew https://docs.brew.sh/Installation
-```
+```shell
 ansible -i servers.txt all -m shell -a 'mkdir homebrew; curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew'
 ansible -i servers.txt all -m shell -a 'echo export PATH="/home/<JHED>/homebrew/bin:\$PATH" >> ~/.bashrc'
+ansible -i servers.txt all -m shell -a '~/homebrew/bin/brew --version'  # verify install
+```
+
+Here are some handy / optional utilities
+
+```shell
 ansible -i servers.txt all -m shell -a '~/homebrew/bin/brew search fish'
 ansible -i servers.txt all -m shell -a '~/homebrew/bin/brew install fish'
 ansible -i servers.txt all -m shell -a '~/homebrew/bin/brew install fzf'
 ansible -i servers.txt all -m shell -a '~/homebrew/bin/brew install ncdu'
-ansible -i servers.txt all -m shell -a '~/homebrew/bin/brew install fzf'
+ansible -i servers.txt all -m shell -a '~/homebrew/bin/brew install tig'
 ansible -i servers.txt all -m shell -a '~/homebrew/bin/brew install ranger'
 ansible -i servers.txt all -m shell -a '~/homebrew/bin/brew install sysstat'
 ansible -i servers.txt all -m shell -a '~/homebrew/bin/brew install julia'
 ```
+
+## A. Server List / IP Address.
+
+Please lookup my email. This manual is public, so the domain names or IP
+addresses are not supposed to be written here.
