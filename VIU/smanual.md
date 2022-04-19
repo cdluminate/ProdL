@@ -382,3 +382,45 @@ ansible -i servers.txt all -m shell -a '~/homebrew/bin/brew install julia'
 
 Please lookup my email. This manual is public, so the domain names or IP
 addresses are not supposed to be written here.
+
+## B. Server Architecture Choise
+
+There are two options for a group of GPU servers: (1) form a computer cluster
+with job management (e.g. slurm); (2) treat as individual standalone GPU
+servers. The two options correspond to completely different server
+architectures.
+
+* Slurm cluster has three groups of nodes (a node is a server or virtual server),
+namely (1) login node; (2) storage node(s); (3) computation nodes. Users are
+blocked from direct access to storage nodes and computation nodes. Only login
+node is accessible to users, and jobs are submitted and scheduled through slurm.
+
+* No slurm means each server is treated as standalone server. Login node
+is not used here. Storage node (server) is optional. All users have direct
+access to all computation resources.
+
+Pros and Cons comparing "use slurm" and "no slurm"
+
+| Index | Aspect | Use Slurm | No Slurm |
+| ------| ------ | --------- | -------- |
+| 1 | Disk IO | read/write on NFS [1] | native NVME read/write |
+| 2 | Access | can only access login node | can access all |
+| 3 | max num of GPU we can use | fixed and mandatory [2] | extremely flexible based on communication |
+| 4 | job queue | fair FIFO queue | no queue [3] |
+| 5 | maintenance | wse IT | wse IT |
+| 6 | cost | extra optical networking (cables and routers) | no extra device |
+| 7 | learning curve | needs to learn more than basic usage | basic usage |
+| 8 | interactive development | interactive debugging not straightforward | straightforward |
+
+[1] NFS (actually any file system over network) performance is very bad at
+random small file read (e.g. imagenet). Disk read will become a significant
+performance bottleneck unless files are cached by linux VFS in memory.
+In a typical case, NVME drive over NFS could perform worse than HDD in
+random small file I/O tasks.
+
+[2] slurm rules are mandatory. For example, even if 50 out of 100 GPUs
+are idle, a user can only occupy 10 GPUs according to the quota 10.
+When slurm is not used, user can temporarily occupy all the idle GPUs.
+
+[3] when there is no job queue, abusive users could result in mess and
+interfere with the others.
