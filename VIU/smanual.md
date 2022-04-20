@@ -411,6 +411,7 @@ Pros and Cons comparing "use slurm" and "no slurm"
 | 6 | cost | extra optical networking (cables and routers) | no extra device |
 | 7 | learning curve | needs to learn more than basic usage | basic usage |
 | 8 | interactive development | interactive debugging not straightforward | straightforward |
+| 9 | GPU usage | takes the whole GPU even if GPU util 1% | can manually stack jobs on the same card |
 
 [1] NFS (actually any file system over network) performance is very bad at
 random small file read (e.g. imagenet). Disk read will become a significant
