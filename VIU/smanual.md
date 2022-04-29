@@ -431,3 +431,11 @@ When slurm is not used, user can temporarily occupy all the idle GPUs.
 
 [3] when there is no job queue, abusive users could result in mess and
 interfere with the others.
+
+## C. Troubleshooting
+
+1. Idle tmux session ends automatically and unexpectedly
+
+This is due to server maintainer team sets an automatic bash timeout `TMOUT=600` at `/etc/profile.d/timeout.sh`.
+It means that a bash being idle for 600 seconds will end automatically. And eventually the whole tmux session will end and disappear.
+Possible workaround includes (1) start a `sh` at the end of the command in tmux window, e.g. `python3 train.py; sh`
