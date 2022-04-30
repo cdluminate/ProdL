@@ -439,3 +439,63 @@ interfere with the others.
 This is due to server maintainer team sets an automatic bash timeout `TMOUT=600` at `/etc/profile.d/timeout.sh`.
 It means that a bash being idle for 600 seconds will end automatically. And eventually the whole tmux session will end and disappear.
 Possible workaround includes (1) start a `sh` at the end of the command in tmux window, e.g. `python3 train.py; sh`
+
+## D. Some Debug information
+
+pci bus not correctly initialized https://unix.stackexchange.com/questions/322337/linux-3-x-fails-assigning-pci-bar-memory
+```
+[Thu Apr 28 19:25:42 2022] pcieport 0000:74:02.0: bridge window [io  0x1000-0x0fff] to [bus 75] add_size 1000
+[Thu Apr 28 19:25:42 2022] pcieport 0000:74:03.0: bridge window [io  0x1000-0x0fff] to [bus 76] add_size 1000
+[Thu Apr 28 19:25:42 2022] pcieport 0000:74:04.0: bridge window [io  0x1000-0x0fff] to [bus 77] add_size 1000
+[Thu Apr 28 19:25:42 2022] pcieport 0000:74:02.0: BAR 13: no space for [io  size 0x1000]
+[Thu Apr 28 19:25:42 2022] pcieport 0000:74:02.0: BAR 13: failed to assign [io  size 0x1000]
+[Thu Apr 28 19:25:42 2022] pcieport 0000:74:03.0: BAR 13: no space for [io  size 0x1000]
+[Thu Apr 28 19:25:42 2022] pcieport 0000:74:03.0: BAR 13: failed to assign [io  size 0x1000]
+[Thu Apr 28 19:25:42 2022] pcieport 0000:74:04.0: BAR 13: no space for [io  size 0x1000]
+[Thu Apr 28 19:25:42 2022] pcieport 0000:74:04.0: BAR 13: failed to assign [io  size 0x1000]
+[Thu Apr 28 19:25:42 2022] pcieport 0000:74:04.0: BAR 13: no space for [io  size 0x1000]
+[Thu Apr 28 19:25:42 2022] pcieport 0000:74:04.0: BAR 13: failed to assign [io  size 0x1000]
+[Thu Apr 28 19:25:42 2022] pcieport 0000:74:03.0: BAR 13: no space for [io  size 0x1000]
+[Thu Apr 28 19:25:42 2022] pcieport 0000:74:03.0: BAR 13: failed to assign [io  size 0x1000]
+[Thu Apr 28 19:25:42 2022] pcieport 0000:74:02.0: BAR 13: no space for [io  size 0x1000]
+[Thu Apr 28 19:25:42 2022] pcieport 0000:74:02.0: BAR 13: failed to assign [io  size 0x1000]
+[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:02.0: bridge window [io  0x1000-0x0fff] to [bus f3] add_size 1000
+[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:03.0: bridge window [io  0x1000-0x0fff] to [bus f4] add_size 1000
+[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:04.0: bridge window [io  0x1000-0x0fff] to [bus f5] add_size 1000
+[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:05.0: bridge window [io  0x1000-0x0fff] to [bus f6] add_size 1000
+[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:02.0: BAR 13: no space for [io  size 0x1000]
+[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:02.0: BAR 13: failed to assign [io  size 0x1000]
+[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:03.0: BAR 13: no space for [io  size 0x1000]
+[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:03.0: BAR 13: failed to assign [io  size 0x1000]
+[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:04.0: BAR 13: no space for [io  size 0x1000]
+[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:04.0: BAR 13: failed to assign [io  size 0x1000]
+[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:05.0: BAR 13: no space for [io  size 0x1000]
+[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:05.0: BAR 13: failed to assign [io  size 0x1000]
+[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:05.0: BAR 13: no space for [io  size 0x1000]
+[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:05.0: BAR 13: failed to assign [io  size 0x1000]
+[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:04.0: BAR 13: no space for [io  size 0x1000]
+[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:04.0: BAR 13: failed to assign [io  size 0x1000]
+[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:03.0: BAR 13: no space for [io  size 0x1000]
+[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:03.0: BAR 13: failed to assign [io  size 0x1000]
+[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:02.0: BAR 13: no space for [io  size 0x1000]
+[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:02.0: BAR 13: failed to assign [io  size 0x1000]
+
+f2:00.0 System peripheral: Intel Corporation Device 09a2 (rev 04)
+f2:00.1 System peripheral: Intel Corporation Device 09a4 (rev 04)
+f2:00.2 System peripheral: Intel Corporation Device 09a3 (rev 04)
+f2:00.4 Host bridge: Intel Corporation Device 0998                                                                                                                       
+f2:02.0 PCI bridge: Intel Corporation Device 347a (rev 04)                                                                                                               
+f2:03.0 PCI bridge: Intel Corporation Device 347b (rev 04)                                                                                                              
+f2:04.0 PCI bridge: Intel Corporation Device 347c (rev 04)                                                                                                               
+f2:05.0 PCI bridge: Intel Corporation Device 347d (rev 04)
+
+74:00.0 System peripheral: Intel Corporation Device 09a2 (rev 04)
+74:00.1 System peripheral: Intel Corporation Device 09a4 (rev 04)
+74:00.2 System peripheral: Intel Corporation Device 09a3 (rev 04)
+74:00.4 Host bridge: Intel Corporation Device 0998
+74:02.0 PCI bridge: Intel Corporation Device 347a (rev 04)
+74:03.0 PCI bridge: Intel Corporation Device 347b (rev 04)
+74:04.0 PCI bridge: Intel Corporation Device 347c (rev 04)
+74:05.0 PCI bridge: Intel Corporation Device 347d (rev 04)
+
+```
