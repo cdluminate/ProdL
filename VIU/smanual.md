@@ -233,7 +233,7 @@ instructions. If you are as lazy as me, just use this to configure anaconda
 in bash (or zsh):
 
 ```
-ansible -i servers.txt all -m shell -a 'echo export PATH="/home/mzhou32/anaconda3/bin:\$PATH" >> ~/.bashrc'
+ansible -i servers.txt all -m shell -a 'echo export PATH="/home/<JHED>/anaconda3/bin:\$PATH" >> ~/.bashrc'
 ```
 
 ### 3.3. Parallel Server Status query
