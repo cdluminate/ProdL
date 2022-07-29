@@ -255,51 +255,19 @@ And the output of gpustat will look like this:
 xxx4.wse.jhu.edu | CHANGED | rc=0 >>
 xxx4                 Thu Apr  7 20:53:17 2022  510.47.03
 [0] NVIDIA RTX A6000 | 67'C, 100 % | 45168 / 49140 MB | xxxxx(44705M) gdm(4M)
-[1] NVIDIA RTX A6000 | 75'C,  99 % | 45062 / 49140 MB | xxxxx(44599M) gdm(4M)
-[2] NVIDIA RTX A6000 | 77'C,  99 % | 45158 / 49140 MB | xxxxx(44695M) gdm(4M)
-[3] NVIDIA RTX A6000 | 78'C,  99 % | 45256 / 49140 MB | xxxxx(44793M) gdm(4M)
-[4] NVIDIA RTX A6000 | 35'C,   0 % |   460 / 49140 MB | gdm(4M)
-[5] NVIDIA RTX A6000 | 32'C,   0 % |   460 / 49140 MB | gdm(4M)
-[6] NVIDIA RTX A6000 | 33'C,   0 % |   460 / 49140 MB | gdm(4M)
-[7] NVIDIA RTX A6000 | 33'C,   0 % |   460 / 49140 MB | gdm(4M)
-[8] NVIDIA RTX A6000 | 32'C,   0 % |   460 / 49140 MB | gdm(4M)
-[9] NVIDIA RTX A6000 | 32'C,   0 % |   460 / 49140 MB | gdm(4M)
+[...]
 xxx2.wse.jhu.edu | CHANGED | rc=0 >>
 xxx2                 Thu Apr  7 20:53:17 2022  510.47.03
 [0] NVIDIA RTX A5000 | 31'C,   0 % |   308 / 24564 MB |
-[1] NVIDIA RTX A5000 | 32'C,   0 % |   308 / 24564 MB |
-[2] NVIDIA RTX A5000 | 31'C,   0 % |   308 / 24564 MB |
-[3] NVIDIA RTX A5000 | 31'C,   0 % |   308 / 24564 MB |
-[4] NVIDIA RTX A5000 | 32'C,   0 % |   308 / 24564 MB |
-[5] NVIDIA RTX A5000 | 32'C,   0 % |   308 / 24564 MB |
-[6] NVIDIA RTX A5000 | 33'C,   0 % |   308 / 24564 MB |
-[7] NVIDIA RTX A5000 | 31'C,   0 % |   308 / 24564 MB |
-[8] NVIDIA RTX A5000 | 33'C,   0 % |   308 / 24564 MB |
-[9] NVIDIA RTX A5000 | 33'C,   0 % |   308 / 24564 MB |
+[...]
 xxx3.wse.jhu.edu | CHANGED | rc=0 >>
 xxx3                 Thu Apr  7 20:53:17 2022  510.47.03
 [0] NVIDIA RTX A5000 | 31'C,   0 % |   308 / 24564 MB |
-[1] NVIDIA RTX A5000 | 32'C,   0 % |   308 / 24564 MB |
-[2] NVIDIA RTX A5000 | 31'C,   0 % |   308 / 24564 MB |
-[3] NVIDIA RTX A5000 | 31'C,   0 % |   308 / 24564 MB |
-[4] NVIDIA RTX A5000 | 32'C,   0 % |   308 / 24564 MB |
-[5] NVIDIA RTX A5000 | 31'C,   0 % |   308 / 24564 MB |
-[6] NVIDIA RTX A5000 | 32'C,   0 % |   308 / 24564 MB |
-[7] NVIDIA RTX A5000 | 31'C,   0 % |   308 / 24564 MB |
-[8] NVIDIA RTX A5000 | 32'C,   0 % |   308 / 24564 MB |
-[9] NVIDIA RTX A5000 | 34'C,   0 % |   308 / 24564 MB |
+[...]
 xxx1.wse.jhu.edu | CHANGED | rc=0 >>
 xxx1                 Thu Apr  7 20:53:18 2022  510.47.03
 [0] NVIDIA RTX A6000 | 32'C,   0 % |   460 / 49140 MB | gdm(4M)
-[1] NVIDIA RTX A6000 | 35'C,   0 % |   460 / 49140 MB | gdm(4M)
-[2] NVIDIA RTX A6000 | 34'C,   0 % |   460 / 49140 MB | gdm(4M)
-[3] NVIDIA RTX A6000 | 35'C,   0 % |   460 / 49140 MB | gdm(4M)
-[4] NVIDIA RTX A6000 | 35'C,   0 % |   460 / 49140 MB | gdm(4M)
-[5] NVIDIA RTX A6000 | 34'C,   0 % |   460 / 49140 MB | gdm(4M)
-[6] NVIDIA RTX A6000 | 37'C,   0 % |   460 / 49140 MB | gdm(4M)
-[7] NVIDIA RTX A6000 | 34'C,   0 % |   460 / 49140 MB | gdm(4M)
-[8] NVIDIA RTX A6000 | 33'C,   0 % |   460 / 49140 MB | gdm(4M)
-[9] NVIDIA RTX A6000 | 36'C,   0 % |   460 / 49140 MB | gdm(4M)
+[...]
 ```
 
 #### 3.3.2. Other System Status
@@ -439,63 +407,3 @@ interfere with the others.
 This is due to server maintainer team sets an automatic bash timeout `TMOUT=600` at `/etc/profile.d/timeout.sh`.
 It means that a bash being idle for 600 seconds will end automatically. And eventually the whole tmux session will end and disappear.
 Possible workaround includes (1) start a `sh` at the end of the command in tmux window, e.g. `python3 train.py; sh`
-
-## D. Some Debug information
-
-pci bus not correctly initialized https://unix.stackexchange.com/questions/322337/linux-3-x-fails-assigning-pci-bar-memory
-```
-[Thu Apr 28 19:25:42 2022] pcieport 0000:74:02.0: bridge window [io  0x1000-0x0fff] to [bus 75] add_size 1000
-[Thu Apr 28 19:25:42 2022] pcieport 0000:74:03.0: bridge window [io  0x1000-0x0fff] to [bus 76] add_size 1000
-[Thu Apr 28 19:25:42 2022] pcieport 0000:74:04.0: bridge window [io  0x1000-0x0fff] to [bus 77] add_size 1000
-[Thu Apr 28 19:25:42 2022] pcieport 0000:74:02.0: BAR 13: no space for [io  size 0x1000]
-[Thu Apr 28 19:25:42 2022] pcieport 0000:74:02.0: BAR 13: failed to assign [io  size 0x1000]
-[Thu Apr 28 19:25:42 2022] pcieport 0000:74:03.0: BAR 13: no space for [io  size 0x1000]
-[Thu Apr 28 19:25:42 2022] pcieport 0000:74:03.0: BAR 13: failed to assign [io  size 0x1000]
-[Thu Apr 28 19:25:42 2022] pcieport 0000:74:04.0: BAR 13: no space for [io  size 0x1000]
-[Thu Apr 28 19:25:42 2022] pcieport 0000:74:04.0: BAR 13: failed to assign [io  size 0x1000]
-[Thu Apr 28 19:25:42 2022] pcieport 0000:74:04.0: BAR 13: no space for [io  size 0x1000]
-[Thu Apr 28 19:25:42 2022] pcieport 0000:74:04.0: BAR 13: failed to assign [io  size 0x1000]
-[Thu Apr 28 19:25:42 2022] pcieport 0000:74:03.0: BAR 13: no space for [io  size 0x1000]
-[Thu Apr 28 19:25:42 2022] pcieport 0000:74:03.0: BAR 13: failed to assign [io  size 0x1000]
-[Thu Apr 28 19:25:42 2022] pcieport 0000:74:02.0: BAR 13: no space for [io  size 0x1000]
-[Thu Apr 28 19:25:42 2022] pcieport 0000:74:02.0: BAR 13: failed to assign [io  size 0x1000]
-[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:02.0: bridge window [io  0x1000-0x0fff] to [bus f3] add_size 1000
-[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:03.0: bridge window [io  0x1000-0x0fff] to [bus f4] add_size 1000
-[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:04.0: bridge window [io  0x1000-0x0fff] to [bus f5] add_size 1000
-[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:05.0: bridge window [io  0x1000-0x0fff] to [bus f6] add_size 1000
-[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:02.0: BAR 13: no space for [io  size 0x1000]
-[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:02.0: BAR 13: failed to assign [io  size 0x1000]
-[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:03.0: BAR 13: no space for [io  size 0x1000]
-[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:03.0: BAR 13: failed to assign [io  size 0x1000]
-[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:04.0: BAR 13: no space for [io  size 0x1000]
-[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:04.0: BAR 13: failed to assign [io  size 0x1000]
-[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:05.0: BAR 13: no space for [io  size 0x1000]
-[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:05.0: BAR 13: failed to assign [io  size 0x1000]
-[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:05.0: BAR 13: no space for [io  size 0x1000]
-[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:05.0: BAR 13: failed to assign [io  size 0x1000]
-[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:04.0: BAR 13: no space for [io  size 0x1000]
-[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:04.0: BAR 13: failed to assign [io  size 0x1000]
-[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:03.0: BAR 13: no space for [io  size 0x1000]
-[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:03.0: BAR 13: failed to assign [io  size 0x1000]
-[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:02.0: BAR 13: no space for [io  size 0x1000]
-[Thu Apr 28 19:25:42 2022] pcieport 0000:f2:02.0: BAR 13: failed to assign [io  size 0x1000]
-
-f2:00.0 System peripheral: Intel Corporation Device 09a2 (rev 04)
-f2:00.1 System peripheral: Intel Corporation Device 09a4 (rev 04)
-f2:00.2 System peripheral: Intel Corporation Device 09a3 (rev 04)
-f2:00.4 Host bridge: Intel Corporation Device 0998                                                                                                                       
-f2:02.0 PCI bridge: Intel Corporation Device 347a (rev 04)                                                                                                               
-f2:03.0 PCI bridge: Intel Corporation Device 347b (rev 04)                                                                                                              
-f2:04.0 PCI bridge: Intel Corporation Device 347c (rev 04)                                                                                                               
-f2:05.0 PCI bridge: Intel Corporation Device 347d (rev 04)
-
-74:00.0 System peripheral: Intel Corporation Device 09a2 (rev 04)
-74:00.1 System peripheral: Intel Corporation Device 09a4 (rev 04)
-74:00.2 System peripheral: Intel Corporation Device 09a3 (rev 04)
-74:00.4 Host bridge: Intel Corporation Device 0998
-74:02.0 PCI bridge: Intel Corporation Device 347a (rev 04)
-74:03.0 PCI bridge: Intel Corporation Device 347b (rev 04)
-74:04.0 PCI bridge: Intel Corporation Device 347c (rev 04)
-74:05.0 PCI bridge: Intel Corporation Device 347d (rev 04)
-
-```
