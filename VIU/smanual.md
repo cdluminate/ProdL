@@ -167,18 +167,17 @@ the ansible command line: `-e 'ansible_remote_tmp=/tmp/<jhed>'`.
 
 ### 2.1. Storage Area
 
-1. maintenance team: "These servers are not running RAID.
-So any data stored on these servers is at risk of sudden irreversible loss."
-The NVME disks are simply combined into a large volume group (8TB), which
-looks like a RAID0 setup. (a single broken disk could render the whole
-storage pool inaccessible).
+1. These servers are not running RAID. Our `/data` directory is currently a
+temporary storage area based on a single U2 NVME SSD. So any data stored on
+these servers is at risk of sudden irreversible loss.
 **Keep it in mind: properly and regularly backup your important data.**
 
-2. maintenance team: "These servers have been configured with two different
-storage areas. `/home` should be used minimally. `/data` is a higher performing file system,
+2. These servers have been configured with two different storage areas.
+`/home` should be used minimally. `/data` is a higher performing file system,
 and any data that needs to be processed should reside here.
 `/home` only has 100GB space (although resizable), so please really don't
-put datasets and bulky files here.
+put datasets and bulky files here. In the worse case, attempts to login
+to the server may fail due to "no enough space left in /home".
 
 ### 2.2. Coordination
 
