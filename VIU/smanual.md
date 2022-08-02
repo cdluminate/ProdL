@@ -417,3 +417,23 @@ interfere with the others.
 This is due to server maintainer team sets an automatic bash timeout `TMOUT=600` at `/etc/profile.d/timeout.sh`.
 It means that a bash being idle for 600 seconds will end automatically. And eventually the whole tmux session will end and disappear.
 Possible workaround includes (1) start a `sh` at the end of the command in tmux window, e.g. `python3 train.py; sh`
+
+## D. Reference Makefile
+
+```makefile
+ping:
+        ansible -i ~/servers.txt all -m ping -o \
+                -e 'ansible_remote_tmp=/tmp/JHED'
+
+gpustat:
+        ansible -i ~/servers.txt all -m shell -a '~/anaconda3/bin/gpustat' \
+                -e 'ansible_remote_tmp=/tmp/JHED'
+
+inxi:
+        ansible -i ~/servers.txt all -m shell -a '~/bin/inxi' \
+                -e 'ansible_remote_tmp=/tmp/JHED'
+
+storage:
+        ansible -i servers.txt all -m shell -a 'df -h | grep -P "/home|/data"' \
+                -e 'ansible_remote_tmp=/tmp/JHED'
+```
