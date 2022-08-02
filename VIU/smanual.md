@@ -192,6 +192,14 @@ using the public storage area:
 You may want to use symlink between `/home/<JHED>/*` and `/data/<JHED>/*` to
 redirect your files. We will follow this convention throughout this document.
 
+### 2.3. Shared Storage Server (NFS)
+
+- Status: wait
+- Network Connections: 10GbE (TCP / RoCE)
+- Disk Array Configuration: ZFS RAID10, +L2ARC (2TB nvme) +ZIL (2TB nvme)
+- Raw/Effective Space: 256TB / 128TB HDD
+- NFS Mount Point: `/nfs`
+
 ## 3. Parallel Setup of Deep Learning Environment
 
 In this section, we setup the servers in parallel, following a consistent
