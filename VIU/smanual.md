@@ -160,6 +160,9 @@ export ANSIBLE_FORCE_COLOR=True
 export ANSIBLE_INVENTORY=~/servers.txt
 ```
 
+In case of ansible error due to `no enough space left in /home`, append this to
+the ansible command line: `-e 'ansible_remote_tmp=/tmp/<jhed>'`.
+
 ## 2. Server Storage
 
 ### 2.1. Storage Area
