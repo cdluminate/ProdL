@@ -10,11 +10,9 @@ Current architecture: Each server is treated as an individual standalone
 GPU server. We have direct access to all these servers and the GPUs on them.
 This is not a computer cluster setup.
 
-GPU Allocation policy: (1) GPUs are open to everyone in regular days; (2)
-enforce GPU quota as 4 to all users within 1 month before the paper submission
-deadline. Currently slurm is not necessary as per consensus. We will discuss
-and revise the policy should we encounter new problems.  (Revision-Date:
-2022-04-20)
+GPU Allocation policy: (1) In regular days: GPUs are open to everyone;
+(2) One month before paper submission deadline: 2 GPUs per person on
+a server. (Revision-Date: 2022-10-03)
 
 WSE IT Contact: `wsehelp @jhu.edu`
 
