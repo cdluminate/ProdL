@@ -933,10 +933,11 @@ improvement be attributed to the core contribution? Does the experiments support
 the hypothesis of the paper?
 
 These are several key words that can be used to remind you on what to check
-about a paper to review: (1) insight and motivation; (2) originality of design;
-(3) scale, extensibility, and flexibility of the design; (4) experimental
-demonstration; (5) paper representation and organization; (6) reproducibility;
-(7) citations and literature review, as well as relation to previous works.
+about a paper to review: (1) insight and motivation; (2) significance of the
+problem; (3) originality of design; (4) scale, extensibility, and flexibility
+of the design; (5) experimental demonstration; (6) paper representation and
+organization; (7) reproducibility; (8) citations and literature review, as well
+as relation to previous works.
 
 [1] [external reference](https://www.msra.cn/zh-cn/news/outreach-articles/%E5%BE%AE%E8%BD%AF%E5%AF%BC%E5%B8%88%E4%BA%B2%E6%8E%88%E8%AE%BA%E6%96%87%E7%A0%94%E8%AF%BB%E5%8D%81%E9%97%AE%E5%9B%9E%E7%AD%94%E9%80%9A%E5%88%99)
 
