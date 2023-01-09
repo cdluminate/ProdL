@@ -13,3 +13,5 @@ Aspects to mention in a review
 9. Flexibility/Extensibility
 10. Assumption
 11. Motivation
+12. Consistency
+13. Completeness
