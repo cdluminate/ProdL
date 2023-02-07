@@ -8,7 +8,10 @@ License: CC-0
 
 Current architecture: Each server is treated as an individual standalone
 GPU server. We have direct access to all these servers and the GPUs on them.
-This is not a computer cluster setup.
+This is not a slurm cluster setup.
+
+**Definition: a GPU server will be named "compute node", while a storage server
+will be named "storage node" in this document for convenience.**
 
 GPU Allocation policy: (1) In regular days: GPUs are open to everyone;
 (2) One month before paper submission deadline: 2 GPUs per person on
@@ -163,7 +166,7 @@ the ansible command line: `-e 'ansible_remote_tmp=/tmp/<jhed>'`.
 
 ## 2. Server Storage
 
-### 2.1. Storage Area
+### 2.1. Storage Area (Compute Nodes)
 
 1. These servers are not running RAID. Our `/data` directory is currently a
 temporary storage area based on a single U2 NVME SSD. So any data stored on
@@ -177,7 +180,7 @@ and any data that needs to be processed should reside here.
 put datasets and bulky files here. In the worse case, attempts to login
 to the server may fail due to "no enough space left in /home".
 
-### 2.2. Coordination
+### 2.2. Coordination (Compute Nodes)
 
 5. Everyone has write access to /data. I suggest the following layout for
 using the public storage area:
@@ -190,13 +193,21 @@ using the public storage area:
 You may want to use symlink between `/home/<JHED>/*` and `/data/<JHED>/*` to
 redirect your files. We will follow this convention throughout this document.
 
-### 2.3. Shared Storage Server (NFS)
+Please the `/data` directory as a temporary storage, and keep in mind to
+move less frequently used and archival files to the storage server.
 
-- Status: wait
-- Network Connections: 10GbE (TCP / RoCE)
-- Disk Array Configuration: ZFS RAID10, +L2ARC (2TB nvme) +ZIL (2TB nvme)
-- Raw/Effective Space: 256TB / 128TB HDD
-- NFS Mount Point: `/nfs`
+### 2.3. Shared Storage Server (ZFS exported through NFS)
+
+- Network Connections: 10GbE (TCP)
+- Disk Array Configuration: (8x16TB RAIDz2 + 8x16TB RAIDz2), +L2ARC (2TB nvme) +ZIL (2TB nvme)
+- Raw/Effective Space: 16 * 16 TB Raw. The effective space is 166TiB.
+- NFS Mount Point (on compute node): `/nfs`  (FIXME)
+- ZFS Mount Point (on storage node): `/pool1`
+- User quota: 8TiB
+
+(On storage server) Use `zpool list -v` and `zfs list -tall` to list the zpool
+and zfs dataset information including data usage.  Use `zpool status -v` to
+check the zpool status.
 
 ## 3. Parallel Setup of Deep Learning Environment
 
