@@ -209,6 +209,9 @@ move less frequently used and archival files to the storage server.
 and zfs dataset information including data usage.  Use `zpool status -v` to
 check the zpool status.
 
+(On any node) Use `findmnt --df` or `df -h` to lookup file system usage and
+mount point information, including NFS.
+
 ## 3. Parallel Setup of Deep Learning Environment
 
 In this section, we setup the servers in parallel, following a consistent
