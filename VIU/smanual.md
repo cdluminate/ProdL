@@ -205,7 +205,12 @@ move less frequently used and archival files to the storage server.
 - ZFS Mount Point (on storage node): `/pool1`
 - User quota: 8TiB
 
-** Please put your personal files in the `/mnt/store/<JHED>/` subdirectory. **
+**Important Hint 1:** Please put your personal files in the `/mnt/store/<JHED>/` subdirectory.
+
+**Important Hint 2:** As a regular user, if you would like to leverage
+the L2 cache, just read your dataset for one or more full
+epochs. Then the ZFS will be automatically informed that you will
+frequently use this piece of data, and it will cache it in the high-speed device.
 
 (On storage server) Use `zpool list -v` and `zfs list -tall` to list the zpool
 and zfs dataset information including data usage.  Use `zpool status -v` to
@@ -213,6 +218,22 @@ check the zpool status.
 
 (On any node) Use `findmnt --df` or `df -h` to lookup file system usage and
 mount point information, including NFS.
+
+*Details-1:* The storage server has 16 x 16TB hard disk drives, organized in
+a single ZFS pool. The storage pool is exported and mounted to
+compute nodes through NFS over 10GbE. This is typically seen
+in clusters. And -- if you had experience working with computer
+clusters -- ZFS+NFS is usually very slow in terms of small file
+IO. In the worst case, it can be even much slower than the small
+file IO on your local hard disk. To mitigate this issue, the storage
+pool is attached with two NVME drives for L2 cache and event
+log purposes to greatly speed up reading and writing. 
+
+*Details-2:* Our storage pool is a combination of two RAIDz2 arrays, where
+each of the arrays has 2 disks for data redundancy. Namely, our
+storage is resistant to at least 2 simultaneous hard disk failures,
+and at most 4 simultaneous hard disk failures. This means the
+storage is much safer than a normal single-disk storage.
 
 ## 3. Parallel Setup of Deep Learning Environment
 
