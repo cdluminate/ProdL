@@ -201,9 +201,11 @@ move less frequently used and archival files to the storage server.
 - Network Connections: 10GbE (TCP)
 - Disk Array Configuration: (8x16TB RAIDz2 + 8x16TB RAIDz2), +L2ARC (2TB nvme) +ZIL (2TB nvme)
 - Raw/Effective Space: 16 * 16 TB Raw. The effective space is 166TiB.
-- NFS Mount Point (on compute node): `/nfs`  (FIXME)
+- NFS Mount Point (on compute node): `/mnt/store`
 - ZFS Mount Point (on storage node): `/pool1`
 - User quota: 8TiB
+
+** Please put your personal files in the `/mnt/store/<JHED>/` subdirectory. **
 
 (On storage server) Use `zpool list -v` and `zfs list -tall` to list the zpool
 and zfs dataset information including data usage.  Use `zpool status -v` to
