@@ -235,6 +235,44 @@ storage is resistant to at least 2 simultaneous hard disk failures,
 and at most 4 simultaneous hard disk failures. This means the
 storage is much safer than a normal single-disk storage.
 
+### 2.3.1 Automatic ZFS Snapshots
+
+We have enabled the automatic snapshots on our storage server, which
+automatically saves the filesystem snapshots at several past timestamps and
+rotates them (i.e., keeping only the N latest snapshots and delete the old
+ones) as time goes by.  This makes the storage resistant to certain types of
+human errors like the accidental `rm -rf <wrong-directory>`. Even if that
+really happened, we can restore the deleted files easily.
+
+The automatic snapshots will be taken daily, hourly, and every five minutes.
+The timestamp will be recorded as a part of the snapshot name, in the format of
+`<zfs-dataset>@zfs-auto-snap_<frequency>-<timestamp>`, where `frequency` is one
+of (daily, hourly, frequent). The timestamp format is YYYY-MM-DD-HHMM. The
+whole string after the `@` symbol is the snapshot name. For instance:
+
+```
+(storage node)$ zfs list -tall
+[...]
+pool1/data@zfs-auto-snap_daily-2023-02-18-1125     4.34G      -     1.71T  -
+[...]
+pool1/data@zfs-auto-snap_hourly-2023-02-20-1317     810K      -     1.79T  -
+[...]
+pool1/data@zfs-auto-snap_frequent-2023-02-20-1415   444K      -     1.79T  -
+[...]
+```
+
+Note, the timezone for the timestamps is UTC, instead of New York time (UTC-5).
+Namely, the `pool1/data@zfs-auto-snap_frequent-2023-02-20-1415` snapshot is
+taken at `9:15 AM`. Assume that you have a directory accidentally removed at
+`9:16 AM`, then we can restore the deleted files from the `9:15 AM` snapshot.
+
+To do so, first change directory into (storage node) `/pool1/data`.  Note, the
+snapshots are currently not exported to compute nodes.  Then `cd
+.zfs/snapshot`, and `ls`. You will see all snapshots organized in read-only
+directories. Just treat the `zfs-auto-snap_frequent-2023-02-20-1415` (`9:15
+AM`) snapshot as a normal directory except that you can never write in these
+readonly snapshots. Then find the accidentally removed files and copy them out.
+
 ## 3. Parallel Setup of Deep Learning Environment
 
 In this section, we setup the servers in parallel, following a consistent
