@@ -208,9 +208,14 @@ move less frequently used and archival files to the storage server.
 **Important Hint 1:** Please put your personal files in the `/mnt/store/<JHED>/` subdirectory.
 
 **Important Hint 2:** As a regular user, if you would like to leverage
-the L2 cache, just read your dataset for one or more full
+the L2ARC cache, just read your dataset for one or more full
 epochs. Then the ZFS will be automatically informed that you will
 frequently use this piece of data, and it will cache it in the high-speed device.
+
+**Important Hint 3:** If you want to figure out how much space you have used,
+you may use `zfs get userused@<JHED> pool1/data` on the storage server -- this is lightning
+fast compared to the naive `du -sh *` solution. By the way, if you want to query your
+current user quota, use `zfs get userquota@<JHED> pool1/data` on the storage server.
 
 (On storage server) Use `zpool list -v` and `zfs list -tall` to list the zpool
 and zfs dataset information including data usage.  Use `zpool status -v` to
@@ -292,6 +297,10 @@ Document for [ansible.builtin.shell](https://docs.ansible.com/ansible/latest/col
 ### 3.2. Download and Setup Anaconda
 
 We install it in the [silent-mode](https://docs.anaconda.com/anaconda/install/silent-mode/)
+
+**Important Hint 1:** We are running out of space of the `/data` partition on every GPU node.
+Please install your anaconda instance to the shared storage (`/mnt`) if no space is available
+there.
 
 ```shell
 ansible -i servers.txt all -m shell -a 'chdir=Downloads wget -c https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh'
