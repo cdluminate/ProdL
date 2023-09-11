@@ -219,7 +219,8 @@ current user quota, use `zfs get userquota@<JHED> pool1/data` on the storage ser
 
 (On storage server) Use `zpool list -v` and `zfs list -tall` to list the zpool
 and zfs dataset information including data usage.  Use `zpool status -v` to
-check the zpool status.
+check the zpool status. Use `arcstat` on storage server to check the L1 ARC
+and L2 ARC usage statistics as a part of performance diagnosis.
 
 (On any node) Use `findmnt --df` or `df -h` to lookup file system usage and
 mount point information, including NFS.
