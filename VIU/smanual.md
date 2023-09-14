@@ -223,6 +223,15 @@ of dataloaders will not only quickly drain the network bandwidth, and greatly sl
 down other programs, including your second experiment. Saturating the network bandwidth
 can also make the NFS super slow to respond.
 
+**Warning:** If you are runing vscode on the GPU server, please do not use
+its code search functionality on a large code base, as its ripgrep backend
+can immediately drain all the network bandwidth and render the shared storage
+almost not responding and hence unusable. This will not only lead to a very
+significant I/O performance drop on the GPU server, making everybody's
+program relying on the shared storage extrmely slow. If you really need
+to use ripgrep to search for something within a large amount of files,
+please directly login onto the storage server itself for the work.
+
 (On storage server) Use `zpool list -v` and `zfs list -tall` to list the zpool
 and zfs dataset information including data usage.  Use `zpool status -v` to
 check the zpool status. Use `arcstat` on storage server to check the L1 ARC
