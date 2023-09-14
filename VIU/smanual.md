@@ -217,6 +217,12 @@ you may use `zfs get userused@<JHED> pool1/data` on the storage server -- this i
 fast compared to the naive `du -sh *` solution. By the way, if you want to query your
 current user quota, use `zfs get userquota@<JHED> pool1/data` on the storage server.
 
+**Warning:** If you are directly loading dataset from the shared storage on a GPU node,
+please refrain from setting a large `num_workers` in your dataloader. Excessive amount
+of dataloaders will not only quickly drain the network bandwidth, and greatly slowing
+down other programs, including your second experiment. Saturating the network bandwidth
+can also make the NFS super slow to respond.
+
 (On storage server) Use `zpool list -v` and `zfs list -tall` to list the zpool
 and zfs dataset information including data usage.  Use `zpool status -v` to
 check the zpool status. Use `arcstat` on storage server to check the L1 ARC
