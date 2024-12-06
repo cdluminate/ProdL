@@ -164,7 +164,7 @@ export ANSIBLE_INVENTORY=~/servers.txt
 In case of ansible error due to `no enough space left in /home`, append this to
 the ansible command line: `-e 'ansible_remote_tmp=/tmp/<jhed>'`.
 
-Check the [Makefile](./Makefiile) for a convinient way to run these commands,
+Check the [Makefile](https://raw.githubusercontent.com/cdluminate/ProdL/refs/heads/master/VIU/Makefile) for a convinient way to run these commands,
 including GPU status query.
 
 ## 2. Server Storage
