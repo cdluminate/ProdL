@@ -25,4 +25,4 @@ tmuxls: .viu_servers.txt
 
 # list all tmux sessions
 gpustat: .viu_servers.txt
-	ansible $(COMMON_ARGS) all -m shell -a "nvidia-smi --query-gpu=index,name,utilization.gpu,memory.used,memory.total --format=csv,noheader" -o | sed 's/\\n/\n/g'
+	ansible $(COMMON_ARGS) all -m shell -a "nvidia-smi --query-gpu=index,name,utilization.gpu,memory.used,memory.total --format=csv" | sed 's/\\n/\n/g'
